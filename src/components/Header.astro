@@ -1,0 +1,131 @@
+---
+
+---
+<header class="header">
+    <div class="header-wrapper">
+        <nav class="header-nav">
+            <a href="/" class="header-nav-link left">
+            Work
+            </a>
+            <a href="/about" class="header-nav-link right">
+            About
+            </a>
+        </nav>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/andyduong510/" class="ext-link" target="_blank" rel="noopener noreferrer">
+                    LinkedIn ↗
+                </a>
+            </li>
+            <li>
+                <a href="../Andy_Duong_Resume.pdf" class="ext-link" target="_blank" rel="noopener noreferrer">
+                    Resume ↗
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<style>
+    .header {
+        display: flex;
+        align-items: center;
+        height: 8rem;
+        padding-left: calc(2rem + 5%);
+        padding-right: calc(2rem + 5%);
+        position: fixed;
+        user-select: none;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        padding: 0.3rem 0.5rem;
+        border-radius: 1.5rem;
+        backdrop-filter: blur(1rem);
+        background-color: #86868b10;
+        transition: background-color 0.3s ease;
+        border: 1px solid #f5f5f715;
+        transition: border-color 0.3s ease;
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .header-nav-link
+    {
+        font-size: 0.875rem;
+        font-weight: 530;
+        color: #f5f5f7;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-nav-link.left,
+    .header-nav-link.right,
+    {
+        background: none;
+        transition: background 0.3s ease;
+        border-radius: 1rem;
+    }
+
+    .header-nav-link.left.active,
+    .header-nav-link.right.active,
+    {
+        background: #86868b35;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        gap: 1rem;
+        text-align: right;
+    }
+
+    .ext-link {
+        border: 1px solid #f5f5f700;
+        font-size: 1rem;
+        font-weight: 530;
+        color: #f5f5f7;
+        text-decoration: none;
+        border-radius: 1.5rem;
+        transition: background 0.3s ease;
+        padding: 0.8rem 1rem;
+    }
+    /* animations */
+    .header-nav:hover {
+        border: 1px solid #f5f5f735;
+        background-color: #86868b25;
+    }
+
+    .header-nav-link.left:hover {
+        background: linear-gradient(270deg, #ffffff00, #86868b25);
+    }
+
+    .header-nav-link.right:hover {
+        background: linear-gradient(90deg, #ffffff00, #86868b25);
+    }
+
+    .header-nav-link.left.active:hover {
+        background: linear-gradient(270deg, #ffffff00, #86868b25), #86868b35;
+    }
+
+    .header-nav-link.right.active:hover {
+        background: linear-gradient(90deg, #ffffff00, #86868b25), #86868b35;
+    }
+
+    .ext-link:hover {
+        border: 1px solid #f5f5f725;
+        background-color: #86868b15;
+    }
+    </style>

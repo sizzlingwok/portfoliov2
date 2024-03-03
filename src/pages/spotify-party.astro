@@ -4,6 +4,7 @@ import ProjectHeader from "../layouts/ProjectHeader.astro";
 import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import VideoPreview from "../components/VideoPreview.astro";
 ---
 
 <Layout
@@ -53,11 +54,28 @@ import SectionHeading from "../components/SectionHeading.astro";
         }}
       />
       <hr class="divider content" />
-      <section class="project-section bg-light">
+      <section class="project-section">
         <SectionHeading
           headerTag="FINAL SOLUTION"
           sectionTitle="Evolving the group listening experience by introducing improved functionality and features for all Spotify users"
         />
+        <div class="preview-wrapper dark-glassbox">
+          <VideoPreview
+            videoSrc="videos/spotify/spotifyinvitefriends.mp4"
+            title="Invite friends directly from the Friend Activity list"
+            description="Easily invite friends directly within the app, eliminating the need for external invitations through links or social media"
+          />
+          <VideoPreview
+            videoSrc="videos/spotify/spotifygroupsetting.mp4"
+            title="Moderate your group sessions"
+            description="Streamline your sessions with customizable group settings. Delegate admin privileges and fine-tune options for a smoother, more enjoyable experience"
+          />
+          <VideoPreview
+            videoSrc="videos/spotify/spotifysessionplaylist.mp4"
+            title="Automatically receive curated group session playlists"
+            description="Rediscover past group sessions with curated playlists of previously played tracks. Replay any missed songs or effortlessly share playlists with others"
+          />
+        </div>
       </section>
     </article>
   </main>
@@ -71,5 +89,27 @@ import SectionHeading from "../components/SectionHeading.astro";
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 3rem;
+  }
+
+  .dark-glassbox {
+    border-radius: 1.5rem;
+    backdrop-filter: blur(1rem);
+    border: 1px solid #f5f5f715;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  .project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    max-width: 90rem;
+    margin: 0 auto;
   }
 </style>

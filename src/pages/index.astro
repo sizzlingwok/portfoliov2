@@ -1,71 +1,216 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Andy Duong">
-	<main>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-	</main>
+  <main>
+    <section class="landing">
+      <div class="landing-wrapper">
+        <h1 class="hoverword">
+          hello! I'm Andy Duong — Product Designer based in the Bay Area. I
+          craft meaningful narratives fueled by my passion for music and art.
+        </h1>
+        <div class="landing-direct hoverline">Scroll down to discover ↓</div>
+      </div>
+    </section>
+    <section class="project-wrapper">
+      <a href="/spotify-party">
+        <div class="project projectslideup1">
+          <div class="project-details">
+            <div class="home-project-title">
+              <h3 class="splitletter">RESPONSIVE DESIGN</h3>
+              <h2 class="splitletter">Spotify Party</h2>
+            </div>
+            <div class="text-description splitword long">
+              Enhancing the group listening experience for an immersive music
+              exploration
+            </div>
+          </div>
+          <div class="thumbnail-container">
+            <img
+              class="thumbnail"
+              src="images/home/spotify-party-thumbnail.webp"
+              alt=""
+              draggable="false"
+            />
+          </div>
+        </div>
+      </a>
+      <a href="/sorette">
+        <div class="project projectslideup2">
+          <div class="project-details">
+            <div class="home-project-title">
+              <h3 class="splitletter">UX DESIGN</h3>
+              <h2 class="splitletter">sorette</h2>
+            </div>
+            <div class="text-description splitword long">
+              Cloud sharing platform streamlining music collaboration with
+              others
+            </div>
+          </div>
+          <div class="thumbnail-container">
+            <img
+              class="thumbnail"
+              src="images/home/sorette-thumbnail.webp"
+              alt=""
+              draggable="false"
+            />
+          </div>
+        </div>
+      </a>
+      <a href="/mechmarket">
+        <div class="project projectslideup3">
+          <div class="project-details">
+            <div class="home-project-title">
+              <h3 class="splitletter">MOBILE DESIGN</h3>
+              <h2 class="splitletter">mechmarket</h2>
+            </div>
+            <div class="text-description splitword long">
+              Mobile marketplace app dedicated to buying and selling keyboard
+              related products
+            </div>
+          </div>
+          <div class="thumbnail-container">
+            <img
+              class="thumbnail"
+              src="images/home/mechmarket-thumbnail.webp"
+              alt=""
+              draggable="false"
+            />
+          </div>
+        </div>
+      </a>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+  .landing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
+    justify-content: center;
+    margin: 0 auto;
+    user-select: none;
+    gap: 1rem;
+    max-width: 90rem;
+  }
+
+  .landing-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: #f5f5f7;
+    user-select: none;
+    font-weight: 530;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #f5f5f7;
+    font-weight: 530;
+  }
+
+  h3 {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    color: #f5f5f788;
+    font-weight: 400;
+  }
+  .landing-direct {
+    color: #f5f5f7;
+    font-size: 1.125rem;
+    overflow: hidden;
+    font-weight: 530;
+    display: flex;
+  }
+
+  .project-wrapper {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    max-width: 90rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    user-select: none;
+    justify-content: center;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: auto;
+    padding: 3rem;
+    background: #86868b10;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(1rem);
+    border: 1px solid #f5f5f715;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    transition:
+      border 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .home-project-title {
+    font-size: 2rem;
+    color: #f5f5f7;
+    text-decoration: none;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  . {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    color: #f5f5f788;
+    font-weight: 400;
+  }
+
+  .text-description {
+    color: #868686;
+    user-select: none;
+    line-height: 1.6;
+    font-weight: 450;
+    font-size: 1.125rem;
+    flex: 1;
+  }
+
+  .thumbnail-container {
+    object-fit: cover;
+  }
+
+  .thumbnail {
+    max-width: 100%;
+    object-fit: cover;
+    user-select: none;
+    border-radius: 1rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* animations */
+  .project:hover {
+    border: 1px solid #f5f5f735;
+    background-color: #86868b25;
+  }
 </style>

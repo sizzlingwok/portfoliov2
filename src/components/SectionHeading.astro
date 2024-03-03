@@ -3,8 +3,8 @@ const { headerTag, sectionTitle } = Astro.props;
 ---
 
 <div class="heading-container">
-  <h3>{headerTag}</h3>
-  <h2>{sectionTitle}</h2>
+  <div class="tag">{headerTag}</div>
+  <div class="title">{sectionTitle}</div>
 </div>
 
 <style>
@@ -14,14 +14,14 @@ const { headerTag, sectionTitle } = Astro.props;
     gap: 1rem;
   }
 
-  h2 {
+  .title {
     font-size: 3.5rem;
     color: #f5f5f7;
     user-select: none;
     font-weight: 530;
   }
 
-  h3 {
+  .tag {
     font-size: 0.875rem;
     letter-spacing: 3px;
     color: #f5f5f780;

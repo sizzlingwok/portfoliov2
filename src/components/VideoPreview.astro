@@ -17,7 +17,7 @@ const { videoSrc, title, description } = Astro.props;
     </video>
   </div>
   <div class="content-details">
-    <div class="title-small">{title}</div>
+    <div class="title">{title}</div>
     <p class="text-description">{description}</p>
   </div>
 </div>
@@ -37,7 +37,7 @@ const { videoSrc, title, description } = Astro.props;
     gap: 5rem;
   }
 
-  .title-small {
+  .title {
     font-size: 1.5rem;
     color: #f5f5f7;
     text-decoration: none;

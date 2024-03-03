@@ -68,3 +68,13 @@ a {
   background: rgba(245, 245, 247, 1);
   border-radius: 10px;
 }
+
+/* global css */
+.divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.divider.content {
+  border-color: rgba(255, 255, 255, 0.08);
+  margin: 10rem 0;
+}

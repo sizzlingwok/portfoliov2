@@ -1,0 +1,30 @@
+---
+const { headerTag, sectionTitle } = Astro.props;
+---
+
+<div class="heading-container">
+  <h3>{headerTag}</h3>
+  <h2>{sectionTitle}</h2>
+</div>
+
+<style>
+  .heading-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    color: #f5f5f7;
+    user-select: none;
+    font-weight: 530;
+  }
+
+  h3 {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    color: #f5f5f780;
+    font-weight: 400;
+  }
+</style>

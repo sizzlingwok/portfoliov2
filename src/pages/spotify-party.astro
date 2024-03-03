@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ProjectHeader from "../layouts/ProjectHeader.astro";
 import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
+import SectionHeading from "../components/SectionHeading.astro";
 ---
 
 <Layout
@@ -28,31 +29,36 @@ import ImageHeader from "../components/ImageHeader.astro";
         nextLink="/sorette"
         nextText="sorette"
       />
-      <div class="project-content">
-        <ImageHeader
-          image1={{
-            src: "images/spotify/preview1.webp",
-            description: "Group session queue system screen",
-            alt: "Group session queue system screen",
-          }}
-          image2={{
-            src: "images/spotify/preview2.webp",
-            description: "Group session collaborative playlist page",
-            alt: "Group session collaborative playlist page",
-          }}
-          image3={{
-            src: "images/spotify/preview3.webp",
-            description: "Automated curated playlist after the ended session",
-            alt: "Automated curated playlist after the ended session",
-          }}
-          image4={{
-            src: "images/spotify/preview4.webp",
-            description:
-              "Mobile design invite friends & current listeners screen",
-            alt: "Mobile design invite friends & current listeners screen",
-          }}
+      <ImageHeader
+        image1={{
+          src: "images/spotify/preview1.webp",
+          description: "Group session queue system screen",
+          alt: "Group session queue system screen",
+        }}
+        image2={{
+          src: "images/spotify/preview2.webp",
+          description: "Group session collaborative playlist page",
+          alt: "Group session collaborative playlist page",
+        }}
+        image3={{
+          src: "images/spotify/preview3.webp",
+          description: "Automated curated playlist after the ended session",
+          alt: "Automated curated playlist after the ended session",
+        }}
+        image4={{
+          src: "images/spotify/preview4.webp",
+          description:
+            "Mobile design invite friends & current listeners screen",
+          alt: "Mobile design invite friends & current listeners screen",
+        }}
+      />
+      <hr class="divider content" />
+      <section class="project-section bg-light">
+        <SectionHeading
+          headerTag="FINAL SOLUTION"
+          sectionTitle="Evolving the group listening experience by introducing improved functionality and features for all Spotify users"
         />
-      </div>
+      </section>
     </article>
   </main>
 </Layout>
@@ -60,14 +66,10 @@ import ImageHeader from "../components/ImageHeader.astro";
 <style>
   .project-content-wrapper {
     background-color: #111111;
-    padding: 10rem 0 0 0;
-  }
-
-  .project-content {
+    padding: 10rem 0 10rem 0;
     width: 100%;
     max-width: 90rem;
     margin-left: auto;
     margin-right: auto;
-    background-color: #111111;
   }
 </style>

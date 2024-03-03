@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ProjectHeader from "../layouts/ProjectHeader.astro";
 import ProjectNav from "../components/ProjectNav.astro";
+import ImageHeader from "../components/ImageHeader.astro";
 ---
 
 <Layout
@@ -20,88 +21,53 @@ import ProjectNav from "../components/ProjectNav.astro";
       videoSrc="videos/spotify/spotifysessionplaylist.mp4"
       prototypeLink="https://www.figma.com/proto/5ciCRD3R2H8jz0fRfKJPJD/Spotify-Party-Landing-Page?page-id=0%3A1&type=design&node-id=1-2&viewport=1334%2C874%2C0.71&t=MT5QwGlDdOlSKv5J-1&scaling=scale-down"
     />
-    <ProjectNav
-      prevLink="/mechmarket"
-      prevText="mechmarket"
-      nextLink="/sorette"
-      nextText="sorette"
-    />
-    <section class="project-section">
-      <div class="heading">
-        <div class="header-tag">PROBLEM STATEMENT</div>
-        <div class="text-container">
-          <div class="section-title">
-            How can we revitalize group listening for an improved experience,
-            addressing challenges and enhancing accessibility effectively?
-          </div>
-        </div>
+    <article class="project-content-wrapper">
+      <ProjectNav
+        prevLink="/mechmarket"
+        prevText="mechmarket"
+        nextLink="/sorette"
+        nextText="sorette"
+      />
+      <div class="project-content">
+        <ImageHeader
+          image1={{
+            src: "images/spotify/preview1.webp",
+            description: "Group session queue system screen",
+            alt: "Group session queue system screen",
+          }}
+          image2={{
+            src: "images/spotify/preview2.webp",
+            description: "Group session collaborative playlist page",
+            alt: "Group session collaborative playlist page",
+          }}
+          image3={{
+            src: "images/spotify/preview3.webp",
+            description: "Automated curated playlist after the ended session",
+            alt: "Automated curated playlist after the ended session",
+          }}
+          image4={{
+            src: "images/spotify/preview4.webp",
+            description:
+              "Mobile design invite friends & current listeners screen",
+            alt: "Mobile design invite friends & current listeners screen",
+          }}
+        />
       </div>
-      <div class="content-details">
-        <p class="title-medium">Solving the issues</p>
-        <div class="border-box">
-          <div class="box-content">
-            <div class="content-hor">
-              <div class="content-icon no-padding">
-                <img
-                  src="images/spotify/icons/searchicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-              <div class="content-vert">
-                <div class="title-small">
-                  Group session feature is hard to locate
-                </div>
-                <p>
-                  The current placement of initiating a group session feature is
-                  hidden under the device lists screen which users can overlook
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-hor">
-              <div class="content-icon no-padding">
-                <img
-                  src="images/spotify/icons/laptopicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-              <div class="content-vert">
-                <div class="title-small">
-                  Feature does not exist on desktop platforms
-                </div>
-                <p>
-                  The lack of group session support on desktop Spotify puts
-                  desktop users at a disadvantage
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-hor">
-              <div class="content-icon no-padding">
-                <img
-                  src="images/spotify/icons/messageicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-              <div class="content-vert">
-                <div class="title-small">
-                  Lack of friend activity integration
-                </div>
-                <p>
-                  Inviting friends to a group session lacks a direct in-app
-                  feature, requiring users to resort to sending invite links via
-                  text or social media
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </article>
   </main>
 </Layout>
+
+<style>
+  .project-content-wrapper {
+    background-color: #111111;
+    padding: 10rem 0 0 0;
+  }
+
+  .project-content {
+    width: 100%;
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #111111;
+  }
+</style>

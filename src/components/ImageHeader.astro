@@ -1,0 +1,98 @@
+---
+const { image1, image2, image3, image4 } = Astro.props;
+import { ImageZoom } from "../components/js/ImageZoom.jsx";
+---
+
+<div class="image-header dark-glassbox" id="project-thumbnails">
+  <div class="project-image">
+    <ImageZoom
+      options={{ background: "#111111" }}
+      client:visible
+      class="project-image"
+      src={image1.src}
+      alt={image1.alt}
+      draggable="false"
+    />
+    <div class="text-description light preview">{image1.description}</div>
+  </div>
+  <div class="project-image">
+    <ImageZoom
+      options={{ background: "#111111" }}
+      client:visible
+      class="project-image"
+      src={image2.src}
+      alt={image2.alt}
+      draggable="false"
+    />
+    <div class="text-description light preview">{image2.description}</div>
+  </div>
+  <div class="project-image">
+    <ImageZoom
+      options={{ background: "#111111" }}
+      client:visible
+      class="project-image"
+      src={image3.src}
+      alt={image3.alt}
+      draggable="false"
+    />
+    <div class="text-description light preview">{image3.description}</div>
+  </div>
+  <div class="project-image">
+    <ImageZoom
+      options={{ background: "#111111" }}
+      client:visible
+      class="project-image"
+      src={image4.src}
+      alt={image4.alt}
+      draggable="false"
+    />
+    <div class="text-description light preview">{image4.description}</div>
+  </div>
+</div>
+
+<style>
+  .dark-glassbox {
+    border-radius: 1.5rem;
+    backdrop-filter: blur(1rem);
+    border: 1px solid #f5f5f715;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  .image-header {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+  }
+
+  .project-image {
+    max-width: 100%;
+    object-fit: cover;
+    user-select: none;
+    border-radius: 1rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-description {
+    color: #868686;
+    user-select: none;
+    line-height: 1.6;
+    font-weight: 450;
+    font-size: 1.125rem;
+    flex: 1;
+  }
+
+  .text-description.light {
+    color: #86868b;
+    font-weight: 430;
+  }
+
+  .text-description.light.preview {
+    color: #86868b;
+    font-weight: 430;
+    font-size: 1rem;
+  }
+</style>

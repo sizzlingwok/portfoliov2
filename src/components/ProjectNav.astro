@@ -1,0 +1,116 @@
+---
+const { prevLink, prevText, nextLink, nextText } = Astro.props;
+---
+
+<div class="project-nav-bar">
+  <a href={prevLink} class="project-nav-link left">
+    <div class="prev-nav">
+      <p class="nav-text">{prevText}</p>
+      <span>←</span>
+    </div>
+  </a>
+  <a href={nextLink} class="project-nav-link right">
+    <div class="next-nav">
+      <span>→</span>
+      <p class="nav-text">{nextText}</p>
+    </div>
+  </a>
+</div>
+
+<style>
+  .project-nav-bar {
+    position: fixed;
+    width: 20rem;
+    bottom: 3.1rem;
+    left: 50%;
+    display: flex;
+    gap: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.3rem 0.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(1rem);
+    background-color: #86868b10;
+    transition: background-color 0.3s ease;
+    border: 1px solid #f5f5f715;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(1rem) translateX(-50%);
+    animation: fadeUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  }
+
+  .project-nav-link {
+    font-size: 0.875rem;
+    font-weight: 530;
+    color: #f5f5f7;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .project-nav-link.left,
+  .project-nav-link.right {
+    background: none;
+    transition: background 0.3s ease;
+    border-radius: 1rem;
+  }
+
+  .prev-nav,
+  .next-nav {
+    display: flex;
+    gap: 0.8rem;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+    font-weight: 530;
+    color: #f5f5f7;
+    text-decoration: none;
+  }
+
+  /* animations */
+  .project-nav-bar:hover {
+    border: 1px solid #f5f5f735;
+    background-color: #86868b25;
+  }
+
+  .project-nav-link.left:hover {
+    background: linear-gradient(270deg, #ffffff00, #86868b25);
+  }
+
+  .project-nav-link.right:hover {
+    background: linear-gradient(90deg, #ffffff00, #86868b25);
+  }
+
+  .project-nav-link.right.active:hover {
+    background: linear-gradient(270deg, #ffffff00, #86868b25), #86868b35;
+  }
+
+  .project-nav-link.right.active:hover {
+    background: linear-gradient(90deg, #ffffff00, #86868b25), #86868b35;
+  }
+
+  .prev-nav:hover,
+  .next-nav:hover {
+    gap: 0.5rem;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem) translateX(-50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateX(-50%);
+    }
+  }
+</style>

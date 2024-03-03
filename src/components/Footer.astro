@@ -1,0 +1,77 @@
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="divider-wrapper">
+      <hr class="divider" />
+    </div>
+    <div class="footer-content">
+      <div class="title-xsmall">© 2024 Andy Duong</div>
+      <nav class="footer-nav">
+        <a class="ext-link" href="mailto:contact@andyduong.work"> Email ↗ </a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    user-select: none;
+    margin: 0 auto;
+    padding-left: calc(2rem + 5%);
+    padding-right: calc(2rem + 5%);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-wrapper {
+    max-width: 90rem;
+    width: 100%;
+  }
+
+  .divider-wrapper {
+    width: auto;
+  }
+
+  .divider {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0;
+  }
+
+  .title-xsmall {
+    font-size: 1rem;
+    color: #f5f5f7;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .ext-link {
+    border: 1px solid #f5f5f700;
+    font-size: 1rem;
+    font-weight: 530;
+    color: #f5f5f7;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    transition: background 0.3s ease;
+    padding: 0.8rem 1rem;
+  }
+
+  /* animations */
+  .ext-link:hover {
+    border: 1px solid #f5f5f725;
+    background-color: #86868b15;
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+const {
+  videoSrc,
+  tag,
+  title,
+  description1,
+  description2,
+  role,
+  tools,
+  timeline,
+  prototypeLink,
+} = Astro.props;
+---
+
+<div class="project-header">
+  <div class="project-header-wrapper">
+    <div class="fs-bg">
+      <video width="100%" height="100%" autoplay loop muted playsinline>
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    </div>
+    <div class="project-header-container">
+      <div class="home-project-title">
+        <p class="header-tag splitletter">{tag}</p>
+        <p class="project-title splitletter">{title}</p>
+      </div>
+      <div class="project-header-details">
+        <div class="project-description-wrapper">
+          <p class="project-description splitwordheader">
+            {description1}
+          </p>
+          <p class="project-description splitwordheader long">
+            {description2}
+          </p>
+        </div>
+        <div class="list-container">
+          <p class="project-description splitwordheader long">
+            <span class="medium">Role</span> - {role}
+          </p>
+          <p class="project-description splitwordheader long">
+            <span class="medium">Tools</span> - {tools}
+          </p>
+          <p class="project-description splitwordheader long">
+            <span class="medium">Timeline</span> - {timeline}
+          </p>
+        </div>
+        <div class="project-buttons slideup">
+          <button class="project-button"> View Case Study </button>
+          <button class="project-button">
+            <a href={prototypeLink} target="_blank" rel="noopener noreferrer">
+              View Prototype ↗
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

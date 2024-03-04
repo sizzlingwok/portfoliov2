@@ -4,7 +4,7 @@ import {
   ExpandDivider,
   ProjectSlideUp,
   Landingtext,
-} from "../components/Animations.jsx";
+} from "../components/js/Animations.jsx";
 ---
 
 <!-- <ExpandDivider client:load />
@@ -26,8 +26,8 @@ import {
         <div class="project projectslideup1">
           <div class="project-details">
             <div class="home-project-title">
-              <h3 class="splitletter">RESPONSIVE DESIGN</h3>
-              <h2 class="splitletter">Spotify Party</h2>
+              <div class="tag splitletter">RESPONSIVE DESIGN</div>
+              <div class="title splitletter">Spotify Party</div>
             </div>
             <div class="text-description splitword long">
               Enhancing the group listening experience for an immersive music
@@ -48,8 +48,8 @@ import {
         <div class="project projectslideup2">
           <div class="project-details">
             <div class="home-project-title">
-              <h3 class="splitletter">UX DESIGN</h3>
-              <h2 class="splitletter">sorette</h2>
+              <div class="tag splitletter">UX DESIGN</div>
+              <div class="title splitletter">sorette</div>
             </div>
             <div class="text-description splitword long">
               Cloud sharing platform streamlining music collaboration with
@@ -70,8 +70,8 @@ import {
         <div class="project projectslideup3">
           <div class="project-details">
             <div class="home-project-title">
-              <h3 class="splitletter">MOBILE DESIGN</h3>
-              <h2 class="splitletter">mechmarket</h2>
+              <div class="tag splitletter">MOBILE DESIGN</div>
+              <div class="title splitletter">mechmarket</div>
             </div>
             <div class="text-description splitword long">
               Mobile marketplace app dedicated to buying and selling keyboard
@@ -119,13 +119,13 @@ import {
     font-weight: 530;
   }
 
-  h2 {
-    font-size: 2rem;
+  .title {
+    font-size: 2.25rem;
     color: #f5f5f7;
     font-weight: 530;
   }
 
-  h3 {
+  .tag {
     font-size: 0.875rem;
     letter-spacing: 3px;
     color: #f5f5f788;
@@ -223,3 +223,4 @@ import {
     background-color: #86868b25;
   }
 </style>
+../components/js/Animations.jsx

@@ -17,7 +17,6 @@ const { videoSrc, title, description } = Astro.props;
     </video>
   </div>
   <div class="content-details">
-    <div class="title">{title}</div>
     <p class="text-description">{description}</p>
   </div>
 </div>
@@ -35,15 +34,7 @@ const { videoSrc, title, description } = Astro.props;
     display: flex;
     flex-direction: row;
     gap: 5rem;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    color: #f5f5f7;
-    text-decoration: none;
-    user-select: none;
-    flex: 1;
-    font-weight: 530;
+    width: 50%;
   }
 
   .text-description {

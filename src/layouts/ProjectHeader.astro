@@ -22,7 +22,7 @@ const {
     </div>
     <div class="project-header-container">
       <div class="home-project-title">
-        <h3 class="splitletter">{tag}</h3>
+        <div class="tag">{tag}</div>
         <h1 class="splitletter">{title}</h1>
       </div>
       <ul class="project-header-details">
@@ -77,17 +77,17 @@ const {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: #f5f5f7;
     text-decoration: none;
     user-select: none;
     font-weight: 530;
   }
 
-  h3 {
+  .tag {
     font-size: 0.875rem;
     letter-spacing: 3px;
-    color: #f5f5f788;
+    color: #f5f5f780;
     font-weight: 400;
   }
 
@@ -141,7 +141,7 @@ const {
   .project-description-wrapper {
     flex-direction: row;
     font-size: 1rem;
-    color: #86868b;
+    color: #f5f5f7;
     width: auto;
     display: flex;
     gap: 5rem;
@@ -175,7 +175,7 @@ const {
     padding: 1rem 1.5rem;
     text-align: center;
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 530;
     transition: background-color 0.3s;

@@ -9,6 +9,5 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "passthrough",
   }),
-  globalStyles: ["./src/styles/global.css"],
   integrations: [react()],
 });

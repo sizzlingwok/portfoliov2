@@ -17,31 +17,34 @@ const { videoSrc, title, description } = Astro.props;
     </video>
   </div>
   <div class="content-details">
-    <p class="text-description">{description}</p>
+    <p class="text-description">
+      <slot name="description" />
+    </p>
   </div>
+
+  <style>
+    .preview-container {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: auto;
+    }
+
+    .content-details {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+      width: 50%;
+    }
+
+    .text-description {
+      color: #86868b;
+      font-weight: 430;
+      font-size: 1rem;
+      flex: 1;
+      line-height: 1.6;
+      user-select: none;
+    }
+  </style>
 </div>
-
-<style>
-  .preview-container {
-    gap: 2rem;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: auto;
-  }
-
-  .content-details {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
-    width: 50%;
-  }
-
-  .text-description {
-    color: #86868b;
-    font-weight: 430;
-    font-size: 1rem;
-    flex: 1;
-    line-height: 1.6;
-  }
-</style>

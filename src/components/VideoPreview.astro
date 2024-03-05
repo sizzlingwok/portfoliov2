@@ -1,8 +1,13 @@
 ---
-const { videoSrc, title, description } = Astro.props;
+const { videoSrc, comboclass } = Astro.props;
 ---
 
-<div class="preview-container">
+<div class={`preview-container ${comboclass}`}>
+  <div class="content-details">
+    <p class="text-description">
+      <slot name="description" />
+    </p>
+  </div>
   <div class="content-container">
     <video
       width="100%"
@@ -16,34 +21,38 @@ const { videoSrc, title, description } = Astro.props;
       <source src={videoSrc} type="video/mp4" />
     </video>
   </div>
-  <div class="content-details">
-    <p class="text-description">
-      <slot name="description" />
-    </p>
-  </div>
 
   <style>
     .preview-container {
-      gap: 2rem;
+      gap: 5rem;
       display: flex;
-      flex-direction: column;
       margin: 0 auto;
       width: auto;
+      align-items: center;
+    }
+
+    .preview-container.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .content-container {
+      width: 60%;
+      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     }
 
     .content-details {
       display: flex;
       flex-direction: row;
       gap: 5rem;
-      width: 50%;
+      width: auto;
+      flex: 1;
     }
 
     .text-description {
       color: #86868b;
-      font-weight: 430;
-      font-size: 1rem;
+      font-weight: 530;
+      font-size: 2rem;
       flex: 1;
-      line-height: 1.6;
       user-select: none;
     }
   </style>

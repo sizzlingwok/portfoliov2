@@ -5,12 +5,14 @@ import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
+import { ExpandDivider } from "../components/js/Animations.jsx";
 ---
 
 <Layout
   title="Andy Duong | Spotify Party"
   description="Enhancing the group listening experience for an immersive music exploration"
 >
+  <ExpandDivider client:only="react" />
   <main>
     <ProjectHeader
       tag="RESPONSIVE DESIGN"

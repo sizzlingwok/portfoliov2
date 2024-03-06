@@ -263,15 +263,12 @@ export const ExpandDivider = () => {
       };
 
       gsap.utils.toArray(".divider").forEach((divider) => {
-        let animation;
         gsap.set(divider, { opacity: 0 });
         ScrollTrigger.create({
           trigger: divider,
           start: "-150vh bottom",
           onEnter: () => {
-            if (!animation || !animation.isActive()) {
-              animation = animateIn(divider);
-            }
+            animateIn(divider);
           },
           scrub: true,
         });

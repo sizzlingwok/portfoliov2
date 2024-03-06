@@ -4,16 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 const { title, description } = Astro.props;
-import {
-  Landingtext,
-  SlideUp,
-  ProjectSlideUp,
-  WorkSlideUp,
-  ExpandDivider,
-  SplitWordHeader,
-  SplitWord,
-  SplitLetter,
-} from "../components/js/Animations.jsx";
 ---
 
 <!doctype html>
@@ -27,14 +17,6 @@ import {
     <ViewTransitions />
   </head>
   <body>
-    <Landingtext client:only="react" />
-    <SlideUp client:only="react" />
-    <ProjectSlideUp client:only="react" />
-    <WorkSlideUp client:only="react" />
-    <ExpandDivider client:only="react" />
-    <SplitWordHeader client:only="react" />
-    <SplitWord client:only="react" />
-    <SplitLetter client:only="react" />
     <Header />
     <slot />
     <Footer />

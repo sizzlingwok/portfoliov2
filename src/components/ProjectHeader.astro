@@ -27,20 +27,20 @@ const {
       <div class="project-header-details">
         <ul class="list-container">
           <p class="project-description splitwordheader long">
-            <span class="medium">Role</span><br />{role}
+            <span class="description">Role</span><br />{role}
           </p>
           <p class="project-description splitwordheader long">
-            <span class="medium">Tools</span><br />{tools}
+            <span class="description">Tools</span><br />{tools}
           </p>
           <p class="project-description splitwordheader long">
-            <span class="medium">Timeline</span><br />{timeline}
+            <span class="description">Timeline</span><br />{timeline}
           </p>
         </ul>
-        <div class="description-wrapper">
-          <p class="project-description splitwordheader">
+        <div class="description-wrapper splitwordheader">
+          <p class="project-description">
             {description1}
           </p>
-          <p class="project-description splitwordheader">
+          <p class="project-description">
             {description2}
           </p>
         </div>
@@ -59,7 +59,7 @@ const {
 
 <style>
   .project-header-container {
-    gap: 2rem;
+    gap: 3rem;
     display: flex;
     flex-direction: column;
     user-select: none;
@@ -163,10 +163,11 @@ const {
     width: 50%;
   }
 
-  .medium {
+  .description {
     font-weight: 530;
     line-height: 1.6;
-    color: #86868b;
+    color: #f5f5f7;
+    font-size: 1.125rem;
   }
 
   .project-button {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -391,36 +391,5 @@ export const SplitLetter = () => {
       });
       return () => ctx.revert();
     });
-  }, []);
-};
-
-export const EndingNavAnimation = () => {
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      let animation;
-
-      const animateIn = () => {
-        const tl = gsap.timeline();
-        tl.fromTo(
-          [".prev-nav", ".next-nav"],
-          { opacity: 0, x: (index) => (index === 0 ? 40 : -40) },
-          { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
-        );
-        return tl;
-      };
-
-      ScrollTrigger.create({
-        trigger: ".ending-nav-wrapper",
-        start: "-150vh bottom",
-        onEnter: () => {
-          if (!animation || !animation.isActive()) {
-            animation = animateIn();
-          }
-        },
-        scrub: true,
-      });
-    });
-
-    return () => ctx.revert();
   }, []);
 };

@@ -54,7 +54,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   .image-header {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 5rem;
     margin: 0 auto;
     width: 100%;
   }
@@ -63,7 +63,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     max-width: 100%;
     object-fit: cover;
     user-select: none;
-    border-radius: 1rem;
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -74,7 +73,12 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     user-select: none;
     line-height: 1.6;
     font-weight: 450;
-    font-size: 1rem;
+    font-size: 1.125em;
     flex: 1;
+  }
+
+  .medium-zoom-image {
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
   }
 </style>

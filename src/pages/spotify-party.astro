@@ -5,6 +5,7 @@ import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
+import { Refresh } from "../components/js/Animations.jsx";
 import { ExpandDivider } from "../components/js/Animations.jsx";
 ---
 
@@ -12,6 +13,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   title="Andy Duong | Spotify Party"
   description="Enhancing the group listening experience for an immersive music exploration"
 >
+  <Refresh client:only="react" />
   <ExpandDivider client:only="react" />
   <main>
     <ProjectHeader

@@ -5,6 +5,7 @@ import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
+import { Refresh } from "../components/js/Animations.jsx";
 import { ExpandDivider } from "../components/js/Animations.jsx";
 ---
 
@@ -12,12 +13,13 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   title="Andy Duong | sorette"
   description="Cloud sharing platform streamlining music collaboration with others"
 >
+  <Refresh client:only="react" />
   <ExpandDivider client:only="react" />
   <main>
     <ProjectHeader
       tag="UX DESIGN"
       title="sorette"
-      description1="sorette is an innovative desktop cloud-sharing service designed for music professionals, offering seamless collaboration opportunities. The primary objective of sorette is to empower music professionals with a powerful cloud-sharing platform, enhancing collaboration and creativity. It provides a suite of crafted tools and customization options to streamline workflows, simplify file organization, and foster a user-friendly environment conducive to enhanced productivity."
+      description1="sorette is an innovative desktop cloud-sharing service designed for music professionals, offering seamless collaboration opportunities. sorette provides a suite of crafted tools and customization options to streamline workflows, simplify file organization, and foster a user-friendly environment conducive to enhanced productivity."
       description2="The existing cloud-sharing platforms are deficient in providing specialized collaboration tools and features that are crucial for an enhanced user experience. I focused on designing sorette to create features that would adapt to the ease of collaborating with others."
       role="UI/UX Designer"
       tools="Figma, Google Forms, Optimal Workshop"
@@ -327,7 +329,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
                 <div class="content-vert">
                   <div class="content-icon">
                     <img
-                      src="images/sorette/icons/layouticon.webp"
+                      src="images/sorette/icons/slowdownload.webp"
                       alt=""
                       class="icon"
                     />
@@ -343,7 +345,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
                 <div class="content-vert">
                   <div class="content-icon">
                     <img
-                      src="images/sorette/icons/speakericon.webp"
+                      src="images/sorette/icons/filters.webp"
                       alt=""
                       class="icon"
                     />
@@ -360,16 +362,15 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
                 <div class="content-vert">
                   <div class="content-icon">
                     <img
-                      src="images/sorette/icons/playlisticon.webp"
+                      src="images/sorette/icons/tag.webp"
                       alt=""
                       class="icon"
                     />
                   </div>
-                  <div class="subheading">Limited filter capabilities</div>
+                  <div class="subheading">No tagging system</div>
                   <p>
-                    Users are able to share their playlists with others. The
-                    process of sharing a playlist involves sending a shareable
-                    link
+                    The lack of tag-based organization hinders users from
+                    efficiently navigating and organizing their files.
                   </p>
                 </div>
               </div>
@@ -426,7 +427,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
             <span class="title">A look back</span>
             <p class="text-description">
               These were the initial designs I have created when I first started
-              the project. Look how far it has came!
+              sorette. Look how far it has came!
             </p>
           </div>
           <ImageHeader

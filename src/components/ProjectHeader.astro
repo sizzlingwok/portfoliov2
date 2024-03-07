@@ -46,7 +46,6 @@ const {
         </div>
       </div>
       <div class="project-buttons slideup">
-        <button class="project-button"> View Case Study </button>
         <button class="project-button">
           <a href={prototypeLink} target="_blank" rel="noopener noreferrer">
             View Prototype ↗
@@ -132,6 +131,7 @@ const {
 
   .project-header-details {
     display: flex;
+    justify-content: space-between;
   }
 
   .project-description {
@@ -139,14 +139,13 @@ const {
     color: #f5f5f7;
     line-height: 1.6;
     font-weight: 450;
-    flex: 1;
   }
 
   .description-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    flex: 1;
+    width: 50%;
   }
 
   ul {
@@ -160,7 +159,6 @@ const {
   }
 
   .list-container {
-    width: 50%;
   }
 
   .description {

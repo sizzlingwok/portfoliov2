@@ -1,10 +1,12 @@
 ---
 const { videoSrc, comboclass } = Astro.props;
+import { SplitWord } from "../components/js/Animations.jsx";
 ---
 
+<SplitWord client:only="react" />
 <div class={`preview-container ${comboclass}`}>
   <div class="content-details">
-    <p class="text-description">
+    <p class="text-description splitword">
       <slot name="description" />
     </p>
   </div>

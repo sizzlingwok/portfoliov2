@@ -218,7 +218,24 @@ const {
   @media (max-width: 1200px) {
     /* Project Wrapper */
     .project-header-details {
+      gap: 5rem;
+    }
+
+    .description-wrapper {
+      width: auto;
+      flex: 1;
+    }
+
+    .project-header-container {
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Project Wrapper */
+    .project-header-details {
       flex-direction: column;
+      flex-wrap: wrap;
       gap: 2rem;
     }
 
@@ -229,9 +246,5 @@ const {
     .project-header-container {
       padding: 0 1rem;
     }
-  }
-
-  @media (max-width: 768px) {
-    /* Project Wrapper */
   }
 </style>

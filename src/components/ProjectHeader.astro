@@ -208,8 +208,14 @@ const {
   }
 
   /* media queries */
+  @media (max-width: 1500px) {
+    /* Project Wrapper */
+    .project-header-container {
+      padding: 10rem calc(2rem + 5%);
+    }
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     /* Project Wrapper */
     .project-header-details {
       flex-direction: column;
@@ -223,5 +229,9 @@ const {
     .project-header-container {
       padding: 0 1rem;
     }
+  }
+
+  @media (max-width: 768px) {
+    /* Project Wrapper */
   }
 </style>

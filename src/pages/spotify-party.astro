@@ -114,7 +114,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         </div>
         <div class="image-wrapper">
           <img
-            style="margin: 0 auto;"
+            class="img-center"
             src="/images/spotify/firstclicktest.webp"
             alt=""
             draggable="false"
@@ -133,7 +133,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         </div>
         <div class="image-wrapper">
           <img
-            style="margin: 0 auto;"
+            class="img-center"
             src="images/spotify/surveyresults1.webp"
             alt=""
             draggable="false"
@@ -143,11 +143,13 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           </figcaption>
           <div class="image-row">
             <img
+              class="img-center"
               src="images/spotify/surveyresults2.webp"
               alt=""
               draggable="false"
             />
             <img
+              class="img-center"
               src="images/spotify/surveyresults3.webp"
               alt=""
               draggable="false"
@@ -361,7 +363,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
             in the process.
           </p>
         </div>
-        <div class="image-row">
+        <div class="image-row nowrap">
           <figure class="image-container">
             <img
               class="project-image"
@@ -502,13 +504,13 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         </div>
         <div class="image-wrapper gap">
           <img
-            style="margin: 0 auto;"
+            class="img-center"
             src="images/spotify/surveyresults4.webp"
             alt=""
             draggable="false"
           />
           <img
-            style="margin: 0 auto;"
+            class="img-center"
             src="images/spotify/surveyresults5.webp"
             alt=""
             draggable="false"
@@ -646,7 +648,8 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       flex-direction: row;
       width: auto;
       margin: 0 auto;
-      gap: 10rem;
+      max-width: 100%;
+      gap: 5rem;
     }
 
     .preview-wrapper {
@@ -723,11 +726,26 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       border-radius: 1rem;
     }
 
+    .img-center {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     /* media queries */
     @media (max-width: 1500px) {
       /* Project Wrapper */
       .project-content-wrapper {
         padding: 10rem calc(2rem + 5%);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      /* Project Wrapper */
+      .image-row {
+        gap: 3rem;
+        flex-wrap: wrap;
       }
     }
 
@@ -760,7 +778,12 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       }
 
       .image-row {
-        gap: 1rem;
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .image-row.nowrap {
+        flex-wrap: nowrap;
       }
     }
   </style>

@@ -574,7 +574,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   <style>
     .project-content-wrapper {
       background-color: #111111;
-      padding: 10rem 0 10rem 0;
+      padding: 10rem 00;
       width: 100%;
       max-width: 90rem;
       margin-left: auto;
@@ -721,6 +721,47 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       object-fit: cover;
       user-select: none;
       border-radius: 1rem;
+    }
+
+    /* media queries */
+    @media (max-width: 1500px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 10rem calc(2rem + 5%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 5rem 1rem;
+      }
+
+      .preview-wrapper,
+      .project-section {
+        gap: 5rem;
+      }
+
+      .divider.content {
+        margin: 5rem 0;
+      }
+
+      .content-details {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .image-wrapper {
+        padding: 0;
+      }
+
+      .border-box {
+        width: auto;
+      }
+
+      .image-row {
+        gap: 1rem;
+      }
     }
   </style>
 </Layout>

@@ -1,0 +1,288 @@
+@media (min-width: 1500px) {
+  /* projects.jsx */
+  .divider-container,
+  .project-content-wrapper,
+  .project-header,
+  .about-work-wrapper,
+  .about-header {
+    padding-left: calc(2rem + 5%);
+    padding-right: calc(2rem + 5%);
+  }
+}
+
+@media (max-width: 1500px) {
+  /* Project Wrapper */
+  .project-wrapper,
+  .project-content-wrapper,
+  .landing,
+  .about-work-wrapper,
+  .project-header,
+  .about-header,
+  .footer {
+    padding-left: calc(2rem + 5%);
+    padding-right: calc(2rem + 5%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-wrapper {
+    padding-left: calc(2rem + 5%);
+    padding-right: calc(2rem + 5%);
+  }
+
+  .image-row {
+    max-width: 100%;
+  }
+
+  .preview-container {
+    width: 80%;
+  }
+
+  .text-container > .text-description {
+    width: 50%;
+  }
+
+  .text-container {
+    gap: 2.25rem !important;
+  }
+
+  .about-description-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .preview-container {
+    width: 100%;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+    height: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-nav {
+    gap: 2rem;
+  }
+  .header-name {
+    font-size: 14px;
+  }
+
+  .header-nav-link {
+    font-size: 14px;
+  }
+
+  .project-wrapper {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  /* Greet */
+  .landing {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: auto;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 0 1rem;
+  }
+
+  .footer-content {
+    padding: 3rem 0;
+  }
+
+  .footer-name {
+    font-size: 14px;
+  }
+
+  .footer-nav-link {
+    font-size: 14px;
+  }
+
+  /* Project */
+  .project-header-wrapper,
+  .about-header-wrapper {
+    height: auto;
+    min-height: 100dvh;
+    padding-top: 6rem;
+    position: relative;
+    padding-bottom: 6rem;
+  }
+
+  .fs-bg {
+    height: 100%;
+    min-height: 100dvh;
+    width: auto;
+    left: -1rem;
+    right: -1rem;
+  }
+
+  .header-tag {
+    font-size: 14px;
+  }
+  .project-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 3rem;
+  }
+  .project-button {
+    padding: 1rem;
+  }
+
+  .project {
+    padding: 2rem;
+  }
+
+  .project-details {
+    gap: 0.5rem;
+  }
+
+  .image-header,
+  .preview-wrapper {
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+
+  .project-section {
+    padding: 5rem 0;
+    gap: 3rem;
+  }
+
+  .project-details.wide {
+    flex-direction: column;
+  }
+
+  .thumbnail-container {
+    max-width: 100%;
+  }
+
+  .thumbnail {
+    aspect-ratio: 1/1;
+  }
+
+  .right-align {
+    text-align: left;
+    right: 0;
+  }
+
+  .project.right-align {
+    flex-direction: column-reverse;
+  }
+
+  .text-description.preview {
+    width: auto;
+  }
+  .description.right-align {
+    text-align: left;
+  }
+
+  .right-align-thumbnail-container {
+    width: 100%;
+  }
+
+  .wide-wrapper {
+    gap: 1rem;
+  }
+
+  /* projects.jsx */
+  .project-description-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .image-header {
+    flex-direction: column;
+  }
+
+  .preview-container {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .content-details {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .image-row {
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  .border-box {
+    width: auto;
+  }
+
+  .image-header-wrapper.row {
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .image-header-wrapper.row.ending {
+    padding-bottom: 2rem;
+  }
+
+  .image-header-wrapper.intro {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .image-header-wrapper.content,
+  .image-row.single {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .project-description {
+    max-width: 100%;
+  }
+
+  .project-nav-bar {
+    bottom: 3rem;
+  }
+  .text-description {
+    max-width: 100%;
+  }
+
+  .text-container > .text-description {
+    width: auto;
+  }
+
+  .project-header,
+  .project-content-wrapper,
+  .about-work-wrapper,
+  .about-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ending {
+    padding-bottom: 2rem;
+  }
+
+  /* abouut */
+  .embed-work {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-description {
+    max-width: none;
+  }
+}

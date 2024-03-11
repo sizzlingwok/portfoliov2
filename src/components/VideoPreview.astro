@@ -57,5 +57,19 @@ import { SplitWord } from "../components/js/Animations.jsx";
       flex: 1;
       user-select: none;
     }
+
+    /* media queries */
+    @media (max-width: 768px) {
+      /* Project Wrapper */
+      .preview-container,
+      .preview-container.reverse {
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+
+      .content-container {
+        width: auto;
+      }
+    }
   </style>
 </div>

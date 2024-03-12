@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
+
 export const Refresh = () => {
   useEffect(() => {
     ScrollTrigger.refresh(true);

@@ -11,6 +11,7 @@
         class="header-nav-link right"
         class:list={{ active: Astro.url.pathname === "/about" }}>About</a
       >
+      <a href="" class="burger-nav"></a>
     </nav>
     <ul>
       <li>
@@ -111,6 +112,10 @@
     padding: 0.8rem 1rem;
   }
 
+  .burger-nav {
+    background-image: url("images/menu/menu.webp");
+    display: none;
+  }
   /* animations */
   .header-nav:hover {
     border: 1px solid #f5f5f735;
@@ -143,6 +148,14 @@
     .header {
       padding: 0 1rem;
       height: 6rem;
+    }
+
+    ul {
+      display: none;
+    }
+
+    .burger-nav {
+      display: block;
     }
   }
 </style>

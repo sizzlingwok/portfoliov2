@@ -17,87 +17,38 @@ import {
   <ProjectSlideUp client:only="react" />
   <ExpandDivider client:only="react" />
   <main>
-    <section class="landing">
-      <div class="landing-wrapper">
-        <h1 class="hoverword">
-          Hello! I'm Andy Duong — Product Designer based in the Bay Area. I
-          craft meaningful narratives fueled by my passion for music and art.
-        </h1>
-        <div class="landing-direct hoverline">Scroll down to discover ↓</div>
-      </div>
-    </section>
-    <section class="project-wrapper">
-      <a href="/spotify-party">
-        <div class="project projectslideup1">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">RESPONSIVE DESIGN</div>
-              <div class="title splitletter">Spotify Party</div>
-            </div>
-            <div class="text-description splitword long">
-              Enhancing the group listening experience for an immersive music
-              exploration
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/spotify-party-thumbnail.webp"
-              alt=""
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
-      <a href="/sorette">
-        <div class="project projectslideup2">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">UX DESIGN</div>
-              <div class="title splitletter">sorette</div>
-            </div>
-            <div class="text-description splitword long">
-              Cloud sharing platform streamlining music collaboration with
-              others
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/sorette-thumbnail.webp"
-              alt=""
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
-      <a href="/mechmarket">
-        <div class="project projectslideup3">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">MOBILE DESIGN</div>
-              <div class="title splitletter">mechmarket</div>
-            </div>
-            <div class="text-description splitword long">
-              Mobile marketplace app dedicated to buying and selling keyboard
-              related products
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/mechmarket-thumbnail.webp"
-              alt=""
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
-    </section>
+    <div class="container">
+      <button class="navigation-button">testing testing</button>
+      <button class="external-link-button">External Link</button>
+    </div>
+    <div class="test"></div>
   </main>
 </Layout>
 
 <style>
+  .test {
+    margin: 0 auto;
+    width: 2px;
+    height: 100vh;
+    background-color: blue;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    max-width: 90rem;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .navigation-button {
+    justify-self: center;
+    margin: 0 auto; /* Ensure the button is centered */
+    width: 10rem;
+  }
+
+  .external-link-button {
+    justify-self: end;
+  }
   .landing {
     position: relative;
     display: flex;

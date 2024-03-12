@@ -11,7 +11,7 @@
         class="header-nav-link right"
         class:list={{ active: Astro.url.pathname === "/about" }}>About</a
       >
-      <a href="" class="burger-nav"></a>
+      <!-- <a href="" class="burger-nav"></a> -->
     </nav>
     <ul>
       <li>
@@ -55,7 +55,6 @@
     display: flex;
     gap: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
     padding: 0.3rem 0.5rem;
     border-radius: 1.5rem;
     backdrop-filter: blur(1rem);
@@ -69,8 +68,11 @@
   .header-wrapper {
     display: flex;
     align-items: center;
+    max-width: 90rem;
     width: 100%;
+    margin: 0 auto;
   }
+
   .header-nav-link {
     font-size: 0.875rem;
     font-weight: 530;
@@ -99,6 +101,9 @@
     text-decoration: none;
     gap: 1rem;
     text-align: right;
+    margin-left: auto;
+    justify-content: flex-end;
+    list-style-type: none;
   }
 
   .ext-link {
@@ -148,6 +153,10 @@
     .header {
       padding: 0 1rem;
       height: 6rem;
+    }
+
+    .header-nav {
+      margin: 0 auto;
     }
 
     ul {

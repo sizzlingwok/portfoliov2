@@ -40,8 +40,6 @@
 
 <style>
   .header {
-    display: flex;
-    align-items: center;
     height: 8rem;
     padding-left: calc(2rem + 5%);
     padding-right: calc(2rem + 5%);
@@ -67,9 +65,13 @@
   }
 
   .header-wrapper {
-    display: flex;
+    display: grid;
+    max-width: 90rem;
+    margin: 0 auto;
+    justify-items: center;
     align-items: center;
-    width: 100%;
+    grid-template-columns: minmax(0, 1fr) 0;
+    height: 8rem;
   }
   .header-nav-link {
     font-size: 0.875rem;
@@ -98,7 +100,8 @@
     flex-direction: row;
     text-decoration: none;
     gap: 1rem;
-    text-align: right;
+    justify-self: end;
+    width: max-content;
   }
 
   .ext-link {

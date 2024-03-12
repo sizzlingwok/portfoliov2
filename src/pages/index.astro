@@ -98,6 +98,25 @@ import {
 </Layout>
 
 <style>
+  .container {
+    display: grid;
+    max-width: 90rem;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 0;
+  }
+
+  .navigation-button {
+    margin: 0 auto;
+    width: 10rem;
+  }
+
+  .external-link-button {
+    justify-self: end;
+    width: max-content;
+  }
+
   .landing {
     position: relative;
     display: flex;

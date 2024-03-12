@@ -213,4 +213,65 @@ import {
     display: flex;
     flex-direction: column;
   }
+
+  /* media queries */
+  @media (max-width: 1500px) {
+    /* Project Wrapper */
+    .landing {
+      padding: 10rem calc(2rem + 5%);
+    }
+  }
+
+  @media (max-width: 970px) {
+    /* Project Wrapper */
+    .project {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-wrapper {
+      gap: 0;
+      padding: 1rem 0;
+    }
+
+    .thumbnail img {
+      aspect-ratio: 1/1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .landing-direct {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Project Wrapper */
+    .landing {
+      height: auto;
+      min-height: 100dvh;
+      padding: 6rem 0;
+      position: relative;
+      padding: 0 1rem;
+    }
+
+    .project {
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .text-description {
+      font-size: 1rem;
+    }
+  }
 </style>

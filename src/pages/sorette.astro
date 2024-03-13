@@ -34,6 +34,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         nextLink="/mechmarket"
         nextText="mechmarket"
       />
+
       <ImageHeader
         image1={{
           src: "images/sorette/preview1.webp",
@@ -111,7 +112,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         </div>
         <div class="image-wrapper">
           <img
-            style="margin: 0 auto;"
+            class="img-center"
             src="/images/sorette/surveyresults1.webp"
             alt=""
             draggable="false"
@@ -296,7 +297,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               cloud platforms like Google Drive, Dropbox, and OneDrive.
             </p>
           </div>
-          <div class="image-row">
+          <div class="image-row nowrap">
             <figure class="image-container">
               <img
                 class="project-image"
@@ -464,7 +465,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           </div>
           <div class="image-wrapper">
             <img
-              style="margin: 0 auto;"
+              class="img-center"
               src="/images/sorette/firstclicktest.webp"
               alt=""
               draggable="false"
@@ -501,13 +502,13 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           </div>
           <div class="image-wrapper gap">
             <img
-              style="margin: 0 auto;"
+              class="img-center"
               src="images/sorette/surveyresults4.webp"
               alt=""
               draggable="false"
             />
             <img
-              style="margin: 0 auto;"
+              class="img-center"
               src="images/sorette/surveyresults5.webp"
               alt=""
               draggable="false"
@@ -716,6 +717,13 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         object-fit: cover;
         user-select: none;
         border-radius: 1rem;
+      }
+
+      .img-center {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
       }
 
       /* media queries */

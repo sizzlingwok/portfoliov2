@@ -1,74 +1,345 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { ImageZoom } from "../components/js/ImageZoom.jsx";
 ---
 
 <Layout title="Andy Duong | About">
   <main>
-    <p class="instructions">
-      To get popo, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
+    <section class="about">
+      <div class="about-wrapper">
+        <div class="about-header-container">
+          <div class="heading-title">
+            <div class="tag">ABOUT ME</div>
+            <h1 class="heading splitletter">Nice to meet you!</h1>
+          </div>
+          <div class="description-wrapper splitwordheader">
+            <p class="about-description">
+              Greetings! In June of 2022, I graduated from the University of
+              California, Irvine with a degree in Business Administration. While
+              contemplating my future career, I took a leap into the exciting
+              world of UX design. As a creative enthusiast with a passion for
+              photography, video production, and music creation, I find immense
+              joy in bringing art to life. My interest lies in designing
+              experiences that foster human connection and leave a positive
+              impact on society. I am currently exploring new opportunities! If you'd like to
+              connect, feel free to contact me via email or reach out on
+              LinkedIn.
+            </p>
+          </div>
+          <div class="about-direct hoverline">Scroll down to see my other work ↓</div>
+        </div>
+        <div class="about-image">
+          <img src="images/about/pp.webp" alt="" draggable="false" />
+        <div>
+      </div>
+    </section>
+    <section class="work">
+      <div class="music">
+        <div class="heading-title">
+          <div class="tag">MUSIC</div>
+          <div class="heading splitletter">dear you</div>
+        </div>
+        <div class="embed-work">
+          <div class="embed">
+            <iframe
+              style={{ borderRadius: "1rem" }}
+              src="https://open.spotify.com/embed/artist/2aTcMxIOsUTt4i2KBJASrA?utm_source=generator&theme=0"
+              width="100%"
+              height="450px"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="embed">
+            <iframe
+              id="embedPlayer"
+              src="https://embed.music.apple.com/us/album/thank-u-single/1631766772?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=dark"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              allow="autoplay *; encrypted-media *; clipboard-write"
+              style={{
+                width: "100%",
+                height: "450px",
+                overflow: "hidden",
+                borderRadius: "1rem",
+                transform: "translateZ(0px)",
+                animation:
+                  "2s ease 0s 6 normal none running loading-indicator",
+                backgroundColor: "rgb(0, 0, 0)",
+              }}
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    
+      <div class="beats">
+        <div class="heading-title">
+          <div class="tag">BEATS</div>
+          <div class="heading splitletter">prod. ichiban</div>
+        </div>
+        <div class="embed-work">
+          <div class="embed">
+            <iframe
+              width="100%"
+              height="450px"
+              style={{ borderRadius: "1rem" }}
+              src="https://www.youtube.com/embed/rynowdhZfRQ?rel=0"
+              title='[free] summer walker x kehlani x bryson tiller type beat "karma"'
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="embed">
+            <iframe
+              width="100%"
+              height="450px"
+              style={{ borderRadius: "1rem" }}
+              src="https://www.youtube.com/embed/WK3-o3QErws?rel=0"
+              title='[FREE] tory lanez x bryson tiller x drake type beat "affection"'
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="photography">
+        <div class="heading-title">
+          <div class="tag">PHOTOGRAPHY</div>
+        </div>
+        <div class="content-header">
+          <div class="content-row">
+            <div class="project-image">
+              <ImageZoom
+              options={{ background: "#111111" }}
+              client:visible
+              src="images/about/pic1.webp"
+              alt=""
+              draggable="false"
+              width="100%" 
+              height="100%"
+            />
+            </div>
+            <div class="project-image">
+              <ImageZoom
+              options={{ background: "#111111" }}
+              client:visible
+              src="images/about/pic2.webp"
+              alt=""
+              draggable="false"
+              width="100%" 
+              height="100%"
+            />
+            </div>
+          </div>
+          <div class="content-row">
+            <div class="project-image">
+              <ImageZoom
+              options={{ background: "#111111" }}
+              client:visible
+              src="images/about/pic3.webp"
+              alt=""
+              draggable="false"
+              width="100%" 
+              height="100%"
+            />
+            </div>
+            <div class="project-image">
+              <ImageZoom
+              options={{ background: "#111111" }}
+              client:visible
+              src="images/about/pic4.webp"
+              alt=""
+              draggable="false"
+              width="100%" 
+              height="100%"
+            />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="beats">
+        <div class="heading-title">
+          <div class="tag">VIDEOS</div>
+        </div>
+        <div class="embed-work">
+          <div class="embed">
+            <div class="embed">
+              <iframe
+              width="100%"
+              height="450px"
+              src="https://www.youtube.com/embed/NlSZEhXSW94?rel=0"
+              title="everything goes on - gym edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            </div>
+            <iframe
+            width="100%"
+            height="450px"
+            src="https://www.youtube.com/embed/D79o2jLOiXM?rel=0"
+            title="Bay Area Barbell Open 2023 - Powerlifting Meet Recap"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          </div>
+          <div class="embed">
+            <iframe
+            width="100%"
+            height="450px"
+            src="https://www.youtube.com/embed/jujFuyUALs4?rel=0"
+            title="SOP PL Promo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          </div>
+          <div class="embed">
+            <iframe
+            width="100%"
+            height="450px"
+            src="https://www.youtube.com/embed/tAkb9H_FtyY?rel=0"
+            title="Eli Meet Recap - SoCal Shodown 2022"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          </div>
+        </div>
+      </div>
+    
+    </section>
   </main>
 </Layout>
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
+  .tag {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    color: #86868b;
+    font-weight: 400;
+  }
+
+  h1, .heading {
+    font-size: 2.25rem;
+    color: #f5f5f7;
+    text-decoration: none;
+    user-select: none;
+    font-weight: 530;
+  }
+
+  .heading-title {
+    font-size: 2rem;
+    color: #f5f5f7;
+    text-decoration: none;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: 0 auto;
+    user-select: none;
+    gap: 1rem;
+    max-width: 90rem;
+  }
+
+  .work {
+    max-width: 90rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 10rem 0;
+  }
+
+  .about-wrapper {
+    display: flex;
+    gap: 10rem;
+  }
+
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-description {
+    font-size: 1.125rem;
+    color: #f5f5f7;
     line-height: 1.6;
+    font-weight: 450;
   }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
+
+  .about-direct {
+    color: #f5f5f7;
+    font-size: 1.125rem;
+    overflow: hidden;
+    font-weight: 530;
+    display: flex;
+  }
+
+  .about-image img {
+    border-radius: 100%;
+  }
+
+  .about-header-container {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  }
+
+  .music, .beats, .videos {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .photography, .videos {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .embed-work {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+  }
+
+  .embed iframe{
+    border: none;
+  }
+
+  .content-header {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .content-row {
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .project-image {
+    max-width: 100%;
+    object-fit: cover;
+    user-select: none;
+    width: 100%;
+  }
+
+  .medium-zoom-image {
+    border-radius: 0.5rem;
+    max-width: 100%;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     height: auto;
-    z-index: -1;
+    width: 100%;
   }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
+
 </style>

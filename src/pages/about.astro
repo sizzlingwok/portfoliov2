@@ -342,4 +342,58 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     width: 100%;
   }
 
+  /* media queries */
+  @media (max-width: 1500px) {
+    /* Project Wrapper */
+    .about, .work {
+      padding: 10rem calc(2rem + 5%);
+    }
+  }
+
+  @media (max-width: 1000px) {
+    /* Project Wrapper */
+    .about-wrapper {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    .about-image {
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Project Wrapper */
+    .about-wrapper {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    .music, .beats, .videos {
+    flex-direction: column;
+    gap: 2rem;
+    }
+
+    .photography, .videos {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .embed-work {
+      width: 100%;
+    }
+
+    .content-row {
+      flex-direction: column;
+    }
+
+    .work {
+      padding: 5rem 1rem;
+    }
+
+    .about {
+      padding: 0 1rem;
+    }
+    
+}
 </style>

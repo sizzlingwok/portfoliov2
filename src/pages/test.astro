@@ -29,68 +29,65 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
     />
     <article class="project-content-wrapper">
       <ProjectNav
-        prevLink="/mechmarket"
-        prevText="mechmarket"
-        nextLink="/sorette"
-        nextText="sorette"
+        prevLink="/sorette"
+        prevText="sorette"
+        nextLink="/spotify-party"
+        nextText="Spotify Party"
       />
       <ImageHeader
         image1={{
-          src: "images/spotify/preview1.webp",
-          description: "Group session queue system screen",
-          alt: "Group session queue system screen",
+          src: "images/mechmarket/preview1.webp",
+          description: "mechmarket home screen",
+          alt: "mechmarket home screen",
         }}
         image2={{
-          src: "images/spotify/preview2.webp",
-          description: "Group session collaborative playlist page",
-          alt: "Group session collaborative playlist page",
+          src: "images/mechmarket/preview2.webp",
+          description: "Product page",
+          alt: "Product page",
         }}
         image3={{
-          src: "images/spotify/preview3.webp",
-          description: "User is invited to a group session",
-          alt: "User is invited to a group session",
+          src: "images/mechmarket/preview3.webp",
+          description: "Market listings",
+          alt: "Market listings",
         }}
         image4={{
-          src: "images/spotify/preview4.webp",
-          description: "User views curated group session playlist",
-          alt: "User views curated group session playlist",
+          src: "images/mechmarket/preview4.webp",
+          description: "Offer screen",
+          alt: "Offer screen",
         }}
       />
       <hr class="divider content" />
       <section class="project-section">
         <SectionHeading
           headerTag="FINAL SOLUTION"
-          sectionTitle="Evolving the group listening experience by introducing improved functionality and features for all Spotify users"
+          sectionTitle="A dedicated mobile marketplace app featuring a better user experience for buying and selling keyboard related products"
         />
         <div class="preview-wrapper">
-          <VideoPreview videoSrc="videos/spotify/spotifyinvitefriends.mp4">
+          <VideoPreview videoSrc="videos/mechmarket/mmmarketdata.mp4">
             <Fragment slot="description"
-              ><span style="color: #e3e3e8;"
-                >Easily invite friends directly within the app</span
-              >
-              eliminating the need for external invitations through links or social
-              media
+              ><span style="color: #e3e3e8;">View current market trends</span>
+              to get a better estimate of current prices before buying and selling
             </Fragment>
           </VideoPreview>
           <VideoPreview
-            videoSrc="videos/spotify/spotifygroupsetting.mp4"
+            videoSrc="videos/mechmarket/mmoffer.mp4"
             comboclass="reverse"
           >
             <Fragment slot="description">
               <span style="color: #e3e3e8;">
-                Streamline your sessions with customizable group settings.
+                Effortlessly streamline transactions by sending and receiving
+                offers,
               </span>
-              Delegate admin privileges and fine-tune options for a more enjoyable
-              experience
+              simplifying your deal-making process for optimal efficiency
             </Fragment>
           </VideoPreview>
-          <VideoPreview videoSrc="videos/spotify/spotifysessionplaylist.mp4">
-            <Fragment slot="description"
-              ><span style="color: #e3e3e8;"
-                >Rediscover past group sessions with curated playlists of
-                previously played tracks.</span
+          <VideoPreview videoSrc="videos/mechmarket/mmfilters.mp4">
+            <Fragment slot="description">
+              Effortlessly locate the products you desire with convenient
+              <span style="color: #e3e3e8;"
+                >access to filters that refine and customize your search
+                criteria</span
               >
-              Replay any missed songs or effortlessly share playlists with others
             </Fragment>
           </VideoPreview>
         </div>
@@ -99,23 +96,23 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       <section class="project-section">
         <SectionHeading
           headerTag="USER RESEARCH"
-          sectionTitle="Evaluating the user flow for initiating a Spotify group session"
+          sectionTitle="Evaluating the buying and selling experience on the mechmarket subreddit"
         />
         <div class="content-details">
           <span class="title">First click test</span>
           <p class="text-description">
-            In the initial phase, I assessed users' ability to navigate to the
-            group session menu through a first-click test with <span
-              style="color: #e3e3e8;">7 participants</span
-            > on the Spotify mobile app. While I planned to extend the test to the
-            desktop platform, the feature was exclusive to mobile. Despite this limitation,
-            the early findings provided crucial insights for subsequent analyses.
+            In the initial phase, I assessed the ability of <span
+              style="color: #e3e3e8;">8 participants</span
+            > to navigate the mechmarket subreddit. Testing two distinct user flows,
+            I aimed to determine their proficiency in completing a purchase or listing
+            an item for sale. It's important to highlight that participants had no
+            prior experience with the mechmarket subreddit in this specific test.
           </p>
         </div>
         <div class="image-wrapper">
           <img
             class="img-center"
-            src="/images/spotify/firstclicktest.webp"
+            src="/images/mechmarket/surveyresults1.webp"
             alt=""
             draggable="false"
           />
@@ -123,34 +120,15 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
         <div class="content-details">
           <span class="title">Survey results</span>
           <p class="text-description">
-            A mere <span style="color: #e3e3e8;">28%</span> of users were able to
-            successfully locate the appropriate menu. This compelling insight bly
-            suggests that the menu's placement may be unintuitive, potentially leading
-            users to overlook its presence. Users tend to overlook the group session
-            feature on the platform due to its unintuitive placement and current
-            lack of features it current offers.
+            Approximately <span style="color: #e3e3e8;">13%</span> of the users were
+            able to complete both tasks. This insight suggests that the user flow
+            may be too difficult for new users.
           </p>
         </div>
         <div class="image-wrapper">
-          <img
-            class="img-center"
-            src="images/spotify/surveyresults1.webp"
-            alt=""
-            draggable="false"
-          />
-          <figcaption class="subheading" style="margin: 0 auto;">
-            But...
-          </figcaption>
-          <div class="image-row stats">
+          <div class="image-row">
             <img
-              class="img-center"
-              src="images/spotify/surveyresults2.webp"
-              alt=""
-              draggable="false"
-            />
-            <img
-              class="img-center"
-              src="images/spotify/surveyresults3.webp"
+              src="images/mechmarket/surveyresults2.webp"
               alt=""
               draggable="false"
             />
@@ -160,58 +138,21 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           <div class="title">A word from our participants</div>
           <div class="border-box">
             <p class="box-content">
+              "I wasn't too familiar with buying and selling on Reddit. I only
+              use it to browse content surrounding communities that pique my
+              interests.
               <span style="color: #ddddde;">
-                "Difficult to invite/join friends."
+                Reddit is the last place I'd look at for marketplace activities"
               </span>
-              Didn’t know about it until someone else showed me. There also lies
-              the potential for queuing songs that others don't enjoy.
             </p>
             <p class="box-content">
+              "Exploring community guides and rules provided insights, but as a
+              new user,
               <span style="color: #ddddde;">
-                "Anyone can play music with no restriction,"
+                the numerous steps felt overwhelming, making a smooth experience
+                seem intricate, especially on mobile
               </span>
-              so one person can skip another's song and play what they want. Can't
-              see who played what song.
             </p>
-          </div>
-        </div>
-        <div class="content-details">
-          <div class="title">Key Insights</div>
-          <div class="border-box gap">
-            <div class="box-content outline">
-              <div class="content-vert">
-                <div class="content-icon">
-                  <img
-                    src="images/spotify/icons/confusedicon.webp"
-                    alt=""
-                    class="icon"
-                  />
-                </div>
-                <div class="subheading">User Experience</div>
-                <p>
-                  Users have difficulty in inviting friends. The user onboarding
-                  msut be enhanced to provide a more intuitive experience for
-                  those wishing to invite and join friends
-                </p>
-              </div>
-            </div>
-            <div class="box-content outline">
-              <div class="content-vert">
-                <div class="content-icon">
-                  <img
-                    src="images/spotify/icons/conflictsicon.webp"
-                    alt=""
-                    class="icon"
-                  />
-                </div>
-                <div class="subheading">Playback Conflicts</div>
-                <p>
-                  The potential conflicts stemming from track skipping by any
-                  participant must be addressed as users are facing disruptive
-                  behavior by malicious users
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -219,28 +160,25 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       <section class="project-section">
         <SectionHeading
           headerTag="PROBLEM STATEMENT"
-          sectionTitle="How can we revitalize group listening for an improved experience, addressing challenges and enhancing accessibility effectively?"
+          sectionTitle="How can a dedicated mobile marketplace app effectively address and enhance the user experience, overcoming the challenges identified in the current Reddit platform?"
         />
         <div class="content-details">
-          <div class="title">Solving the issues</div>
+          <div class="title">Insights</div>
           <div class="border-box">
             <div class="box-content">
               <div class="content-hor">
                 <div class="content-icon no-padding">
                   <img
-                    src="images/spotify/icons/searchicon.webp"
+                    src="images/mechmarket/icons/confused.webp"
                     alt=""
                     class="icon"
                   />
                 </div>
                 <div class="content-vert">
-                  <div class="subheading">
-                    Group session feature is hard to locate
-                  </div>
+                  <div class="subheading">Lack of User Intuitiveness</div>
                   <p>
-                    The current placement of initiating a group session feature
-                    is hidden under the device lists screen which users can
-                    overlook
+                    The buying and selling process on Reddit is not user
+                    friendly and poses challenges to new users
                   </p>
                 </div>
               </div>
@@ -249,39 +187,17 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-hor">
                 <div class="content-icon no-padding">
                   <img
-                    src="images/spotify/icons/laptopicon.webp"
+                    src="images/mechmarket/icons/shop.webp"
                     alt=""
                     class="icon"
                   />
                 </div>
                 <div class="content-vert">
-                  <div class="subheading">
-                    Feature does not exist on desktop platforms
-                  </div>
+                  <div class="subheading">Limited Functionality</div>
                   <p>
-                    The lack of group session support on desktop Spotify puts
-                    desktop users at a disadvantage
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="box-content">
-              <div class="content-hor">
-                <div class="content-icon no-padding">
-                  <img
-                    src="images/spotify/icons/messageicon.webp"
-                    alt=""
-                    class="icon"
-                  />
-                </div>
-                <div class="content-vert">
-                  <div class="subheading">
-                    Lack of friend activity integration
-                  </div>
-                  <p>
-                    Inviting friends to a group session lacks a direct in-app
-                    feature, requiring users to resort to sending invite links
-                    via text or social media
+                    Reddit's platform is primarily designed for discussion
+                    rather than commerce. As a result, features and tools are
+                    limited compared to dedicated e-commerce platforms.
                   </p>
                 </div>
               </div>
@@ -293,7 +209,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       <section class="project-section">
         <SectionHeading
           headerTag="USER PERSONA"
-          sectionTitle="Introducing Michelle & Edward"
+          sectionTitle="Introducing Amy & Alex"
         />
         <div class="content-details">
           <div class="title">A look from a different perspective</div>
@@ -302,20 +218,21 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-hor">
                 <div class="content-icon no-padding">
                   <img
-                    src="images/spotify/michelle.webp"
+                    src="images/mechmarket/amy.webp"
                     alt=""
                     class="icon large"
                   />
                 </div>
                 <div class="content-vert">
-                  <div class="subheading">Michelle</div>
+                  <div class="subheading">Amy</div>
                   <p>
-                    Michelle, a party enthusiast, creates perfect playlists for
-                    her events. Prior to each gathering, she dedicates herself
-                    to selecting tracks, ensuring an unforgettable experience.
-                    In her quest for new music, she dreams of a feature allowing
-                    guests to queue up favorite tracks with a voting system for
-                    an enhanced party experience.
+                    Amy is new to the mechanical keyboard hobby. She wants to
+                    acquire a new keyboard with a budget cap of $500. However,
+                    she finds the current lack of price filtering options quite
+                    frustrating on the subreddit. The absence of this feature
+                    makes it cumbersome for her to navigate through various
+                    products, as they may not align with her specific budget
+                    constraints.
                   </p>
                 </div>
               </div>
@@ -324,21 +241,20 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-hor">
                 <div class="content-icon no-padding">
                   <img
-                    src="images/spotify/edward.webp"
+                    src="images/mechmarket/alex.webp"
                     alt=""
                     class="icon large"
                   />
                 </div>
                 <div class="content-vert">
-                  <div class="subheading">Edward</div>
+                  <div class="subheading">Alex</div>
                   <p>
-                    Edward is an avid music listener who loves to play songs
-                    with his friends. He recently found out about the group
-                    session feature Spotify implemented. He likes the idea of
-                    such feature, but finds it tedious to constantly invite his
-                    friends through links to listen along with him. He wishes
-                    there was a better invitation system in place so he can
-                    continue to invite the same friends to his sessions.
+                    Alex is a veteran on mechmarket. He loves building and
+                    collecting keyboards. He wishes there was a dedicated mobile
+                    app where he can easily track and view market data. This
+                    would spare him the effort of needing to consistently sift
+                    through numerous posts on the subreddit, making it seamless
+                    to obtain an accurate overview of prevailing market prices.
                   </p>
                 </div>
               </div>
@@ -350,24 +266,22 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       <section class="project-section">
         <SectionHeading
           headerTag="COMPETITIVE ANALYSIS"
-          sectionTitle="Analyzing Spotify's Competitors"
+          sectionTitle="Analyzing Popular E-commerce platforms"
         />
         <div class="content-details">
-          <span class="title">Diving deeper</span>
+          <span class="title">Digging deeper</span>
           <p class="text-description">
-            I conducted a comprehensive analysis of Spotify's direct
-            competitors, assessing their user interface and implementation of
-            listening group sessions with others. This endeavor allowed me to
-            delve deeper into their approach to user experience as well as
-            explore other related functionalities, uncovering valuable insights
-            in the process.
+            I conducted a comprehensive analysis of top marketplace apps to
+            inspire enhanced design concepts for mechmarket. This involved a
+            evaluation of their user interfaces and userflows, aimed at gaining
+            deeper insights into staple design principles.
           </p>
         </div>
         <div class="image-row nowrap">
           <figure class="image-container">
             <img
               class="project-image"
-              src="images/spotify/applemusic.webp"
+              src="images/mechmarket/stockx.webp"
               alt=""
               draggable="false"
             />
@@ -375,7 +289,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           <figure class="image-container">
             <img
               class="project-image"
-              src="images/spotify/amazonmusic.webp"
+              src="images/mechmarket/poshmark.webp"
               alt=""
               draggable="false"
             />
@@ -383,7 +297,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
           <figure class="image-container">
             <img
               class="project-image"
-              src="images/spotify/youtubemusic.webp"
+              src="images/mechmarket/goat.webp"
               alt=""
               draggable="false"
             />
@@ -396,16 +310,17 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-vert">
                 <div class="content-icon">
                   <img
-                    src="images/spotify/icons/layouticon.webp"
+                    src="images/mechmarket/icons/filter.webp"
                     alt=""
                     class="icon"
                   />
                 </div>
-                <div class="subheading">Similar User Experience</div>
+                <div class="subheading">Filtering Options</div>
                 <p>
-                  Each platform delivers an intuitive and cohesive user
-                  interface with consistent design elements and a familiar
-                  layout for a user-friendly experience
+                  These leading marketplace platforms offer users the capability
+                  to sort by crucial metrics like price range. In contrast,
+                  mechmarket lacks this functionality, resulting in notable
+                  limitations in its filtering options
                 </p>
               </div>
             </div>
@@ -413,15 +328,17 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-vert">
                 <div class="content-icon">
                   <img
-                    src="images/spotify/icons/speakericon.webp"
+                    src="images/mechmarket/icons/imageupload.webp"
                     alt=""
                     class="icon"
                   />
                 </div>
-                <div class="subheading">Cross-platform compatibility</div>
+                <div class="subheading">Direct Image Upload</div>
                 <p>
-                  These platforms allow the user to play media through multiple
-                  devices including phones, tablets, computers and TVs
+                  These platforms empower users to effortlessly upload and
+                  capture images of their products for sale, eliminating the
+                  need for third-party image hosting services currently required
+                  on mechamarket
                 </p>
               </div>
             </div>
@@ -429,16 +346,17 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
               <div class="content-vert">
                 <div class="content-icon">
                   <img
-                    src="images/spotify/icons/playlisticon.webp"
+                    src="images/mechmarket/icons/offer.webp"
                     alt=""
                     class="icon"
                   />
                 </div>
-                <div class="subheading">Playlist Sharing</div>
+                <div class="subheading">Offers</div>
                 <p>
-                  Users are able to share their playlists with others. The
-                  process of sharing a playlist involves sending a shareable
-                  link
+                  These platforms allow users to propose a price for a product,
+                  a feature currently unavailable on mechmarket. Currently,
+                  users must engage directly with sellers to discuss pricing
+                  options
                 </p>
               </div>
             </div>

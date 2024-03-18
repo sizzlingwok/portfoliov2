@@ -293,15 +293,18 @@ export const ExpandDivider = () => {
 export const SplitWordHeader = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const elements = gsap.utils.toArray(".splitwordheader");
+      const wordElements = gsap.utils.toArray(".splitwordheader");
+      const letterElements = gsap.utils.toArray(".splitletter");
+      const descriptionElements = gsap.utils.toArray(".project-details");
+      const slideupElements = gsap.utils.toArray(".slideup");
 
-      elements.forEach((element) => {
-        const staggerValue = element.classList.contains("long") ? 0.04 : 0.02;
+      wordElements.forEach((element) => {
         const textsplit = new SplitType(element, {
           types: "words",
           tagName: "span",
         });
 
+        gsap.to(element, { opacity: 1, visibility: "visible" });
         gsap.fromTo(
           textsplit.words,
           {
@@ -314,8 +317,59 @@ export const SplitWordHeader = () => {
             rotationX: 0,
             opacity: 1,
             duration: 2,
-            stagger: staggerValue,
+            stagger: 0.02,
             ease: "expo.out",
+          }
+        );
+      });
+
+      letterElements.forEach((element) => {
+        const staggerValue = element.classList.contains("short") ? 0.03 : 0.05;
+        const textsplit = new SplitType(element, {
+          types: "chars",
+          tagName: "span",
+        });
+        const letters = textsplit.chars;
+
+        gsap.to(element, { opacity: 1, visibility: "visible" });
+
+        gsap.fromTo(
+          letters,
+          { x: -5, opacity: 0, rotateX: 50 },
+          {
+            x: 0,
+            rotateX: 0,
+            opacity: 1,
+            duration: 2,
+            stagger: staggerValue,
+            ease: "power3.out",
+          }
+        );
+      });
+
+      descriptionElements.forEach((element, index) => {
+        gsap.set(element, { opacity: 0, y: 25 });
+
+        gsap.to(element, {
+          opacity: 1,
+          y: 0,
+          visibility: "visible",
+          duration: 1.5,
+          ease: "power2.out",
+          delay: 0.15 * index + 0.2,
+        });
+      });
+
+      slideupElements.forEach((element) => {
+        gsap.fromTo(
+          element,
+          { y: "2rem", opacity: 0 },
+          {
+            y: 0,
+            visibility: "visible",
+            opacity: 1,
+            duration: 2,
+            ease: "power2.out",
           }
         );
       });

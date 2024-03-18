@@ -11,10 +11,10 @@ const {
   prototypeLink,
 } = Astro.props;
 
-import { SplitWord } from "./js/Animations.jsx";
+import { SplitWordHeader } from "./js/Animations.jsx";
 ---
 
-<SplitWord client:only="react" />
+<SplitWordHeader client:only="react" />
 <div class="project-header">
   <div class="project-header-wrapper">
     <div class="fs-bg">
@@ -24,22 +24,22 @@ import { SplitWord } from "./js/Animations.jsx";
     </div>
     <div class="project-header-container">
       <div class="home-project-title">
-        <div class="tag">{tag}</div>
+        <div class="tag splitletter">{tag}</div>
         <h1 class="splitletter">{title}</h1>
       </div>
       <div class="project-header-details">
         <ul class="list-container">
-          <p class="project-description splitwordheader long">
+          <p class="project-details">
             <span class="description">Role</span><br />{role}
           </p>
-          <p class="project-description splitwordheader long">
+          <p class="project-details">
             <span class="description">Tools</span><br />{tools}
           </p>
-          <p class="project-description splitwordheader long">
+          <p class="project-details">
             <span class="description">Timeline</span><br />{timeline}
           </p>
         </ul>
-        <div class="description-wrapper splitword">
+        <div class="description-wrapper splitwordheader">
           <p class="project-description">
             {description1}
           </p>
@@ -60,7 +60,10 @@ import { SplitWord } from "./js/Animations.jsx";
 </div>
 
 <style>
-  .splitword {
+  .splitwordheader,
+  .splitletter,
+  .project-details,
+  .slideup {
     opacity: 0;
     visibility: hidden;
   }
@@ -142,7 +145,8 @@ import { SplitWord } from "./js/Animations.jsx";
     justify-content: space-between;
   }
 
-  .project-description {
+  .project-description,
+  .project-details {
     font-size: 1.125rem;
     color: #f5f5f7;
     line-height: 1.6;

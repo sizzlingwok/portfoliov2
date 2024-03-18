@@ -15,6 +15,14 @@ export const Landingtext = () => {
   useEffect(() => {
     const tl = gsap.timeline();
 
+    // Show the elements using GSAP once the page has fully loaded
+    tl.to(".hoverword, .hoverline", {
+      opacity: 1,
+      visibility: "visible",
+      duration: 0.5,
+      delay: 0.5,
+    });
+
     const wordElements = document.querySelectorAll(".hoverword");
     wordElements.forEach((element) => {
       const textsplit = new SplitType(element, {
@@ -22,30 +30,29 @@ export const Landingtext = () => {
         tagName: "span",
       });
 
-      tl.fromTo(
+      tl.from(
         textsplit.words,
-        { y: 25, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
+          y: 25,
+          opacity: 0,
           duration: 2,
           stagger: 0.03,
           ease: "power3.out",
-        }
+        },
+        "-=0.5" // Start the animation 0.5 seconds before revealing the elements
       );
     });
 
-    tl.fromTo(
+    tl.from(
       ".hoverline",
-      { y: 25, opacity: 0 },
       {
-        y: 0,
-        opacity: 1,
+        y: 25,
+        opacity: 0,
         duration: 2,
         stagger: 0.1,
         ease: "back.out",
       },
-      "-=2"
+      "-=1.5" // Start the animation 1.5 seconds before revealing the elements
     );
   }, []);
 };

@@ -10,8 +10,11 @@ const {
   timeline,
   prototypeLink,
 } = Astro.props;
+
+import { SplitWord } from "./js/Animations.jsx";
 ---
 
+<SplitWord client:only="react" />
 <div class="project-header">
   <div class="project-header-wrapper">
     <div class="fs-bg">
@@ -36,7 +39,7 @@ const {
             <span class="description">Timeline</span><br />{timeline}
           </p>
         </ul>
-        <div class="description-wrapper splitwordheader">
+        <div class="description-wrapper splitword">
           <p class="project-description">
             {description1}
           </p>
@@ -57,6 +60,11 @@ const {
 </div>
 
 <style>
+  .splitword {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .project-header-container {
     gap: 3rem;
     display: flex;

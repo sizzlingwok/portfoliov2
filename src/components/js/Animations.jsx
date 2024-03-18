@@ -33,6 +33,7 @@ export const Landingtext = () => {
         duration: 2,
         stagger: 0.03,
         ease: "power3.out",
+        delay: -0.5,
       });
     });
 
@@ -339,13 +340,20 @@ export const SplitWord = () => {
           types: "words",
           tagName: "span",
         });
-        gsap.set(textsplit.words, { opacity: 0, x: -5, rotationX: 100 });
+
+        // Set initial state
+        gsap.set(textsplit.words, {
+          opacity: 0,
+          x: -5,
+          rotationX: 100,
+        });
 
         ScrollTrigger.create({
           trigger: element,
           start: "top bottom",
           scrub: true,
           onEnter: () => {
+            gsap.to(element, { opacity: 1, visibility: "visible" });
             gsap.fromTo(
               textsplit.words,
               {

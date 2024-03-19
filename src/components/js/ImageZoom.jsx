@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
-import mediumZoom from 'medium-zoom';
+import React, { useRef } from "react";
+import mediumZoom from "medium-zoom/dist/pure";
+import "medium-zoom/dist/style.css";
 
 export function ImageZoom({ options, ...props }) {
   const zoomOptions = {
-    background: '#111111',
-    ...options
+    background: "#111111",
+    ...options,
   };
 
   const zoomRef = useRef(null);

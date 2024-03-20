@@ -20,7 +20,7 @@ export const Landingtext = () => {
       visibility: "visible",
     });
 
-    const wordElements = document.querySelectorAll(".hoverword");
+    const wordElements = gsap.utils.toArray(".hoverword");
     wordElements.forEach((element) => {
       const textsplit = new SplitType(element, {
         types: "lines, words",
@@ -53,6 +53,92 @@ export const Landingtext = () => {
       "-=2"
     );
   }, []);
+};
+
+export const AboutHeader = () => {
+  useEffect(() => {
+    const tl = gsap.timeline();
+    const wordElements = document.querySelectorAll(".hoverword");
+    const letterElements = gsap.utils.toArray(".splitletter");
+    const slideupElements = gsap.utils.toArray(".slideup");
+
+    tl.to(".hoverword", {
+      opacity: 1,
+      visibility: "visible",
+    });
+
+    wordElements.forEach((element) => {
+      const textsplit = new SplitType(element, {
+        types: "lines, words",
+        tagName: "span",
+      });
+
+      tl.from(textsplit.words, {
+        y: 25,
+        opacity: 0,
+        duration: 2,
+        stagger: 0.01,
+        ease: "power3.out",
+        delay: -0.5,
+      });
+    });
+
+    tl.fromTo(
+      ".hoverline",
+      { y: 25, autoAlpha: 0 },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 2,
+        stagger: 0.1,
+        ease: "back.out",
+        onStart: () => {
+          gsap.set(".hoverline", { opacity: 1, visibility: "visible" });
+        },
+      },
+      "-=2"
+    );
+
+    letterElements.forEach((element) => {
+      const staggerValue = element.classList.contains("short") ? 0.03 : 0.05;
+      const textsplit = new SplitType(element, {
+        types: "chars",
+        tagName: "span",
+      });
+      const letters = textsplit.chars;
+
+      gsap.to(element, { opacity: 1, visibility: "visible" });
+
+      gsap.fromTo(
+        letters,
+        { x: -5, opacity: 0, rotateX: 50 },
+        {
+          x: 0,
+          rotateX: 0,
+          opacity: 1,
+          duration: 2,
+          stagger: staggerValue,
+          ease: "power3.out",
+        }
+      );
+    });
+
+    slideupElements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { y: "2rem", opacity: 0 },
+        {
+          y: 0,
+          visibility: "visible",
+          opacity: 1,
+          duration: 2,
+          ease: "power2.out",
+        }
+      );
+    });
+  }, []);
+
+  return null; // Since this is a side-effect only component
 };
 
 export const SlideUp = () => {

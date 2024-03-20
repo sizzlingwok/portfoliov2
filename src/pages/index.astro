@@ -168,7 +168,6 @@ import {
     display: flex;
     gap: 5rem;
     width: auto;
-    padding: 3rem;
     border-radius: 1.5rem;
     backdrop-filter: blur(1rem);
   }
@@ -176,8 +175,7 @@ import {
   .project-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+    width: 69%;
     gap: 1rem;
   }
 
@@ -226,9 +224,20 @@ import {
     .landing {
       padding: 10rem calc(2rem + 5%);
     }
+
+    .project-wrapper {
+      padding: calc(2rem + 5%);
+    }
   }
 
-  @media (max-width: 970px) {
+  @media (max-width: 1200px) {
+    /* Project Wrapper */
+    .project-details {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1028px) {
     /* Project Wrapper */
     .project {
       flex-direction: column;
@@ -236,8 +245,7 @@ import {
     }
 
     .project-wrapper {
-      gap: 0;
-      padding: 1rem 0;
+      padding: 0 1rem;
     }
 
     .thumbnail img {
@@ -246,6 +254,10 @@ import {
 
     h1 {
       font-size: 2.5rem;
+    }
+
+    .landing {
+      padding: 0 1rem;
     }
 
     .landing-direct {

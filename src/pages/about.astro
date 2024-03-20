@@ -1,18 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { ImageZoom } from "../components/js/ImageZoom.jsx";
+import { AboutHeader } from "../components/js/Animations.jsx";
 ---
 
 <Layout title="About | Andy Duong">
+  <AboutHeader client:only="react" />
   <main>
     <section class="about">
       <div class="about-wrapper">
         <div class="about-header-container">
-          <div class="heading-title">
+          <div class="heading-title splitletter">
             <div class="tag">ABOUT ME</div>
             <h1 class="heading splitletter">Nice to meet you!</h1>
           </div>
-          <div class="description-wrapper splitwordheader">
+          <div class="description-wrapper hoverword">
             <p class="about-description">
               Greetings! In June of 2022, I graduated from the University of
               California, Irvine with a degree in Business Administration. While
@@ -30,7 +32,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             Scroll down to see my other work ↓
           </div>
         </div>
-        <div class="about-image">
+        <div class="about-image slideup">
           <img src="images/about/pp.webp" alt="" draggable="false" />
           <div></div>
         </div>
@@ -40,7 +42,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       <div class="music">
         <div class="heading-title">
           <div class="tag">MUSIC</div>
-          <div class="heading splitletter">dear you</div>
+          <div class="heading">dear you</div>
         </div>
         <div class="embed-work">
           <div class="embed">
@@ -75,7 +77,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       <div class="beats">
         <div class="heading-title">
           <div class="tag">BEATS</div>
-          <div class="heading splitletter">prod. ichiban</div>
+          <div class="heading">prod. ichiban</div>
         </div>
         <div class="embed-work">
           <div class="embed">
@@ -202,6 +204,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   </main>
 </Layout>
 <style>
+  .hoverword,
+  .hoverline,
+  .splitletter,
+  .slideup {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .tag {
     font-size: 0.875rem;
     letter-spacing: 3px;

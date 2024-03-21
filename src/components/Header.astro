@@ -64,13 +64,11 @@
   </div>
 </header>
 <script>
-  window.addEventListener("load", function () {
-    sessionStorage.setItem("animationFlag", "reload");
-
+  sessionStorage.setItem("animationFlag", "reload");
+  document.addEventListener("DOMContentLoaded", function () {
     var headerNav = document.querySelector(".header-nav");
     if (headerNav) {
       headerNav.classList.add("fadeup");
-
       headerNav.addEventListener("animationstart", function () {
         sessionStorage.setItem("animationFlag", "played");
       });
@@ -102,8 +100,6 @@
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     transition: background-color 0.3s ease;
     transition: border-color 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
   }
 
   .header-wrapper {
@@ -228,8 +224,6 @@
 
   .fadeup {
     animation: fadeUpAnimation 1s ease forwards;
-    opacity: 0;
-    visibility: hidden;
   }
 
   @keyframes fadeUpAnimation {

@@ -52,6 +52,7 @@ export const Landingtext = () => {
       },
       "-=2"
     );
+    return () => tl.revert();
   }, []);
 };
 
@@ -136,9 +137,8 @@ export const AboutHeader = () => {
         }
       );
     });
+    return () => tl.revert();
   }, []);
-
-  return null; // Since this is a side-effect only component
 };
 
 export const SlideUp = () => {

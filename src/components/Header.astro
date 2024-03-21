@@ -40,7 +40,7 @@
       </div> -->
     </nav>
     <ul>
-      <li>
+      <li class="link-left">
         <a
           href="https://www.linkedin.com/in/andyduong510/"
           class="ext-link"
@@ -50,7 +50,7 @@
           LinkedIn ↗
         </a>
       </li>
-      <li>
+      <li class="link-right">
         <a
           href="../Andy_Duong_Resume.pdf"
           class="ext-link"
@@ -66,13 +66,39 @@
 <script>
   sessionStorage.setItem("animationFlag", "reload");
   document.addEventListener("DOMContentLoaded", function () {
-    var headerNav = document.querySelector(".header-nav");
-    if (headerNav) {
-      headerNav.classList.add("fadeup");
-      headerNav.addEventListener("animationstart", function () {
-        sessionStorage.setItem("animationFlag", "played");
-      });
-    }
+    var elements = document.querySelectorAll(
+      ".header-nav, .link-left, .link-right"
+    );
+
+    elements.forEach(function (element) {
+      if (element) {
+        element.classList.add("fadeup");
+
+        if (
+          element.classList.contains("link-left") ||
+          element.classList.contains("link-right")
+        ) {
+          (element as HTMLElement).style.visibility = "hidden";
+        }
+
+        if (element.classList.contains("link-left")) {
+          (element as HTMLElement).style.animationDelay = "0.3s";
+        } else if (element.classList.contains("link-right")) {
+          (element as HTMLElement).style.animationDelay = "0.5s";
+        }
+
+        element.addEventListener("animationstart", function () {
+          sessionStorage.setItem("animationFlag", "played");
+
+          if (
+            element.classList.contains("link-left") ||
+            element.classList.contains("link-right")
+          ) {
+            (element as HTMLElement).style.visibility = "visible";
+          }
+        });
+      }
+    });
   });
 </script>
 <style>

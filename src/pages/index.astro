@@ -23,7 +23,10 @@ import {
           Hello! I'm Andy Duong — Product Designer based in the Bay Area. I
           craft meaningful narratives fueled by my passion for music and art.
         </h1>
-        <div class="landing-direct hoverline">Scroll down to discover ↓</div>
+        <div class="landing-direct hoverline spotlight">
+          Scroll down to discover<span class="arrow">↓</span>
+        </div>
+        <div class="arrow"></div>
       </div>
     </section>
     <section class="project-wrapper">
@@ -146,7 +149,6 @@ import {
   .landing-direct {
     color: #f5f5f7;
     font-size: 1.125rem;
-    overflow: hidden;
     font-weight: 530;
     display: flex;
   }
@@ -218,6 +220,26 @@ import {
     flex-direction: column;
   }
 
+  /* animations */
+  @keyframes arrow {
+    0% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    40% {
+      transform: translateY(5px);
+      animation-timing-function: cubic-bezier(0.8, 0, 0.5, 1);
+    }
+    100% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+    }
+  }
+
+  .arrow {
+    animation: arrow 3s infinite;
+    padding: 0 0.5rem;
+  }
   /* media queries */
   @media (max-width: 1500px) {
     /* Project Wrapper */

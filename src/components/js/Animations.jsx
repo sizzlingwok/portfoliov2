@@ -490,7 +490,7 @@ export const SplitWord = () => {
 
         ScrollTrigger.create({
           trigger: element,
-          start: "top top",
+          start: "top bottom",
           scrub: true,
           onEnter: () => {
             gsap.to(element, { opacity: 1, visibility: "visible" });

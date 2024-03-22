@@ -17,6 +17,8 @@ import {
   <ProjectSlideUp client:only="react" />
   <ExpandDivider client:only="react" />
   <main>
+    <div class="bg"></div>
+
     <section class="landing">
       <div class="landing-wrapper">
         <h1 class="hoverword">
@@ -120,6 +122,13 @@ import {
     max-width: 90rem;
   }
 
+  .bg {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
   .landing-wrapper {
     display: flex;
     flex-direction: column;
@@ -154,7 +163,7 @@ import {
   }
 
   .project-wrapper {
-    padding: 5rem 0;
+    padding: 10rem 0 5rem 0;
     max-width: 90rem;
     height: auto;
     display: flex;
@@ -240,6 +249,7 @@ import {
     animation: arrow 3s infinite;
     padding: 0 0.5rem;
   }
+
   /* media queries */
   @media (max-width: 1500px) {
     /* Project Wrapper */

@@ -11,22 +11,23 @@ export const Refresh = () => {
   }, []);
 };
 
-export const Project = (event, path) => {
-  if (Astro.url.pathname === "/") {
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: ".project-wrapper" },
-      ease: "power3.out",
-    });
+// export const Project = (event, path) => {
+//   if (Astro.url.pathname === "/") {
+//     gsap.to(window, {
+//       duration: 1,
+//       scrollTo: { y: ".project-wrapper" },
+//       ease: "power3.out",
+//     });
 
-    if (path === Astro.url.pathname) {
-      event.preventDefault();
-    }
-  }
-};
+//     if (path === Astro.url.pathname) {
+//       event.preventDefault();
+//     }
+//   }
+// };
 
 export const Landingtext = () => {
   useEffect(() => {
+    ScrollTrigger.refresh(true);
     const tl = gsap.timeline();
 
     tl.to(".hoverword", {

@@ -19,9 +19,35 @@ import { Lenis } from "../components/js/lenis.jsx";
   </head>
 
   <body>
-    <Lenis client:only="react" />
-    <Header />
-    <slot />
-    <Footer />
+    <main>
+      <div class="landing">
+        <div class="title">under construction</div>
+        <div class="description">check back later thank u</div>
+      </div>
+    </main>
+    <style>
+      .landing {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 auto;
+        text-align: center;
+        height: 100vh;
+        justify-content: center;
+      }
+
+      .title {
+        font-size: 10rem;
+        color: #f5f5f7;
+        font-weight: 530;
+        user-select: none;
+      }
+
+      .description {
+        font-size: 1.5rem;
+        color: #f5f5f7;
+        user-select: none;
+      }
+    </style>
   </body>
 </html>

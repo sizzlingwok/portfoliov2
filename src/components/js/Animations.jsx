@@ -27,7 +27,6 @@ export const Refresh = () => {
 
 export const Landingtext = () => {
   useEffect(() => {
-    ScrollTrigger.refresh(true);
     const tl = gsap.timeline();
 
     tl.to(".hoverword", {

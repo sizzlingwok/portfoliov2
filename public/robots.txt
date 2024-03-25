@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+Disallow: /public/images
+Disallow: /public/viddeos
+
+Sitemap: https://www.andyduong.work/sitemap-index.xml

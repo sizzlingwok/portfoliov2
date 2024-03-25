@@ -8,6 +8,7 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare({
     imageService: "passthrough",
+    routes: { strategy: "include" },
   }),
   integrations: [react()],
 });

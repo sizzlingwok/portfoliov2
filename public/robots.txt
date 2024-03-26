@@ -2,6 +2,6 @@ User-agent: *
 
 Allow: /
 Disallow: /public/images
-Disallow: /public/viddeos
+Disallow: /public/videos
 
 Sitemap: https://www.andyduong.work/sitemap-index.xml

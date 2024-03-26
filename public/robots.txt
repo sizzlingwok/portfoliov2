@@ -3,5 +3,6 @@ User-agent: *
 Allow: /
 Disallow: /public/images
 Disallow: /public/videos
+Disallow: /*.pdf$
 
 Sitemap: https://www.andyduong.work/sitemap-index.xml

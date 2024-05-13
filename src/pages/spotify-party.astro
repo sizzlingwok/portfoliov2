@@ -29,13 +29,23 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       videoSrc="videos/spotify/spotifysessionplaylist.mp4"
       prototypeLink="https://www.figma.com/proto/5ciCRD3R2H8jz0fRfKJPJD/Spotify-Party-Landing-Page?page-id=0%3A1&type=design&node-id=1-2&viewport=1334%2C874%2C0.71&t=MT5QwGlDdOlSKv5J-1&scaling=scale-down"
     />
+    <ProjectNav
+      prevLink="/mechmarket"
+      prevText="mechmarket"
+      nextLink="/sorette"
+      nextText="sorette"
+    />
+    <div class="overview">
+      <p class="grayheading">Product Overview</p>
+      <ul class="carousel">
+        <li class="item"><img src="images/spotify/preview1.webp" alt="" /></li>
+        <li class="item"><img src="images/spotify/preview2.webp" alt="" /></li>
+        <li class="item"><img src="images/spotify/preview3.webp" alt="" /></li>
+        <li class="item"><img src="images/spotify/preview4.webp" alt="" /></li>
+      </ul>
+    </div>
+
     <article class="project-content-wrapper">
-      <ProjectNav
-        prevLink="/mechmarket"
-        prevText="mechmarket"
-        nextLink="/sorette"
-        nextText="sorette"
-      />
       <ImageHeader
         image1={{
           src: "images/spotify/preview1.webp",
@@ -60,41 +70,91 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       />
       <hr class="divider content" />
       <section class="project-section">
-        <SectionHeading
+        <p class="grayheading">Final Solution</p>
+        <!-- <SectionHeading
           headerTag="FINAL SOLUTION"
           sectionTitle="Evolving the group listening experience by introducing improved functionality and features for all Spotify users"
-        />
+        /> -->
         <div class="preview-wrapper">
-          <VideoPreview videoSrc="videos/spotify/spotifyinvitefriends.mp4">
-            <Fragment slot="description"
-              ><span style="color: #e3e3e8;"
-                >Easily invite friends directly within the app</span
+          <div class="preview-header">
+            <p class="subsection center">Enhanced Functionalities.</p>
+            <p class="text-description center">
+              Evolving the group listening experience by introducing
+              <span class="highlight"
+                >improved functionality and features for all Spotify users</span
               >
-              eliminating the need for external invitations through links or social
-              media
-            </Fragment>
-          </VideoPreview>
-          <VideoPreview
-            videoSrc="videos/spotify/spotifygroupsetting.mp4"
-            comboclass="reverse"
-          >
-            <Fragment slot="description">
-              <span style="color: #e3e3e8;">
-                Streamline your sessions with customizable group settings.
-              </span>
-              Delegate admin privileges and fine-tune options for a more enjoyable
-              experience
-            </Fragment>
-          </VideoPreview>
-          <VideoPreview videoSrc="videos/spotify/spotifysessionplaylist.mp4">
-            <Fragment slot="description"
-              ><span style="color: #e3e3e8;"
-                >Rediscover past group sessions with curated playlists of
-                previously played tracks.</span
+            </p>
+          </div>
+          <div class="content-preview">
+            <div class="content">
+              <video
+                width="100%"
+                height="100%"
+                autoplay
+                loop
+                muted
+                playsinline
+                style={{ borderRadius: "2rem" }}
               >
-              Replay any missed songs or effortlessly share playlists with others
-            </Fragment>
-          </VideoPreview>
+                <source
+                  src="videos/spotify/spotifyinvitefriends.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <p class="text-description half">
+                <span class="highlight"
+                  >Easily invite friends directly within the app</span
+                >
+                eliminating the need for external invitations through links or social
+                media
+              </p>
+            </div>
+            <div class="content">
+              <video
+                width="100%"
+                height="100%"
+                autoplay
+                loop
+                muted
+                playsinline
+                style={{ borderRadius: "2rem" }}
+              >
+                <source
+                  src="videos/spotify/spotifygroupsetting.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <p class="text-description half">
+                <span class="highlight"
+                  >Streamline your sessions with customizable group settings</span
+                >. Delegate admin privileges and fine-tune options for a more
+                enjoyable experience
+              </p>
+            </div>
+            <div class="content">
+              <video
+                width="100%"
+                height="100%"
+                autoplay
+                loop
+                muted
+                playsinline
+                style={{ borderRadius: "2rem" }}
+              >
+                <source
+                  src="videos/spotify/spotifysessionplaylist.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <p class="text-description half">
+                <span class="highlight"
+                  >Rediscover past group sessions with curated playlists of
+                  previously played tracks</span
+                >. Replay any missed songs or effortlessly share playlists with
+                others
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <hr class="divider content" />
@@ -576,11 +636,51 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   </main>
 
   <style>
+    .overview {
+      background-color: #161617;
+      display: flex;
+      flex-direction: column;
+      padding: 10rem 0;
+      gap: 2.5rem;
+    }
+
+    .grayheading {
+      color: #86868b;
+      font-size: 3.5rem;
+      font-weight: 600;
+      width: 78.75rem;
+      margin: 0 auto;
+    }
+    .carousel {
+      display: flex;
+      overflow: auto;
+      max-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 24px;
+      gap: 20px;
+    }
+
+    .carousel .item {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+
+    .item {
+      width: 78.75rem;
+      height: 42.5rem;
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+      border-radius: 28px;
+    }
+
     .project-content-wrapper {
-      background-color: #111111;
+      background-color: #000000;
       padding: 10rem 00;
       width: 100%;
-      max-width: 90rem;
+      max-width: 78.75rem;
       margin-left: auto;
       margin-right: auto;
     }
@@ -606,17 +706,27 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       text-decoration: none;
       user-select: none;
       flex: 1;
-      font-weight: 530;
+      font-weight: 500;
+    }
+
+    .subsection {
+      font-size: 5rem;
+      font-weight: 600;
+      color: #f5f5f7;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .text-description {
       color: #868686;
       user-select: none;
-      line-height: 1.6;
-      font-weight: 450;
-      font-size: 1.125rem;
+      line-height: 29px;
+      font-weight: 600;
+      font-size: 21px;
       flex: 1;
-      font-weight: 450;
+      font-weight: 600;
       display: inline;
     }
 
@@ -632,7 +742,7 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       text-decoration: none;
       user-select: none;
       flex: 1;
-      font-weight: 530;
+      font-weight: 500;
     }
 
     .image-wrapper {
@@ -653,6 +763,37 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
       margin: 0 auto;
       max-width: 100%;
       gap: 5rem;
+    }
+
+    .preview-header {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin: 0 auto;
+      width: 50%;
+    }
+
+    .highlight {
+      color: #f5f5f7;
+    }
+
+    .content-preview {
+      margin-top: -5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+
+    .content {
+      margin: 0 auto;
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .half {
+      width: 50%;
     }
 
     .preview-wrapper {
@@ -804,10 +945,6 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
 
       .title {
         font-size: 1.5rem;
-      }
-
-      .text-description {
-        font-size: 1rem;
       }
     }
   </style>

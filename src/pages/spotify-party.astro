@@ -6,7 +6,6 @@ import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
 import { Refresh } from "../components/js/Animations.jsx";
-import { ExpandDivider } from "../components/js/Animations.jsx";
 import { ImageZoom } from "../components/js/ImageZoom.jsx";
 ---
 
@@ -17,7 +16,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   canonical="https://andyduong.work/spotify-party"
 >
   <Refresh client:only="react" />
-  <ExpandDivider client:only="react" />
   <main>
     <ProjectHeader
       tag="RESPONSIVE DESIGN"
@@ -209,10 +207,13 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
     </article>
     <section class="project-section">
-      <p class="grayheading">User Research</p>
-      <p class="subsection">
-        Evaluating the user flow for initiating a Spotify group session
-      </p>
+      <div class="section-heading">
+        <p class="grayheading">User Research</p>
+        <p class="subsection">
+          Evaluating the user flow for initiating a Spotify group session
+        </p>
+      </div>
+
       <div class="project-content">
         <div class="content-details">
           <span class="title xlarge">First click test</span>
@@ -815,6 +816,12 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
   .image-wrapper.row {
     gap: 3rem;
+  }
+
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .image-row {

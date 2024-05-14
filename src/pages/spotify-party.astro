@@ -17,24 +17,68 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 >
   <Refresh client:only="react" />
   <main>
-    <ProjectHeader
-      tag="RESPONSIVE DESIGN"
-      title="Spotify Party"
-      description1="Spotify Party strives to enhance the listening experience for users who enjoy music with others. While creating group sessions already exists on Spotify, it currently falls short in terms of functionality and could greatly benefit from improvements. Spotify Party will not only strengthen its current group session capabilities, but will also introduce captivating new features to foster an immersive and enjoyable journey of music exploration."
-      description2="I redesigned the elements in the current Spotify UI in Figma on both the mobile and desktop version of the app. I then implemented my design ideas and created functioning prototypes."
-      role="UI/UX Design, User Resarch, Visual Design, Prototyping"
-      tools="Figma, Google Forms, Optimal Workshop, After Effects"
-      timeline="8 weeks (June - July 2023)"
-      videoSrc="videos/spotify/spotifysessionplaylist.mp4"
-      prototypeLink="https://www.figma.com/proto/5ciCRD3R2H8jz0fRfKJPJD/Spotify-Party-Landing-Page?page-id=0%3A1&type=design&node-id=1-2&viewport=1334%2C874%2C0.71&t=MT5QwGlDdOlSKv5J-1&scaling=scale-down"
-    />
     <ProjectNav
       prevLink="/mechmarket"
       prevText="mechmarket"
       nextLink="/sorette"
       nextText="sorette"
     />
+    <div class="project-header-wrapper">
+      <div class="project-header-details">
+        <h1>Spotify Party</h1>
+        <p class="text-description">
+          Enhancing the group listening experience for an immersive music
+          exploration
+        </p>
+      </div>
+      <picture class="project-thumbnail">
+        <img src="images/spotify/spotifythumbnail.webp" alt="" />
+      </picture>
+      <button class="project-button">
+        <a
+          href="https://www.figma.com/proto/5ciCRD3R2H8jz0fRfKJPJD/Spotify-Party-Landing-Page?page-id=0%3A1&type=design&node-id=1-2&viewport=1334%2C874%2C0.71&t=MT5QwGlDdOlSKv5J-1&scaling=scale-down"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Prototype ↗
+        </a>
+      </button>
+    </div>
     <div class="overview">
+      <div class="project-details">
+        <ul class="list-container">
+          <ul class="list-item">
+            <p class="text-description highlight">Role</p>
+            <p class="text-description">
+              UX Design, User Research, Visual Design, Prototyping
+            </p>
+          </ul>
+          <ul class="list-item">
+            <p class="text-description highlight">Tools</p>
+            <p class="text-description">
+              Figma, Google Forms, Optimal Workshop, After Effects
+            </p>
+          </ul>
+          <ul class="list-item">
+            <p class="text-description highlight">Timeline</p>
+            <p class="text-description">8 weeks (June - July 2023)</p>
+          </ul>
+        </ul>
+        <ul class="list-container">
+          <ul class="list-item">
+            <p class="text-description highlight">Overview</p>
+            <p class="text-description">
+              Spotify Party strives to enhance the listening experience for
+              users who enjoy music with others. While creating group sessions
+              already exist on Spotify, it currently falls short in terms of
+              functionality and could greatly benefit from improvements. Spotify
+              Party will not only strengthen its current group session
+              capabilities, but will also introduce captivating new features to
+              foster an immersive and enjoyable journey of music exploration.
+            </p>
+          </ul>
+        </ul>
+      </div>
       <p class="grayheading">Product Overview</p>
       <ul class="carousel">
         <li>
@@ -208,8 +252,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     </article>
     <section class="project-section">
       <div class="section-heading">
-        <p class="subsection">User Research</p>
-        <p class="text-description large">
+        <p class="grayheading">User Research</p>
+        <p class="subsection center">
           Evaluating the user flow for initiating a Spotify group session
         </p>
       </div>
@@ -675,6 +719,79 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 </Layout>
 
 <style>
+  h1 {
+    font-size: 64px;
+    line-height: 68px;
+    color: #f5f5f7;
+    font-weight: 500;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .project-header-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .project-header-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 78.75rem;
+    margin: 0 auto;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .project-button {
+    border: none;
+    color: #f5f5f7;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1rem);
+    border-radius: 1.5rem;
+
+    background-color: #86868b35;
+
+    border: 1px solid #f5f5f715;
+    transition: border-color 0.3s ease;
+  }
+
+  .project-button:hover {
+    border: 1px solid #f5f5f735;
+  }
+
+  .project-thumbnail img {
+    max-width: 100%;
+  }
+
+  .project-details {
+    display: flex;
+    max-width: 78.75rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-bottom: 7.5rem;
+    gap: 5rem;
+  }
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+  }
+
   .overview {
     background-color: #161617;
     display: flex;
@@ -719,6 +836,12 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     height: 42.5rem;
     border-radius: 28px;
     position: relative;
+  }
+
+  .list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .item img {
@@ -820,7 +943,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   .section-heading {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10rem;
   }
 
   .image-row {

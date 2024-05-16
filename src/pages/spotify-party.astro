@@ -741,10 +741,12 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     const prevButton = document.querySelector(".prev-button") as HTMLElement;
     const nextButton = document.querySelector(".next-button") as HTMLElement;
     let isScrolling = false;
+    const scrollDuration = 700; // Duration of the scroll animation in milliseconds
 
     // Function to handle left arrow key press
     function handleLeftArrowKey() {
       if (!isScrolling) {
+        isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft -
           (carousel.querySelector(".item") as HTMLElement).offsetWidth;
@@ -755,13 +757,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         setTimeout(function () {
           isScrolling = false;
           checkButtonsState(); // Check button state after scrolling
-        }, 700); // Adjust the time to match the duration of your scroll animation
+        }, scrollDuration); // Adjust the time to match the duration of your scroll animation
       }
     }
 
     // Function to handle right arrow key press
     function handleRightArrowKey() {
       if (!isScrolling) {
+        isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft +
           (carousel.querySelector(".item") as HTMLElement).offsetWidth;
@@ -772,7 +775,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         setTimeout(function () {
           isScrolling = false;
           checkButtonsState(); // Check button state after scrolling
-        }, 700); // Adjust the time to match the duration of your scroll animation
+        }, scrollDuration); // Adjust the time to match the duration of your scroll animation
       }
     }
 

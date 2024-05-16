@@ -24,14 +24,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       nextText="sorette"
     />
     <div class="project-header-wrapper">
-      <div class="project-header-details">
-        <h1>Spotify Party</h1>
-        <p class="text-description">
-          Enhancing the group listening experience for an immersive music
-          exploration
-        </p>
-      </div>
       <picture class="project-thumbnail">
+        <div class="project-header-details">
+          <h1>Spotify Party</h1>
+          <p class="text-description">
+            Enhancing the group listening experience for an immersive music
+            exploration
+          </p>
+        </div>
         <img src="images/spotify/spotifythumbnail.webp" alt="" />
       </picture>
       <button class="project-button">
@@ -152,7 +152,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </ul>
       <div class="carousel-buttons-wrapper">
         <ul class="carousel-buttons">
-          <button class="prev-button">
+          <button class="prev-button disabled">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
               <path
                 d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
@@ -742,9 +742,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     const nextButton = document.querySelector(".next-button") as HTMLElement;
     let isScrolling = false;
 
-    prevButton.addEventListener("click", function () {
+    // Function to handle left arrow key press
+    function handleLeftArrowKey() {
       if (!isScrolling) {
-        isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft -
           (carousel.querySelector(".item") as HTMLElement).offsetWidth;
@@ -754,13 +754,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         });
         setTimeout(function () {
           isScrolling = false;
+          checkButtonsState(); // Check button state after scrolling
         }, 700); // Adjust the time to match the duration of your scroll animation
       }
-    });
+    }
 
-    nextButton.addEventListener("click", function () {
+    // Function to handle right arrow key press
+    function handleRightArrowKey() {
       if (!isScrolling) {
-        isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft +
           (carousel.querySelector(".item") as HTMLElement).offsetWidth;
@@ -770,8 +771,62 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         });
         setTimeout(function () {
           isScrolling = false;
+          checkButtonsState(); // Check button state after scrolling
         }, 700); // Adjust the time to match the duration of your scroll animation
       }
+    }
+
+    prevButton.addEventListener("click", function () {
+      handleLeftArrowKey();
+    });
+
+    nextButton.addEventListener("click", function () {
+      handleRightArrowKey();
+    });
+
+    // Event listener for keyboard arrow keys
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        handleLeftArrowKey();
+      } else if (event.key === "ArrowRight") {
+        handleRightArrowKey();
+      }
+    });
+
+    // Function to check and disable/enable prev/next buttons based on carousel position
+    function checkButtonsState() {
+      // Get the first and last slides
+      const firstSlide = carousel.querySelector(
+        ".item:first-child"
+      ) as HTMLElement;
+      const lastSlide = carousel.querySelector(
+        ".item:last-child"
+      ) as HTMLElement;
+
+      // Check if the carousel is at the first slide
+      if (carousel.scrollLeft <= firstSlide.offsetWidth) {
+        prevButton.classList.add("disabled");
+      } else {
+        prevButton.classList.remove("disabled");
+      }
+
+      // Check if the carousel is at the last slide
+      if (
+        carousel.scrollLeft >=
+        carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
+      ) {
+        nextButton.classList.add("disabled");
+      } else {
+        nextButton.classList.remove("disabled");
+      }
+    }
+
+    // Initially check button state
+    checkButtonsState();
+
+    // Event listener for scroll events on the carousel
+    carousel.addEventListener("scroll", function () {
+      checkButtonsState(); // Check button state after scrolling
     });
   });
 </script>
@@ -787,6 +842,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .project-header-details {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -848,11 +904,39 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     background: #333336;
     border: none;
     cursor: pointer;
+    transition: background 100ms linear;
   }
 
   .prev-button svg path,
   .next-button svg path {
     fill: #ffffff80;
+    transition: fill 100ms linear;
+  }
+
+  .prev-button:hover svg path,
+  .next-button:hover svg path {
+    fill: rgba(255, 255, 255, 0.8);
+  }
+
+  .prev-button:focus,
+  .next-button:focus {
+    outline: none;
+  }
+
+  .prev-button:hover,
+  .next-button:hover {
+    background: #37373a;
+  }
+
+  .prev-button.disabled,
+  .next-button.disabled {
+    pointer-events: none;
+    opacity: 0.36;
+    transition: opacity 0.1s linear;
+  }
+
+  .project-thumbnail {
+    position: relative;
   }
 
   .project-thumbnail img {

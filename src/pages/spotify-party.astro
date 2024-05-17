@@ -716,6 +716,33 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </div>
     </section>
   </main>
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const headings = document.querySelectorAll(".grayheading");
+
+      headings.forEach((heading) => {
+        gsap.fromTo(
+          heading,
+          {
+            opacity: 0,
+            y: 25,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+            },
+            duration: 0.5,
+            ease: "cubic-bezier(0,0,0.5,1)",
+          }
+        );
+      });
+    });
+  </script>
 </Layout>
 <!-- import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; -->

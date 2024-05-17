@@ -24,5 +24,9 @@ const { title, description, canonical } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <script>
+      import gsap from "gsap";
+      window.gsap = gsap;
+    </script>
   </body>
 </html>

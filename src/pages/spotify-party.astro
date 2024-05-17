@@ -845,11 +845,23 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .project-header-details {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
     gap: 1rem;
-    align-items: center;
+  }
+
+  .project-thumbnail {
+    position: relative;
+  }
+
+  .project-thumbnail img {
+    max-width: 100%;
   }
 
   .project-header-wrapper {
@@ -936,14 +948,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     pointer-events: none;
     opacity: 0.36;
     transition: opacity 0.1s linear;
-  }
-
-  .project-thumbnail {
-    position: relative;
-  }
-
-  .project-thumbnail img {
-    max-width: 100%;
   }
 
   .project-details {

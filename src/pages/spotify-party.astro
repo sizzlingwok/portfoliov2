@@ -717,10 +717,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     </section>
   </main>
 </Layout>
+<!-- import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; -->
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
   document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector(".carousel") as HTMLElement;
     const prevButton = document.querySelector(".prev-button") as HTMLElement;
@@ -792,7 +791,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       ) as HTMLElement;
 
       // Check if the carousel is at the first slide
-      if (firstSlide && carousel.scrollLeft <= firstSlide.offsetWidth) {
+      if (carousel.scrollLeft <= firstSlide.offsetWidth) {
         prevButton.classList.add("disabled");
       } else {
         prevButton.classList.remove("disabled");
@@ -800,9 +799,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
       // Check if the carousel is at the last slide
       if (
-        lastSlide &&
         carousel.scrollLeft >=
-          carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
+        carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
       ) {
         nextButton.classList.add("disabled");
       } else {
@@ -817,35 +815,34 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     carousel.addEventListener("scroll", function () {
       checkButtonsState(); // Check button state after scrolling
     });
-
-    // gsap animation
-    gsap.registerPlugin(ScrollTrigger);
-    const headings = document.querySelectorAll(".grayheading");
-
-    headings.forEach((heading) => {
-      gsap.fromTo(
-        heading,
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scrollTrigger: {
-            trigger: heading,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
-            markers: true,
-          },
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-    });
   });
 </script>
+<!-- // gsap animation
+// gsap.registerPlugin(ScrollTrigger);
+// const headings = document.querySelectorAll(".grayheading");
+
+// headings.forEach((heading) => {
+//   gsap.fromTo(
+//     heading,
+//     {
+//       opacity: 0,
+//       y: 25,
+//     },
+//     {
+//       opacity: 1,
+//       y: 0,
+//       scrollTrigger: {
+//         trigger: heading,
+//         start: "top 80%",
+//         end: "bottom 20%",
+//         toggleActions: "play none none reverse",
+//         markers: true,
+//       },
+//       duration: 0.5,
+//       ease: "cubic-bezier(0,0,0.5,1)",
+//     }
+//   );
+// }); -->
 
 <style>
   h1 {

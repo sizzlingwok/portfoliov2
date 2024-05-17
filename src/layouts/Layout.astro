@@ -4,7 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 const { title, description, canonical } = Astro.props;
-import { Lenis } from "../components/js/lenis.jsx";
 ---
 
 <!doctype html>
@@ -22,7 +21,6 @@ import { Lenis } from "../components/js/lenis.jsx";
   </head>
 
   <body>
-    <!-- <Lenis client:only="react" /> -->
     <Header />
     <slot />
     <Footer />

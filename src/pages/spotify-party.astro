@@ -753,10 +753,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"; -->
     const nextButton = document.querySelector(".next-button") as HTMLElement;
     let isScrolling = false;
     const scrollDuration = 700; // Duration of the scroll animation in milliseconds
+    let isCarouselVisible = true;
 
     // Function to handle left arrow key press
     function handleLeftArrowKey() {
-      if (!isScrolling) {
+      if (!isScrolling && isCarouselVisible) {
         isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft -
@@ -774,7 +775,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"; -->
 
     // Function to handle right arrow key press
     function handleRightArrowKey() {
-      if (!isScrolling) {
+      if (!isScrolling && isCarouselVisible) {
         isScrolling = true;
         const scrollDistance =
           carousel.scrollLeft +
@@ -842,34 +843,47 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"; -->
     carousel.addEventListener("scroll", function () {
       checkButtonsState(); // Check button state after scrolling
     });
+
+    // IntersectionObserver to check if the carousel is fully visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isCarouselVisible = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.8 }
+    );
+
+    observer.observe(carousel);
+  });
+
+  // gsap animation
+  gsap.registerPlugin(ScrollTrigger);
+  const headings = document.querySelectorAll(".grayheading");
+
+  headings.forEach((heading) => {
+    gsap.fromTo(
+      heading,
+      {
+        opacity: 0,
+        y: 25,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: heading,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: true,
+        },
+        duration: 0.5,
+        ease: "cubic-bezier(0,0,0.5,1)",
+      }
+    );
   });
 </script>
-<!-- // gsap animation
-// gsap.registerPlugin(ScrollTrigger);
-// const headings = document.querySelectorAll(".grayheading");
-
-// headings.forEach((heading) => {
-//   gsap.fromTo(
-//     heading,
-//     {
-//       opacity: 0,
-//       y: 25,
-//     },
-//     {
-//       opacity: 1,
-//       y: 0,
-//       scrollTrigger: {
-//         trigger: heading,
-//         start: "top 80%",
-//         end: "bottom 20%",
-//         toggleActions: "play none none reverse",
-//         markers: true,
-//       },
-//       duration: 0.5,
-//       ease: "cubic-bezier(0,0,0.5,1)",
-//     }
-//   );
-// }); -->
 
 <style>
   h1 {

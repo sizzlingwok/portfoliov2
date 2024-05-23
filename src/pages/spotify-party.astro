@@ -1,9 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectNav from "../components/ProjectNav.astro";
-import ImageHeader from "../components/ImageHeader.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import { Refresh } from "../components/js/Animations.jsx";
 import { ImageZoom } from "../components/js/ImageZoom.jsx";
 ---
 
@@ -13,7 +10,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   description="Enhancing the group listening experience for an immersive music exploration"
   canonical="https://andyduong.work/spotify-party"
 >
-  <Refresh client:only="react" />
   <main>
     <ProjectNav
       prevLink="/mechmarket"

@@ -80,7 +80,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </ul>
           </ul>
         </div>
-        <p class="grayheading">Product Overview</p>
+        <p class="grayheading inline">Product Overview</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -336,7 +336,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
           <div class="content-details col">
             <span class="title xlarge">Key Insights</span>
-            <div class="border-box gap">
+            <div class="border-box">
               <div class="box-content">
                 <div class="content-vert">
                   <div class="icon-wrapper">
@@ -609,7 +609,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </section>
       <div class="overview">
-        <p class="grayheading">Information Architecture</p>
+        <p class="grayheading inline">Information Architecture</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -732,46 +732,42 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </section>
-      <section class="overview"></section>
-    </article>
-  </main>
-
-  <section class="project-section">
-    <SectionHeading headerTag="REFLECTION" sectionTitle="Wrapping up" />
-    <div class="content-details">
-      <div class="title">Retrospective Insights</div>
-      <div class="border-box gap">
-        <div class="box-content outline">
-          <div class="content-vert">
-            <div class="subheading">Project Takeaways</div>
-            <p>
-              The inspiration for Spotify Party came from encountering a
-              limitation with the group session feature in the Spotify app. This
-              project allowed me to explore innovative design ideas while
-              adhering to guidelines, deepening my understanding of app
-              organization. Prototyping was challenging yet rewarding, refining
-              my skills in smart animate techniques and maintaining visual
-              continuity across platforms. Spotify Party marked my initial
-              venture into designing a responsive design for both the desktop
-              and mobile platform
-            </p>
-          </div>
-        </div>
-        <div class="box-content outline">
-          <div class="content-vert">
-            <div class="subheading">Things I would do differently</div>
-            <p>
-              In hindsight, I devoted considerable time to manual tasks like
-              copying album cover arts and track information, which prolonged
-              the design phase. Reflecting on this, I realize I could have
-              streamlined the process by reusing assets and focusing more on
-              functional aspects to expedite project completion
-            </p>
+      <div class="overview">
+        <div class="blackborder">
+          <p class="grayheading">Wrapping Up</p>
+          <div class="border-box row gap">
+            <div class="box-content nobg">
+              <div class="content-vert">
+                <p class="title large highlight">Project Takeaways</p>
+                <p class="text-description small">
+                  Inspired by the limitations of Spotify's group session
+                  feature, I created Spotify Party to explore innovative designs
+                  and enhance my app organization skills. The project refined my
+                  smart animate techniques and visual continuity, marking my
+                  first responsive design for both desktop and mobile platforms.
+                </p>
+              </div>
+            </div>
+            <div class="box-content nobg">
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Things I would do differently
+                </p>
+                <p class="text-description small">
+                  In hindsight, I devoted considerable time to manual tasks like
+                  copying album cover arts and track information, which
+                  prolonged the design phase. Reflecting on this, I realize I
+                  could have streamlined the process by reusing assets and
+                  focusing more on functional aspects to expedite project
+                  completion.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </article>
+  </main>
 </Layout>
 
 <script>
@@ -1095,14 +1091,29 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     color: #86868b;
     font-size: 3.5rem;
     font-weight: 600;
-    width: 78.75rem;
-    margin: 0 auto;
+    text-align: left;
     text-decoration: none;
     user-select: none;
   }
 
+  .grayheading.inline {
+    width: 78.75rem;
+    margin: 0 auto;
+  }
+
   .box {
     max-width: 33.33%;
+  }
+
+  .blackborder {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    border-radius: 28px;
+    max-width: 95.25rem;
+    margin: 0 auto;
+    padding: 8.25rem;
+    gap: 3rem;
   }
 
   .carousel {
@@ -1168,6 +1179,10 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     max-width: 78.75rem;
     margin: 0 auto;
     padding: 200px 0;
+  }
+
+  .project-section.gray {
+    background: #161617;
   }
 
   .title {
@@ -1314,7 +1329,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
   .border-box {
     display: flex;
-
     flex: 1;
     gap: 25px;
     justify-content: space-around;
@@ -1326,8 +1340,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     flex: 1;
   }
 
-  .border-box.gap {
-    gap: 25px;
+  .gap {
+    gap: 10em;
   }
 
   .box-content {
@@ -1340,6 +1354,11 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     flex: 1;
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+  }
+
+  .box-content.nobg {
+    background: none;
+    padding: 0;
   }
 
   .content-vert {

@@ -42,117 +42,118 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </a>
       </button>
     </div>
-    <div class="overview">
-      <div class="project-details">
-        <ul class="list-container">
-          <ul class="list-item">
-            <p class="text-description highlight">Role</p>
-            <p class="text-description">
-              UX Design, User Research, Visual Design, Prototyping
-            </p>
-          </ul>
-          <ul class="list-item">
-            <p class="text-description highlight">Tools</p>
-            <p class="text-description">
-              Figma, Google Forms, Optimal Workshop, After Effects
-            </p>
-          </ul>
-          <ul class="list-item">
-            <p class="text-description highlight">Timeline</p>
-            <p class="text-description">8 weeks (June - July 2023)</p>
-          </ul>
-        </ul>
-        <ul class="list-container">
-          <ul class="list-item">
-            <p class="text-description highlight">Overview</p>
-            <p class="text-description">
-              Spotify Party strives to enhance the listening experience for
-              users who enjoy music with others. While creating group sessions
-              already exist on Spotify, it currently falls short in terms of
-              functionality and could greatly benefit from improvements. Spotify
-              Party will not only strengthen its current group session
-              capabilities, but will also introduce captivating new features to
-              foster an immersive and enjoyable journey of music exploration.
-            </p>
-          </ul>
-        </ul>
-      </div>
-      <p class="grayheading">Product Overview</p>
-      <ul class="carousel">
-        <li>
-          <div class="image-gallery">
-            <ImageZoom
-              options={{ background: "#000000" }}
-              client:only="react"
-              class="item"
-              src="images/spotify/preview1.webp"
-              draggable="false"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </li>
-        <li>
-          <div class="image-gallery">
-            <ImageZoom
-              options={{ background: "#000000" }}
-              client:only="react"
-              class="item"
-              src="images/spotify/preview2.webp"
-              draggable="false"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </li>
-        <li>
-          <div class="image-gallery">
-            <ImageZoom
-              options={{ background: "#000000" }}
-              client:only="react"
-              class="item"
-              src="images/spotify/preview3.webp"
-              draggable="false"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </li>
-        <li>
-          <div class="image-gallery">
-            <ImageZoom
-              options={{ background: "#000000" }}
-              client:only="react"
-              class="item"
-              src="images/spotify/preview4.webp"
-              draggable="false"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </li>
-      </ul>
-      <div class="carousel-buttons-wrapper">
-        <ul class="carousel-buttons">
-          <button class="prev-button disabled">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-              <path
-                d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
-              ></path>
-            </svg>
-          </button>
-          <button class="next-button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-              <path
-                d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"
-              ></path>
-            </svg>
-          </button>
-        </ul>
-      </div>
-    </div>
 
     <article class="project-content-wrapper">
+      <section class="overview">
+        <div class="project-details">
+          <ul class="list-container">
+            <ul class="list-item">
+              <p class="text-description highlight">Role</p>
+              <p class="text-description">
+                UX Design, User Research, Visual Design, Prototyping
+              </p>
+            </ul>
+            <ul class="list-item">
+              <p class="text-description highlight">Tools</p>
+              <p class="text-description">
+                Figma, Google Forms, Optimal Workshop, After Effects
+              </p>
+            </ul>
+            <ul class="list-item">
+              <p class="text-description highlight">Timeline</p>
+              <p class="text-description">8 weeks (June - July 2023)</p>
+            </ul>
+          </ul>
+          <ul class="list-container">
+            <ul class="list-item">
+              <p class="text-description highlight">Overview</p>
+              <p class="text-description">
+                Spotify Party strives to enhance the listening experience for
+                users who enjoy music with others. While creating group sessions
+                already exist on Spotify, it currently falls short in terms of
+                functionality and could greatly benefit from improvements.
+                Spotify Party will not only strengthen its current group session
+                capabilities, but will also introduce captivating new features
+                to foster an immersive and enjoyable journey of music
+                exploration.
+              </p>
+            </ul>
+          </ul>
+        </div>
+        <p class="grayheading">Product Overview</p>
+        <ul class="carousel">
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/preview1.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/preview2.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/preview3.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/preview4.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </li>
+        </ul>
+        <div class="carousel-buttons-wrapper">
+          <ul class="carousel-buttons">
+            <button class="prev-button disabled">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                <path
+                  d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
+                ></path>
+              </svg>
+            </button>
+            <button class="next-button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                <path
+                  d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"
+                ></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+      </section>
       <section class="project-section">
         <p class="grayheading">Final Solution</p>
         <div class="preview-wrapper">
@@ -249,435 +250,492 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </section>
-    </article>
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="grayheading">User Research</p>
-        <p class="subsection center">
-          Evaluating the user flow for initiating a Spotify group session
-        </p>
-      </div>
-      <div class="project-content">
-        <div class="content-details">
-          <span class="title xlarge">First click test</span>
-          <p class="text-description">
-            In the initial phase, I assessed users' ability to navigate to the
-            group session menu through a first-click test with <span
-              style="color: #e3e3e8;">7 participants</span
-            > on the Spotify mobile app. While I planned to extend the test to the
-            desktop platform, the feature was exclusive to mobile. Despite this limitation,
-            the early findings provided crucial insights for subsequent analyses.
+      <section class="project-section">
+        <div class="section-heading">
+          <p class="grayheading">User Research</p>
+          <p class="subsection center">
+            Evaluating the user flow for initiating a Spotify group session
           </p>
         </div>
+        <div class="project-content">
+          <div class="content-details">
+            <span class="title xlarge">First click test</span>
+            <p class="text-description">
+              In the initial phase, I assessed users' ability to navigate to the
+              group session menu through a first-click test with <span
+                style="color: #e3e3e8;">7 participants</span
+              > on the Spotify mobile app. While I planned to extend the test to
+              the desktop platform, the feature was exclusive to mobile. Despite
+              this limitation, the early findings provided crucial insights for subsequent
+              analyses.
+            </p>
+          </div>
+          <div class="image-wrapper">
+            <img
+              class="img-center"
+              src="/images/spotify/firstclicktest.webp"
+              alt=""
+              draggable="false"
+            />
+            <div class="content-details">
+              <p class="text-description center">
+                A mere <span style="color: #e3e3e8;">28%</span> of users were able
+                to successfully locate the appropriate menu. This compelling insight
+                bly suggests that the menu's placement may be unintuitive, potentially
+                leading users to overlook its presence. Users tend to overlook the
+                group session feature on the platform due to its unintuitive placement
+                and current lack of features it current offers.
+              </p>
+            </div>
+          </div>
+
+          <div class="image-wrapper">
+            <img
+              class="img-center"
+              src="images/spotify/surveyresults1.webp"
+              alt=""
+              draggable="false"
+            />
+            <figcaption class="title" style="margin: 0 auto;">
+              But...
+            </figcaption>
+            <div class="image-row stats">
+              <img
+                class="img-center"
+                src="images/spotify/surveyresults2.webp"
+                alt=""
+                draggable="false"
+              />
+              <img
+                class="img-center"
+                src="images/spotify/surveyresults3.webp"
+                alt=""
+                draggable="false"
+              />
+            </div>
+            <div class="content-details padding">
+              <div class="box">
+                <p class="text-description">
+                  <span class="highlight">
+                    "Difficult to invite/join friends.
+                  </span>
+                  Didn’t know about it until someone else showed me. There also lies
+                  the potential for queuing songs that others don't enjoy."
+                </p>
+              </div>
+              <div class="box">
+                <p class="text-description">
+                  <span class="highlight">
+                    "Anyone can play music with no restriction,
+                  </span>
+                  so one person can skip another's song and play what they want.
+                  Can't see who played what song."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="content-details col">
+            <span class="title xlarge">Key Insights</span>
+            <div class="border-box gap">
+              <div class="box-content">
+                <div class="content-vert">
+                  <div class="icon-wrapper">
+                    <img
+                      src="images/spotify/icons/confusedicon.webp"
+                      alt=""
+                      class="icon"
+                    />
+                  </div>
+
+                  <p class="title large highlight">User Experience</p>
+                  <p class="text-description small">
+                    Users have difficulty in inviting friends. The user
+                    onboarding msut be enhanced to provide a more intuitive
+                    experience for those wishing to invite and join friends
+                  </p>
+                </div>
+              </div>
+              <div class="box-content">
+                <div class="content-vert">
+                  <div class="icon-wrapper">
+                    <img
+                      src="images/spotify/icons/conflictsicon.webp"
+                      alt=""
+                      class="icon"
+                    />
+                  </div>
+                  <div class="title large highlight">Playback Conflicts</div>
+                  <p class="text-description small">
+                    The potential conflicts stemming from track skipping by any
+                    participant must be addressed as users are facing disruptive
+                    behavior by malicious users
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <div class="section-heading">
+          <p class="grayheading">Problem Statement</p>
+          <p class="subsection center">
+            How can we revitalize group listening and enhance accessibility?
+          </p>
+        </div>
+        <div class="border-box row">
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/searchicon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Group session feature is hard to locate
+                </p>
+                <p class="text-description small">
+                  The current placement of initiating a group session feature is
+                  hidden under the device lists screen which users can overlook
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/laptopicon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Feature does not exist on desktop platforms
+                </p>
+                <p class="text-description small">
+                  The lack of group session support on desktop Spotify puts
+                  desktop users at a disadvantage
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/messageicon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Lack of friend activity integration
+                </p>
+                <p class="text-description small">
+                  Inviting friends to a group session lacks a direct in-app
+                  feature, requiring users to resort to sending invite links via
+                  text or social media
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <div class="section-heading">
+          <p class="grayheading">User Persona</p>
+          <p class="subsection center">Introducing Michelle & Edward</p>
+        </div>
+        <div class="border-box row">
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/michelle.webp"
+                  alt=""
+                  class="icon large"
+                />
+              </div>
+              <div class="content-vert">
+                <p class="title large highlight">Michelle</p>
+                <p class="text-description small">
+                  Michelle, a party enthusiast, creates perfect playlists for
+                  her events. Prior to each gathering, she dedicates herself to
+                  selecting tracks, ensuring an unforgettable experience. In her
+                  quest for new music, she dreams of a feature allowing guests
+                  to queue up favorite tracks with a voting system for an
+                  enhanced party experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/edward.webp"
+                  alt=""
+                  class="icon large"
+                />
+              </div>
+              <div class="content-vert">
+                <p class="title large highlight">Edwawrd</p>
+                <p class="text-description small">
+                  Edward is an avid music listener who loves to play songs with
+                  his friends. He recently found out about the group session
+                  feature Spotify implemented. He likes the idea of such
+                  feature, but finds it tedious to constantly invite his friends
+                  through links to listen along with him. He wishes there was a
+                  better invitation system in place so he can continue to invite
+                  the same friends to his sessions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <div class="section-heading">
+          <p class="grayheading">Competitive Analysis</p>
+          <p class="subsection center">Analyzing Spotify's Competitors</p>
+        </div>
         <div class="image-wrapper">
-          <img
-            class="img-center"
-            src="/images/spotify/firstclicktest.webp"
-            alt=""
-            draggable="false"
-          />
+          <div class="image-row nowrap">
+            <figure class="image-container">
+              <img
+                class="project-image"
+                src="images/spotify/applemusic.webp"
+                alt=""
+                draggable="false"
+              />
+            </figure>
+            <figure class="image-container">
+              <img
+                class="project-image"
+                src="images/spotify/amazonmusic.webp"
+                alt=""
+                draggable="false"
+              />
+            </figure>
+            <figure class="image-container">
+              <img
+                class="project-image"
+                src="images/spotify/youtubemusic.webp"
+                alt=""
+                draggable="false"
+              />
+            </figure>
+          </div>
           <div class="content-details">
             <p class="text-description center">
-              A mere <span style="color: #e3e3e8;">28%</span> of users were able
-              to successfully locate the appropriate menu. This compelling insight
-              bly suggests that the menu's placement may be unintuitive, potentially
-              leading users to overlook its presence. Users tend to overlook the
-              group session feature on the platform due to its unintuitive placement
-              and current lack of features it current offers.
+              I conducted a comprehensive analysis of Spotify's direct
+              competitors, assessing their user interface and implementation of
+              listening group sessions with others. This endeavor allowed me to
+              delve deeper into their approach to user experience as well as
+              explore other related functionalities, uncovering valuable
+              insights in the process.
             </p>
           </div>
         </div>
+        <div class="border-box row">
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/layouticon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
 
-        <div class="image-wrapper">
-          <img
-            class="img-center"
-            src="images/spotify/surveyresults1.webp"
-            alt=""
-            draggable="false"
-          />
-          <figcaption class="title" style="margin: 0 auto;">But...</figcaption>
-          <div class="image-row stats">
-            <img
-              class="img-center"
-              src="images/spotify/surveyresults2.webp"
-              alt=""
-              draggable="false"
-            />
-            <img
-              class="img-center"
-              src="images/spotify/surveyresults3.webp"
-              alt=""
-              draggable="false"
-            />
-          </div>
-          <div class="content-details padding">
-            <div class="box">
-              <p class="text-description">
-                <span class="highlight">
-                  "Difficult to invite/join friends.
-                </span>
-                Didn’t know about it until someone else showed me. There also lies
-                the potential for queuing songs that others don't enjoy."
-              </p>
-            </div>
-            <div class="box">
-              <p class="text-description">
-                <span class="highlight">
-                  "Anyone can play music with no restriction,
-                </span>
-                so one person can skip another's song and play what they want. Can't
-                see who played what song."
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="content-details col">
-          <span class="title xlarge">Key Insights</span>
-          <div class="border-box gap">
-            <div class="box-content">
               <div class="content-vert">
-                <div class="icon-wrapper">
-                  <img
-                    src="images/spotify/icons/confusedicon.webp"
-                    alt=""
-                    class="icon"
-                  />
-                </div>
-
-                <p class="title large highlight">User Experience</p>
+                <p class="title large highlight">Similar User Experience</p>
                 <p class="text-description small">
-                  Users have difficulty in inviting friends. The user onboarding
-                  msut be enhanced to provide a more intuitive experience for
-                  those wishing to invite and join friends
+                  Each platform delivers an intuitive and cohesive user
+                  interface with consistent design elements and a familiar
+                  layout for a user-friendly experience
                 </p>
               </div>
             </div>
-            <div class="box-content">
+          </div>
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/speakericon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+
               <div class="content-vert">
-                <div class="icon-wrapper">
-                  <img
-                    src="images/spotify/icons/conflictsicon.webp"
-                    alt=""
-                    class="icon"
-                  />
-                </div>
-                <div class="title large highlight">Playback Conflicts</div>
+                <p class="title large highlight">
+                  Cross-platform compatibility
+                </p>
                 <p class="text-description small">
-                  The potential conflicts stemming from track skipping by any
-                  participant must be addressed as users are facing disruptive
-                  behavior by malicious users
+                  These platforms allow the user to play media through multiple
+                  devices including phones, tablets, computers and TVs
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/spotify/icons/playlisticon.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="content-vert">
+                <p class="title large highlight">Playlist Sharing</p>
+                <p class="text-description small">
+                  Users are able to share their playlists with others. The
+                  process of sharing a playlist involves sending a shareable
+                  link
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="grayheading">Problem Statement</p>
-        <p class="subsection center">
-          How can we revitalize group listening and enhance accessibility?
-        </p>
-      </div>
-      <div class="border-box row">
-        <div class="box-content">
-          <div class="content-vert">
-            <div class="icon-wrapper">
-              <img
-                src="images/spotify/icons/searchicon.webp"
-                alt=""
-                class="icon"
+      </section>
+      <div class="overview">
+        <p class="grayheading">Information Architecture</p>
+        <ul class="carousel">
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/sitemap.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
               />
             </div>
-
-            <div class="content-vert">
-              <p class="title large highlight">
-                Group session feature is hard to locate
-              </p>
-              <p class="text-description small">
-                The current placement of initiating a group session feature is
-                hidden under the device lists screen which users can overlook
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="box-content">
-          <div class="content-vert">
-            <div class="icon-wrapper">
-              <img
-                src="images/spotify/icons/laptopicon.webp"
-                alt=""
-                class="icon"
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/userflow1.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
               />
             </div>
-
-            <div class="content-vert">
-              <p class="title large highlight">
-                Feature does not exist on desktop platforms
-              </p>
-              <p class="text-description small">
-                The lack of group session support on desktop Spotify puts
-                desktop users at a disadvantage
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="box-content">
-          <div class="content-vert">
-            <div class="icon-wrapper">
-              <img
-                src="images/spotify/icons/messageicon.webp"
-                alt=""
-                class="icon"
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/userflow2.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
               />
             </div>
-
-            <div class="content-vert">
-              <p class="title large highlight">
-                Lack of friend activity integration
-              </p>
-              <p class="text-description small">
-                Inviting friends to a group session lacks a direct in-app
-                feature, requiring users to resort to sending invite links via
-                text or social media
+          </li>
+          <li>
+            <div class="image-gallery">
+              <ImageZoom
+                options={{ background: "#000000" }}
+                client:only="react"
+                class="item"
+                src="images/spotify/userflow3.webp"
+                draggable="false"
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </li>
+        </ul>
+        <div class="carousel-buttons-wrapper">
+          <ul class="carousel-buttons">
+            <button class="prev-button disabled">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                <path
+                  d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
+                ></path>
+              </svg>
+            </button>
+            <button class="next-button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                <path
+                  d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"
+                ></path>
+              </svg>
+            </button>
+          </ul>
+        </div>
+      </div>
+      <section class="project-section">
+        <div class="section-heading">
+          <p class="grayheading">Usability Testing</p>
+          <p class="subsection center">
+            Evaluating the Spotify Party prototype
+          </p>
+        </div>
+        <div class="project-content">
+          <div class="content-details">
+            <span class="title xlarge">Second click test</span>
+            <p class="text-description">
+              I conducted a second first-click test involving <span
+                class="highlight">9 new participants</span
+              >
+              to assess how well users grasped tasks within the Spotify Party prototype.
+              The test encompassed demonstrations of both mobile and desktop versions,
+              with a specific emphasis on participants' capability to initiate a
+              group session.
+            </p>
+          </div>
+          <div class="image-wrapper">
+            <img
+              class="img-center"
+              src="images/spotify/surveyresults4.webp"
+              alt=""
+              draggable="false"
+            />
+            <img
+              class="img-center"
+              src="images/spotify/surveyresults5.webp"
+              alt=""
+              draggable="false"
+            />
+            <div class="content-details">
+              <p class="text-description center">
+                With a completion rate surpassing <span class="highlight"
+                  >77%</span
+                >, the results bly indicate that the Spotify Party prototype
+                exhibits a higher level of intuitiveness and user-friendliness
+                in comparison to Spotify's current user interface. Participants
+                were able to quickly navigate to the corresponding interaction
+                with an average time taken of <span class="highlight"
+                  >26.5 seconds</span
+                >
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="grayheading">User Persona</p>
-        <p class="subsection center">Introducing Michelle & Edward</p>
-      </div>
-      <div class="border-box row">
-        <div class="box-content">
-          <div class="content-vert">
-            <div class="icon-wrapper">
-            <img src="images/spotify/michelle.webp" alt="" class="icon large" />
-            </div>
-            <div class="content-vert">
-              <p class="title large highlight">Michelle</p>
-              <p class="text-description small">
-                Michelle, a party enthusiast, creates perfect playlists for her
-                events. Prior to each gathering, she dedicates herself to
-                selecting tracks, ensuring an unforgettable experience. In her
-                quest for new music, she dreams of a feature allowing guests to
-                queue up favorite tracks with a voting system for an enhanced
-                party experience.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="box-content">
-          <div class="content-vert">
-            <div class="icon-wrapper">
-            <img src="images/spotify/edward.webp" alt="" class="icon large" />
-            </div>
-            <div class="content-vert">
-              <p class="title large highlight">Edwawrd</p>
-              <p class="text-description small">
-                Edward is an avid music listener who loves to play songs with
-                his friends. He recently found out about the group session
-                feature Spotify implemented. He likes the idea of such feature,
-                but finds it tedious to constantly invite his friends through
-                links to listen along with him. He wishes there was a better
-                invitation system in place so he can continue to invite the same
-                friends to his sessions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="grayheading">Competitive Analysis</p>
-        <p class="subsection center">Analyzing Spotify's Competitors</p>
-      </div>
-    </section>
+      </section>
+      <section class="overview"></section>
+    </article>
   </main>
-  <section class="project-section">
-    <SectionHeading
-      headerTag="COMPETITIVE ANALYSIS"
-      sectionTitle="Analyzing Spotify's Competitors"
-    />
-    <div class="content-details">
-      <span class="title">Diving deeper</span>
-      <p class="text-description">
-        I conducted a comprehensive analysis of Spotify's direct competitors,
-        assessing their user interface and implementation of listening group
-        sessions with others. This endeavor allowed me to delve deeper into
-        their approach to user experience as well as explore other related
-        functionalities, uncovering valuable insights in the process.
-      </p>
-    </div>
-    <div class="image-row nowrap">
-      <figure class="image-container">
-        <img
-          class="project-image"
-          src="images/spotify/applemusic.webp"
-          alt=""
-          draggable="false"
-        />
-      </figure>
-      <figure class="image-container">
-        <img
-          class="project-image"
-          src="images/spotify/amazonmusic.webp"
-          alt=""
-          draggable="false"
-        />
-      </figure>
-      <figure class="image-container">
-        <img
-          class="project-image"
-          src="images/spotify/youtubemusic.webp"
-          alt=""
-          draggable="false"
-        />
-      </figure>
-    </div>
-    <div class="content-details">
-      <div class="title">Findings</div>
-      <div class="border-box gap">
-        <div class="box-content outline">
-          <div class="content-vert">
-            <div class="content-icon">
-              <img
-                src="images/spotify/icons/layouticon.webp"
-                alt=""
-                class="icon"
-              />
-            </div>
-            <div class="subheading">Similar User Experience</div>
-            <p>
-              Each platform delivers an intuitive and cohesive user interface
-              with consistent design elements and a familiar layout for a
-              user-friendly experience
-            </p>
-          </div>
-        </div>
-        <div class="box-content outline">
-          <div class="content-vert">
-            <div class="content-icon">
-              <img
-                src="images/spotify/icons/speakericon.webp"
-                alt=""
-                class="icon"
-              />
-            </div>
-            <div class="subheading">Cross-platform compatibility</div>
-            <p>
-              These platforms allow the user to play media through multiple
-              devices including phones, tablets, computers and TVs
-            </p>
-          </div>
-        </div>
-        <div class="box-content outline">
-          <div class="content-vert">
-            <div class="content-icon">
-              <img
-                src="images/spotify/icons/playlisticon.webp"
-                alt=""
-                class="icon"
-              />
-            </div>
-            <div class="subheading">Playlist Sharing</div>
-            <p>
-              Users are able to share their playlists with others. The process
-              of sharing a playlist involves sending a shareable link
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="project-section">
-    <SectionHeading
-      headerTag="INFORMATION ARCHITECTURE"
-      sectionTitle="Laying out the floor plan"
-    />
-    <div class="content-details">
-      <span class="title">Creating the flow</span>
-      <p class="text-description">
-        I crafted three unique user flows and developed a comprehensive sitemap
-        for Spotify Party, recognizing the crucial role of smooth navigation in
-        every interaction. My objective was to simplify the flow, emphasizing
-        ease of use, and guarantee seamless integration with Spotify's
-        established design principles
-      </p>
-    </div>
-    <ImageHeader
-      image1={{
-        src: "images/spotify/sitemap.webp",
-        description: "Sitemap",
-        alt: "Sitemap",
-      }}
-      image2={{
-        src: "images/spotify/userflow1.webp",
-        description: "User initiates a group session and invites friends",
-        alt: "User initiates a group session and invites friends",
-      }}
-      image3={{
-        src: "images/spotify/userflow2.webp",
-        description: "User is invited to a group session",
-        alt: "User is invited to a group session",
-      }}
-      image4={{
-        src: "images/spotify/userflow3.webp",
-        description: "Moderate ",
-        alt: "Moderate ",
-      }}
-    />
-  </section>
-  <section class="project-section">
-    <SectionHeading
-      headerTag="USABILITY TESTING"
-      sectionTitle="Evaluating the Spotify Party prototype"
-    />
-    <div class="content-details">
-      <span class="title">Second click test</span>
-      <p class="text-description">
-        I conducted a second first-click test involving <span
-          style="color: #e3e3e8;">9 new participants</span
-        >
-        to assess how well users grasped tasks within the Spotify Party prototype.
-        The test encompassed demonstrations of both mobile and desktop versions,
-        with a specific emphasis on participants' capability to initiate a group
-        session.
-      </p>
-    </div>
-    <div class="image-wrapper gap">
-      <img
-        class="img-center"
-        src="images/spotify/surveyresults4.webp"
-        alt=""
-        draggable="false"
-      />
-      <img
-        class="img-center"
-        src="images/spotify/surveyresults5.webp"
-        alt=""
-        draggable="false"
-      />
-    </div>
-    <div class="content-details">
-      <span class="title">Significant improvement over the initial 28%</span>
-      <p class="text-description">
-        With a completion rate surpassing <span style="color: #e3e3e8;"
-          >77%</span
-        >, the results bly indicate that the Spotify Party prototype exhibits a
-        higher level of intuitiveness and user-friendliness in comparison to
-        Spotify's current user interface. Participants were able to quickly
-        navigate to the corresponding interaction with an average time taken of <span
-          style="color: #e3e3e8;">26.5 seconds</span
-        >
-      </p>
-    </div>
-  </section>
+
   <section class="project-section">
     <SectionHeading headerTag="REFLECTION" sectionTitle="Wrapping up" />
     <div class="content-details">
@@ -1089,9 +1147,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   .project-content-wrapper {
     background-color: #000000;
     width: 100%;
-    max-width: 78.75rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
   .dark-glassbox {
@@ -1165,7 +1221,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     flex-direction: column;
     gap: 3rem;
   }
-  
+
   .subheading {
     font-size: 1.5rem;
     color: #f5f5f7;

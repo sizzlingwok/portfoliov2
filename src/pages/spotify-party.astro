@@ -331,17 +331,20 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </div>
           </div>
         </div>
-        <div class="content-details">
+        <div class="content-details col">
           <span class="title xlarge">Key Insights</span>
           <div class="border-box gap">
             <div class="box-content">
               <div class="content-vert">
-                <img
-                  src="images/spotify/icons/confusedicon.webp"
-                  alt=""
-                  class="icon"
-                />
-                <p class="text-description highlight">User Experience</p>
+                <div class="icon-wrapper">
+                  <img
+                    src="images/spotify/icons/confusedicon.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+
+                <p class="title large highlight">User Experience</p>
                 <p class="text-description small">
                   Users have difficulty in inviting friends. The user onboarding
                   msut be enhanced to provide a more intuitive experience for
@@ -351,12 +354,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </div>
             <div class="box-content">
               <div class="content-vert">
-                <img
-                  src="images/spotify/icons/conflictsicon.webp"
-                  alt=""
-                  class="icon"
-                />
-                <div class="text-description highlight">Playback Conflicts</div>
+                <div class="icon-wrapper">
+                  <img
+                    src="images/spotify/icons/conflictsicon.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="title large highlight">Playback Conflicts</div>
                 <p class="text-description small">
                   The potential conflicts stemming from track skipping by any
                   participant must be addressed as users are facing disruptive
@@ -368,29 +373,29 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </div>
     </section>
-  </main>
-  <section class="project-section">
-    <SectionHeading
-      headerTag="PROBLEM STATEMENT"
-      sectionTitle="How can we revitalize group listening for an improved experience, addressing challenges and enhancing accessibility effectively?"
-    />
-    <div class="content-details">
-      <div class="title">Solving the issues</div>
-      <div class="border-box">
+    <section class="project-section">
+      <div class="section-heading">
+        <p class="grayheading">Problem Statement</p>
+        <p class="subsection center">
+          How can we revitalize group listening and enhance accessibility?
+        </p>
+      </div>
+      <div class="border-box row">
         <div class="box-content">
-          <div class="content-hor">
-            <div class="content-icon no-padding">
+          <div class="content-vert">
+            <div class="icon-wrapper">
               <img
                 src="images/spotify/icons/searchicon.webp"
                 alt=""
                 class="icon"
               />
             </div>
+
             <div class="content-vert">
-              <div class="subheading">
+              <p class="title large highlight">
                 Group session feature is hard to locate
-              </div>
-              <p>
+              </p>
+              <p class="text-description small">
                 The current placement of initiating a group session feature is
                 hidden under the device lists screen which users can overlook
               </p>
@@ -398,19 +403,20 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
         <div class="box-content">
-          <div class="content-hor">
-            <div class="content-icon no-padding">
+          <div class="content-vert">
+            <div class="icon-wrapper">
               <img
                 src="images/spotify/icons/laptopicon.webp"
                 alt=""
                 class="icon"
               />
             </div>
+
             <div class="content-vert">
-              <div class="subheading">
+              <p class="title large highlight">
                 Feature does not exist on desktop platforms
-              </div>
-              <p>
+              </p>
+              <p class="text-description small">
                 The lack of group session support on desktop Spotify puts
                 desktop users at a disadvantage
               </p>
@@ -418,17 +424,20 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
         <div class="box-content">
-          <div class="content-hor">
-            <div class="content-icon no-padding">
+          <div class="content-vert">
+            <div class="icon-wrapper">
               <img
                 src="images/spotify/icons/messageicon.webp"
                 alt=""
                 class="icon"
               />
             </div>
+
             <div class="content-vert">
-              <div class="subheading">Lack of friend activity integration</div>
-              <p>
+              <p class="title large highlight">
+                Lack of friend activity integration
+              </p>
+              <p class="text-description small">
                 Inviting friends to a group session lacks a direct in-app
                 feature, requiring users to resort to sending invite links via
                 text or social media
@@ -437,28 +446,21 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="project-section">
-    <SectionHeading
-      headerTag="USER PERSONA"
-      sectionTitle="Introducing Michelle & Edward"
-    />
-    <div class="content-details">
-      <div class="title">A look from a different perspective</div>
-      <div class="border-box gap">
-        <div class="box-content outline">
-          <div class="content-hor">
-            <div class="content-icon no-padding">
-              <img
-                src="images/spotify/michelle.webp"
-                alt=""
-                class="icon large"
-              />
+    </section>
+    <section class="project-section">
+      <div class="section-heading">
+        <p class="grayheading">User Persona</p>
+        <p class="subsection center">Introducing Michelle & Edward</p>
+      </div>
+      <div class="border-box row">
+        <div class="box-content">
+          <div class="content-vert">
+            <div class="icon-wrapper">
+            <img src="images/spotify/michelle.webp" alt="" class="icon large" />
             </div>
             <div class="content-vert">
-              <div class="subheading">Michelle</div>
-              <p>
+              <p class="title large highlight">Michelle</p>
+              <p class="text-description small">
                 Michelle, a party enthusiast, creates perfect playlists for her
                 events. Prior to each gathering, she dedicates herself to
                 selecting tracks, ensuring an unforgettable experience. In her
@@ -469,14 +471,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </div>
           </div>
         </div>
-        <div class="box-content outline">
-          <div class="content-hor">
-            <div class="content-icon no-padding">
-              <img src="images/spotify/edward.webp" alt="" class="icon large" />
+        <div class="box-content">
+          <div class="content-vert">
+            <div class="icon-wrapper">
+            <img src="images/spotify/edward.webp" alt="" class="icon large" />
             </div>
             <div class="content-vert">
-              <div class="subheading">Edward</div>
-              <p>
+              <p class="title large highlight">Edwawrd</p>
+              <p class="text-description small">
                 Edward is an avid music listener who loves to play songs with
                 his friends. He recently found out about the group session
                 feature Spotify implemented. He likes the idea of such feature,
@@ -489,8 +491,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="project-section">
+      <div class="section-heading">
+        <p class="grayheading">Competitive Analysis</p>
+        <p class="subsection center">Analyzing Spotify's Competitors</p>
+      </div>
+    </section>
+  </main>
   <section class="project-section">
     <SectionHeading
       headerTag="COMPETITIVE ANALYSIS"
@@ -1153,6 +1161,11 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     justify-content: space-around;
   }
 
+  .content-details.col {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
   .subheading {
     font-size: 1.5rem;
     color: #f5f5f7;
@@ -1201,7 +1214,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
   .large {
     font-size: 28px;
-    line-height: 29px;
+    line-height: 34px;
   }
 
   .xlarge {
@@ -1245,24 +1258,32 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
   .border-box {
     display: flex;
-    flex-direction: column;
+
+    flex: 1;
+    gap: 25px;
+    justify-content: space-around;
+  }
+
+  .border-box.row {
+    display: flex;
+    flex-direction: row;
     flex: 1;
   }
 
   .border-box.gap {
-    gap: 0.5rem;
+    gap: 25px;
   }
 
   .box-content {
     background: #161617;
-    padding: 2rem;
+    padding: 3rem 2rem;
     color: #868686;
     user-select: none;
     line-height: 1.6;
     font-weight: 430;
-    font-size: 1.125rem;
     flex: 1;
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
   }
 
   .content-vert {
@@ -1271,9 +1292,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     gap: 1rem;
   }
 
-  .content-icon {
-    margin: 0;
-    padding: 0;
+  .icon-wrapper {
+    padding-bottom: 1rem;
   }
 
   .small {
@@ -1281,8 +1301,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .content-hor {

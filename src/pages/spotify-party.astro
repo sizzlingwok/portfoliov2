@@ -833,113 +833,123 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   // });
 
   document.addEventListener("astro:page-load", () => {
-    const carousel = document.querySelector(".carousel") as HTMLElement;
-    const prevButton = document.querySelector(".prev-button") as HTMLElement;
-    const nextButton = document.querySelector(".next-button") as HTMLElement;
-    let isScrolling = false;
-    const scrollDuration = 700; // Duration of the scroll animation in milliseconds
-    let isCarouselVisible = true;
+    // Select all carousels on the page
+    const carousels = document.querySelectorAll<HTMLElement>(".carousel");
 
-    // Function to handle left arrow key press
-    function handleLeftArrowKey() {
-      if (!isScrolling && isCarouselVisible) {
-        isScrolling = true;
-        const scrollDistance =
-          carousel.scrollLeft -
-          (carousel.querySelector(".item") as HTMLElement).offsetWidth;
-        carousel.scrollTo({
-          left: scrollDistance,
-          behavior: "smooth",
-        });
-        setTimeout(function () {
-          isScrolling = false;
-          checkButtonsState(); // Check button state after scrolling
-        }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+    carousels.forEach((carousel) => {
+      const prevButton = carousel.parentElement?.querySelector(
+        ".prev-button"
+      ) as HTMLElement;
+      const nextButton = carousel.parentElement?.querySelector(
+        ".next-button"
+      ) as HTMLElement;
+      let isScrolling = false;
+      const scrollDuration = 700; // Duration of the scroll animation in milliseconds
+      let isCarouselVisible = true;
+
+      // Function to handle left arrow key press
+      function handleLeftArrowKey() {
+        if (!isScrolling && isCarouselVisible) {
+          isScrolling = true;
+          const scrollDistance =
+            carousel.scrollLeft -
+            (carousel.querySelector(".item") as HTMLElement).offsetWidth;
+          carousel.scrollTo({
+            left: scrollDistance,
+            behavior: "smooth",
+          });
+          setTimeout(function () {
+            isScrolling = false;
+            checkButtonsState(); // Check button state after scrolling
+          }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+        }
       }
-    }
 
-    // Function to handle right arrow key press
-    function handleRightArrowKey() {
-      if (!isScrolling && isCarouselVisible) {
-        isScrolling = true;
-        const scrollDistance =
-          carousel.scrollLeft +
-          (carousel.querySelector(".item") as HTMLElement).offsetWidth;
-        carousel.scrollTo({
-          left: scrollDistance,
-          behavior: "smooth",
-        });
-        setTimeout(function () {
-          isScrolling = false;
-          checkButtonsState(); // Check button state after scrolling
-        }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+      // Function to handle right arrow key press
+      function handleRightArrowKey() {
+        if (!isScrolling && isCarouselVisible) {
+          isScrolling = true;
+          const scrollDistance =
+            carousel.scrollLeft +
+            (carousel.querySelector(".item") as HTMLElement).offsetWidth;
+          carousel.scrollTo({
+            left: scrollDistance,
+            behavior: "smooth",
+          });
+          setTimeout(function () {
+            isScrolling = false;
+            checkButtonsState(); // Check button state after scrolling
+          }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+        }
       }
-    }
 
-    prevButton.addEventListener("click", function () {
-      handleLeftArrowKey();
-    });
-
-    nextButton.addEventListener("click", function () {
-      handleRightArrowKey();
-    });
-
-    // Event listener for keyboard arrow keys
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowLeft") {
+      prevButton?.addEventListener("click", function () {
         handleLeftArrowKey();
-      } else if (event.key === "ArrowRight") {
+      });
+
+      nextButton?.addEventListener("click", function () {
         handleRightArrowKey();
+      });
+
+      // Event listener for keyboard arrow keys
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+          handleLeftArrowKey();
+        } else if (event.key === "ArrowRight") {
+          handleRightArrowKey();
+        }
+      });
+
+      // Function to check and disable/enable prev/next buttons based on carousel position
+      function checkButtonsState() {
+        // Get the first and last slides
+        const firstSlide = carousel.querySelector(
+          ".item:first-child"
+        ) as HTMLElement;
+        const lastSlide = carousel.querySelector(
+          ".item:last-child"
+        ) as HTMLElement;
+
+        if (!firstSlide || !lastSlide) return; // Ensure the slides exist
+
+        // Check if the carousel is at the first slide
+        if (carousel.scrollLeft <= firstSlide.offsetWidth) {
+          prevButton?.classList.add("disabled");
+        } else {
+          prevButton?.classList.remove("disabled");
+        }
+
+        // Check if the carousel is at the last slide
+        if (
+          carousel.scrollLeft >=
+          carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
+        ) {
+          nextButton?.classList.add("disabled");
+        } else {
+          nextButton?.classList.remove("disabled");
+        }
       }
+
+      // Initially check button state
+      checkButtonsState();
+
+      // Event listener for scroll events on the carousel
+      carousel.addEventListener("scroll", function () {
+        checkButtonsState(); // Check button state after scrolling
+      });
+
+      // IntersectionObserver to check if the carousel is fully visible
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isCarouselVisible = entry.isIntersecting;
+          });
+        },
+        { threshold: 0.8 }
+      );
+
+      observer.observe(carousel);
     });
-
-    // Function to check and disable/enable prev/next buttons based on carousel position
-    function checkButtonsState() {
-      // Get the first and last slides
-      const firstSlide = carousel.querySelector(
-        ".item:first-child"
-      ) as HTMLElement;
-      const lastSlide = carousel.querySelector(
-        ".item:last-child"
-      ) as HTMLElement;
-
-      // Check if the carousel is at the first slide
-      if (carousel.scrollLeft <= firstSlide.offsetWidth) {
-        prevButton.classList.add("disabled");
-      } else {
-        prevButton.classList.remove("disabled");
-      }
-
-      // Check if the carousel is at the last slide
-      if (
-        carousel.scrollLeft >=
-        carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
-      ) {
-        nextButton.classList.add("disabled");
-      } else {
-        nextButton.classList.remove("disabled");
-      }
-    }
-
-    // Initially check button state
-    checkButtonsState();
-
-    // Event listener for scroll events on the carousel
-    carousel.addEventListener("scroll", function () {
-      checkButtonsState(); // Check button state after scrolling
-    });
-
-    // IntersectionObserver to check if the carousel is fully visible
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isCarouselVisible = entry.isIntersecting;
-        });
-      },
-      { threshold: 0.8 }
-    );
-
-    observer.observe(carousel);
   });
 </script>
 

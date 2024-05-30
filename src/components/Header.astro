@@ -63,44 +63,6 @@
     </ul>
   </div>
 </header>
-<script>
-  sessionStorage.setItem("animationFlag", "reload");
-  document.addEventListener("DOMContentLoaded", function () {
-    var elements = document.querySelectorAll(
-      ".header-nav, .link-left, .link-right"
-    );
-
-    elements.forEach(function (element) {
-      if (element) {
-        element.classList.add("fadeup");
-
-        if (
-          element.classList.contains("link-left") ||
-          element.classList.contains("link-right")
-        ) {
-          (element as HTMLElement).style.visibility = "hidden";
-        }
-
-        if (element.classList.contains("link-left")) {
-          (element as HTMLElement).style.animationDelay = "0.3s";
-        } else if (element.classList.contains("link-right")) {
-          (element as HTMLElement).style.animationDelay = "0.5s";
-        }
-
-        element.addEventListener("animationstart", function () {
-          sessionStorage.setItem("animationFlag", "played");
-
-          if (
-            element.classList.contains("link-left") ||
-            element.classList.contains("link-right")
-          ) {
-            (element as HTMLElement).style.visibility = "visible";
-          }
-        });
-      }
-    });
-  });
-</script>
 
 <style>
   .header {

@@ -26,7 +26,9 @@ const { title, description, canonical } = Astro.props;
     <Footer />
     <script>
       import gsap from "gsap";
+      import ScrollTrigger from "gsap/ScrollTrigger";
       window.gsap = gsap;
+      gsap.registerPlugin(ScrollTrigger);
     </script>
   </body>
 </html>

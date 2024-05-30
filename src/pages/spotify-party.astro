@@ -20,8 +20,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     <div class="project-header-wrapper">
       <picture class="project-thumbnail">
         <div class="project-header-details">
-          <h1>Spotify Party</h1>
-          <p class="text-description">
+          <h1 class="fadeup">Spotify Party</h1>
+          <p class="heading-description">
             Enhancing the group listening experience for an immersive music
             exploration
           </p>
@@ -76,7 +76,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </ul>
           </ul>
         </div>
-        <p class="grayheading inline">Product Overview</p>
+        <p class="grayheading inline fadeup">Product Overview</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -151,7 +151,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </section>
       <section class="project-section">
-        <p class="grayheading">Final Solution</p>
+        <p class="grayheading fadeup">Final Solution</p>
         <div class="preview-wrapper">
           <div class="preview-header">
             <p class="subsection center">Enhanced Functionalities.</p>
@@ -248,7 +248,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading">User Research</p>
+          <p class="grayheading fadeup">User Research</p>
           <p class="subsection center">
             Evaluating the user flow for initiating a Spotify group session
           </p>
@@ -374,7 +374,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading">Problem Statement</p>
+          <p class="grayheading fadeup">Problem Statement</p>
           <p class="subsection center">
             How can we revitalize group listening and enhance accessibility?
           </p>
@@ -447,7 +447,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading">User Persona</p>
+          <p class="grayheading fadeup">User Persona</p>
           <p class="subsection center">Introducing Michelle & Edward</p>
         </div>
         <div class="border-box row">
@@ -483,7 +483,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 />
               </div>
               <div class="content-vert">
-                <p class="title large highlight">Edwawrd</p>
+                <p class="title large highlight">Edward</p>
                 <p class="text-description small">
                   Edward is an avid music listener who loves to play songs with
                   his friends. He recently found out about the group session
@@ -500,7 +500,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading">Competitive Analysis</p>
+          <p class="grayheading fadeup">Competitive Analysis</p>
           <p class="subsection center">Analyzing Spotify's Competitors</p>
         </div>
         <div class="image-wrapper">
@@ -681,7 +681,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </div>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading">Usability Testing</p>
+          <p class="grayheading fadeup">Usability Testing</p>
           <p class="subsection center">
             Evaluating the Spotify Party prototype
           </p>
@@ -767,10 +767,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 </Layout>
 
 <script>
-  import SplitType from "split-type";
   // gsap fadeup
   document.addEventListener("astro:page-load", () => {
-    const headings = document.querySelectorAll(".grayheading");
+    const headings = document.querySelectorAll(".fadeup");
 
     headings.forEach((heading) => {
       gsap.fromTo(
@@ -955,7 +954,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
 <style>
   :root {
-    --conditional-color: rgb(29, 29, 31);
+    --conditional-footer: rgb(29, 29, 31);
   }
 
   h1 {
@@ -1090,11 +1089,15 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .overview {
-    background-color: #161617;
+    background-color: var(--gray-background);
     display: flex;
     flex-direction: column;
     padding: 10rem 0;
     gap: 2.5rem;
+  }
+
+  .fadeup {
+    opacity: 0;
   }
 
   .grayheading {
@@ -1191,10 +1194,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     padding: 200px 0;
   }
 
-  .project-section.gray {
-    background: #161617;
-  }
-
   .title {
     font-size: 2rem;
     color: #f5f5f7;
@@ -1225,8 +1224,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     text-align: center;
   }
 
-  .text-description {
-    color: #868686;
+  .text-description,
+  .heading-description {
+    color: var(--description-text);
     user-select: none;
     line-height: 29px;
     font-weight: 600;
@@ -1421,69 +1421,120 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   /* media queries */
-  @media (max-width: 1500px) {
-    /* Project Wrapper */
-    .project-content-wrapper {
-      padding: 10rem calc(2rem + 5%);
-    }
-  }
-
-  @media (max-width: 1000px) {
-    /* Project Wrapper */
-    .image-row.stats {
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-  }
-
-  @media (max-width: 768px) {
-    /* Project Wrapper */
-    .project-content-wrapper {
-      padding: 5rem 1rem;
+  @media (max-width: 1260px) {
+    .project-details {
+      padding-bottom: 7.5rem !important;
     }
 
-    .preview-wrapper,
+    .content-preview {
+      padding: 0 5%;
+    }
+
     .project-section {
-      gap: 5rem;
+      padding: 200px 5%;
     }
 
-    .divider.content {
-      margin: 5rem 0;
+    .overview {
+      padding: 10rem 5%;
+    }
+  }
+
+  @media (max-width: 1068px) {
+    h1 {
+      font-size: 48px;
+    }
+
+    .heading-description {
+      font-size: 17px;
+    }
+
+    .project-header-details {
+      gap: 8px;
+    }
+
+    .project-details {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 779px) {
+    h1 {
+      font-size: 40px;
+    }
+
+    .heading-description {
+      font-size: 14px;
+    }
+
+    .text-description {
+      font-size: 19px;
+    }
+
+    .project-header-details {
+      gap: 0;
+    }
+
+    .project-details {
+      padding: 0;
+      flex-direction: column;
+    }
+
+    .list-item {
+      gap: 0.3rem;
+    }
+
+    .list-container {
+      gap: 1rem;
+    }
+
+    .overview {
+      padding: 100px 5%;
+    }
+
+    .project-details {
+      gap: 3rem;
+    }
+
+    .grayheading {
+      font-size: 32px;
+    }
+
+    .subsection {
+      font-size: 48px;
+      line-height: 1.0834933333;
+    }
+
+    .content {
+      flex-direction: column;
+    }
+
+    .content-preview,
+    .project-section,
+    .preview-wrapper,
+    .section-heading {
+      gap: 100px;
+    }
+
+    .project-section {
+      padding: 100px 5%;
     }
 
     .content-details {
-      flex-direction: row;
-      gap: 1.5rem;
-    }
-
-    .image-wrapper {
-      padding: 0;
-    }
-
-    .box-content {
-      font-size: 1rem;
-    }
-
-    .subheading {
-      font-size: 1.25rem;
-    }
-
-    .content-hor {
       flex-direction: column;
-      align-items: normal;
+    }
+
+    .project-content {
+      width: auto;
+      gap: 100px;
+    }
+
+    .xlarge {
+      font-size: 36px;
     }
 
     .image-row {
+      flex-direction: column;
       gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .image-row.nowrap {
-      flex-wrap: nowrap;
-    }
-
-    .title {
-      font-size: 1.5rem;
     }
   }
 </style>

@@ -728,7 +728,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </section>
-      <div class="overview">
+      <div class="overview end">
         <div class="blackborder">
           <p class="grayheading">Wrapping Up</p>
           <div class="border-box row gap">
@@ -1435,7 +1435,19 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .overview {
+      padding: 10rem 0 10rem 5%;
+    }
+
+    .overview.end {
       padding: 10rem 5%;
+    }
+
+    .carousel-buttons-wrapper {
+      width: 100%;
+    }
+
+    .grayheading.inline {
+      width: 100%;
     }
   }
 
@@ -1454,6 +1466,15 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
     .project-details {
       padding: 0;
+    }
+
+    .project-content {
+      width: 100%;
+    }
+
+    .image-row.stats {
+      gap: 0;
+      justify-content: space-between;
     }
   }
 

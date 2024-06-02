@@ -5,8 +5,6 @@ import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
-import { Refresh } from "../components/js/Animations.jsx";
-import { ExpandDivider } from "../components/js/Animations.jsx";
 ---
 
 <meta property="og:image" content="/images/home/mechmarket.webp" />
@@ -15,7 +13,6 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   description="Mobile marketplace app dedicated to buying and selling keyboard related products"
   canonical="https://andyduong.work/mechmarket"
 >
-  <Refresh client:only="react" />
   <main>
     <ProjectHeader
       tag="MOBILE DESIGN"

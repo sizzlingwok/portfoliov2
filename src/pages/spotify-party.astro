@@ -18,17 +18,26 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       nextText="sorette"
     />
     <div class="project-header-wrapper">
-      <picture class="project-thumbnail">
+      <picture class="project-thumbnail fadeup">
         <div class="project-header-details">
-          <h1 class="fadeup">Spotify Party</h1>
+          <h1 class="">Spotify Party</h1>
           <p class="heading-description">
             Enhancing the group listening experience for an immersive music
             exploration
           </p>
         </div>
-        <img src="images/spotify/spotifythumbnail.webp" alt="" />
+        <img
+          class="def-image"
+          src="images/spotify/spotifythumbnail.webp"
+          alt=""
+        />
+        <img
+          class="mobile-image"
+          src="images/spotify/mobilethumbnail.webp"
+          alt=""
+        />
       </picture>
-      <button class="project-button">
+      <button class="project-button fadeup-d">
         <a
           href="https://www.figma.com/proto/5ciCRD3R2H8jz0fRfKJPJD/Spotify-Party-Landing-Page?page-id=0%3A1&type=design&node-id=1-2&viewport=1334%2C874%2C0.71&t=MT5QwGlDdOlSKv5J-1&scaling=scale-down"
           target="_blank"
@@ -76,7 +85,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             </ul>
           </ul>
         </div>
-        <p class="grayheading inline fadeup">Product Overview</p>
+        <p class="grayheading inline fadeup-st">Product Overview</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -151,7 +160,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </section>
       <section class="project-section">
-        <p class="grayheading fadeup">Final Solution</p>
+        <p class="grayheading fadeup-st">Final Solution</p>
         <div class="preview-wrapper">
           <div class="preview-header">
             <p class="subsection center">Enhanced Functionalities.</p>
@@ -248,7 +257,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup">User Research</p>
+          <p class="grayheading fadeup-st">User Research</p>
           <p class="subsection center">
             Evaluating the user flow for initiating a Spotify group session
           </p>
@@ -314,9 +323,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 <p class="text-description">
                   <span class="highlight">
                     "Difficult to invite/join friends.
-                  </span>
-                  Didn’t know about it until someone else showed me. There also lies
-                  the potential for queuing songs that others don't enjoy."
+                  </span> Didn’t know about it until someone else showed me. There
+                  also lies the potential for queuing songs that others don't enjoy."
                 </p>
               </div>
               <div class="box">
@@ -374,7 +382,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup">Problem Statement</p>
+          <p class="grayheading fadeup-st">Problem Statement</p>
           <p class="subsection center">
             How can we revitalize group listening and enhance accessibility?
           </p>
@@ -447,7 +455,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup">User Persona</p>
+          <p class="grayheading fadeup-st">User Persona</p>
           <p class="subsection center">Introducing Michelle & Edward</p>
         </div>
         <div class="border-box row">
@@ -500,7 +508,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup">Competitive Analysis</p>
+          <p class="grayheading fadeup-st">Competitive Analysis</p>
           <p class="subsection center">Analyzing Spotify's Competitors</p>
         </div>
         <div class="image-wrapper">
@@ -681,7 +689,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </div>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup">Usability Testing</p>
+          <p class="grayheading fadeup-st">Usability Testing</p>
           <p class="subsection center">
             Evaluating the Spotify Party prototype
           </p>
@@ -767,32 +775,69 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 </Layout>
 
 <script>
-  // gsap fadeup
+  // gsap
   import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
   document.addEventListener("astro:page-load", () => {
-    const headings = document.querySelectorAll(".fadeup");
-
-    headings.forEach((heading) => {
-      gsap.fromTo(
-        heading,
-        {
-          opacity: 0,
-          y: 25,
+    gsap.fromTo(
+      ".fadeup",
+      {
+        opacity: 0,
+        y: 25,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "cubic-bezier(0,0,0.5,1)",
+      }
+    );
+    gsap.fromTo(
+      ".fadeup-d",
+      {
+        opacity: 0,
+        y: 25,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "cubic-bezier(0,0,0.5,1)",
+        delay: 0.1,
+      }
+    );
+    gsap.fromTo(
+      ".fadeup-st",
+      {
+        opacity: 0,
+        y: 25,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "cubic-bezier(0,0,0.5,1)",
+        scrollTrigger: {
+          trigger: ".fadeup-st",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: true,
         },
-        {
-          opacity: 1,
-          y: 0,
-          scrollTrigger: {
-            trigger: heading,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
-          },
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-    });
+      }
+    );
+    gsap.fromTo(
+      ".fadein",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "cubic-bezier(0,0,0.5,1)",
+      }
+    );
   });
 
   // gsap flip
@@ -1149,6 +1194,10 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   .carousel .item {
     scroll-snap-align: center;
     flex-shrink: 0;
+  }
+
+  .mobile-image {
+    display: none;
   }
 
   .item {
@@ -1645,6 +1694,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     .preview-header {
       gap: 1.5rem;
       width: 100%;
+    }
+
+    .mobile-image {
+      display: block;
+    }
+
+    .def-image {
+      display: none;
     }
   }
 </style>

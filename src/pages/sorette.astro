@@ -5,8 +5,6 @@ import ProjectNav from "../components/ProjectNav.astro";
 import ImageHeader from "../components/ImageHeader.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import VideoPreview from "../components/VideoPreview.astro";
-import { Refresh } from "../components/js/Animations.jsx";
-import { ExpandDivider } from "../components/js/Animations.jsx";
 ---
 
 <meta property="og:image" content="/images/home/sorette.webp" />
@@ -15,8 +13,6 @@ import { ExpandDivider } from "../components/js/Animations.jsx";
   description="Cloud sharing platform streamlining music collaboration with others"
   canonical="https://andyduong.work/sorette"
 >
-  <Refresh client:only="react" />
-  <ExpandDivider client:only="react" />
   <main>
     <ProjectHeader
       tag="UX DESIGN"

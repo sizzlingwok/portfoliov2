@@ -768,6 +768,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
 <script>
   // gsap fadeup
+  import { gsap } from "gsap";
   document.addEventListener("astro:page-load", () => {
     const headings = document.querySelectorAll(".fadeup");
 
@@ -1427,25 +1428,33 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .project-details {
-      padding: 0 5%;
+      padding: 0 10%;
     }
 
     .project-section {
-      padding: 200px 5%;
+      padding: 200px 10%;
     }
 
     .overview.end {
-      padding: 10rem 5%;
+      padding: 10rem 10%;
     }
 
     .carousel-buttons-wrapper {
       width: 100%;
-      padding: 0 5%;
+      padding: 0 10%;
     }
 
     .grayheading.inline {
       width: 100%;
-      padding: 0 5%;
+      padding: 0 10%;
+    }
+
+    .project-content {
+      width: 100%;
+    }
+
+    .carousel {
+      padding-left: 10%;
     }
   }
 
@@ -1462,18 +1471,22 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       gap: 8px;
     }
 
-    .project-details {
-      padding: 0;
-    }
-
     .project-content {
       width: 100%;
     }
 
     .image-row.stats {
-      gap: 1rem;
+      gap: 3rem;
       justify-content: space-between;
       flex-direction: column;
+    }
+
+    .blackborder {
+      padding: 6rem;
+    }
+
+    .preview-header {
+      width: 75%;
     }
   }
 
@@ -1508,11 +1521,16 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .overview {
-      padding: 100px 5%;
+      padding: 100px 0;
     }
 
     .project-details {
       gap: 3rem;
+      padding: 0 5%;
+    }
+
+    .grayheading.inline {
+      padding: 0 5%;
     }
 
     .grayheading {
@@ -1545,7 +1563,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .project-content {
-      width: auto;
+      width: 100%;
       gap: 100px;
     }
 
@@ -1563,7 +1581,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       flex-direction: row;
     }
 
-    .border-box.row {
+    .border-box.row,
+    .border-box {
       flex-wrap: wrap;
       flex-basis: 100%;
     }
@@ -1578,7 +1597,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .blackborder {
-      padding: 5rem;
+      padding: 5rem 3rem;
     }
 
     .gap {
@@ -1613,6 +1632,19 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
     .border-box.row.gap {
       flex-direction: column;
+    }
+
+    .carousel-buttons-wrapper {
+      padding: 0 5%;
+    }
+
+    .preview {
+      width: 75%;
+    }
+
+    .preview-header {
+      gap: 1.5rem;
+      width: 100%;
     }
   }
 </style>

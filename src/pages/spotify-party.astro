@@ -1421,21 +1421,17 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   /* media queries */
-  @media (max-width: 1260px) {
+  @media (max-width: 1270px) {
     .project-details {
       padding-bottom: 7.5rem !important;
     }
 
-    .content-preview {
+    .project-details {
       padding: 0 5%;
     }
 
     .project-section {
       padding: 200px 5%;
-    }
-
-    .overview {
-      padding: 10rem 0 10rem 5%;
     }
 
     .overview.end {
@@ -1444,10 +1440,12 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
     .carousel-buttons-wrapper {
       width: 100%;
+      padding: 0 5%;
     }
 
     .grayheading.inline {
       width: 100%;
+      padding: 0 5%;
     }
   }
 
@@ -1473,8 +1471,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .image-row.stats {
-      gap: 0;
-      justify-content: space-between;git ad
+      gap: 1rem;
+      justify-content: space-between;
+      flex-direction: column;
     }
   }
 

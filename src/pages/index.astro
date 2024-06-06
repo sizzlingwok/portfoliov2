@@ -2,325 +2,177 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<meta property="og:image" content="/favicon.webp" />
 <Layout
   title="Andy Duong"
   description="Hello! I'm Andy Duong — Product Designer based in the Bay Area. I craft meaningful narratives fueled by my passion for music and art."
   canonical="https://andyduong.work"
 >
   <main>
-    <div class="bg"></div>
-
-    <section class="landing">
-      <div class="landing-wrapper">
+    <section class="home">
+      <div class="heading-wrapper">
         <h1 class="hoverword">
-          Hello! I'm Andy Duong — Product Designer based in the Bay Area. I
-          craft meaningful narratives fueled by my passion for music and art.
+          Hello! I'm Andy Duong <br />Product Designer in the Bay Area<br />
         </h1>
-        <div class="landing-direct hoverline spotlight">
+        <div class="heading-description">
           Scroll down to discover<span class="arrow">↓</span>
         </div>
-        <div class="arrow"></div>
       </div>
     </section>
-    <section class="project-wrapper">
-      <a href="/spotify-party">
-        <div class="project projectslideup1">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">RESPONSIVE DESIGN</div>
-              <div class="title splitletter">Spotify Party</div>
+    <section class="project-section">
+      <ul class="project-wrapper">
+        <li class="project">
+          <a href="/spotify-party">
+            <div class="project-content spotify">
+              <p class="project-title">Spotify Party</p>
             </div>
-            <div class="text-description splitword long">
-              Enhancing the group listening experience for an immersive music
-              exploration
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/spotify-party-thumbnail.webp"
-              alt="Spotify Party | Enhancing the group listening experience for an immersive music
-              exploration"
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
-      <a href="/sorette">
-        <div class="project projectslideup2">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">UX DESIGN</div>
-              <div class="title splitletter">sorette</div>
-            </div>
-            <div class="text-description splitword long">
-              Cloud sharing platform streamlining music collaboration with
-              others
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/sorette-thumbnail.webp"
-              alt="sorette | Cloud sharing platform streamlining music collaboration with
-              others"
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
-      <a href="/mechmarket">
-        <div class="project projectslideup3">
-          <div class="project-details">
-            <div class="home-project-title">
-              <div class="tag splitletter">MOBILE DESIGN</div>
-              <div class="title splitletter">mechmarket</div>
-            </div>
-            <div class="text-description splitword long">
-              Mobile marketplace app dedicated to buying and selling keyboard
-              related products
-            </div>
-          </div>
-          <div class="thumbnail-container">
-            <img
-              class="thumbnail"
-              src="images/home/mechmarket-thumbnail.webp"
-              alt="mechmarket | Mobile marketplace app dedicated to buying and selling keyboard
-              related products"
-              draggable="false"
-            />
-          </div>
-        </div>
-      </a>
+          </a>
+        </li>
+        <li class="project">
+          <div class="project-content sorette"></div>
+        </li>
+        <li class="project">
+          <div class="project-content mechmarket"></div>
+        </li>
+      </ul>
     </section>
   </main>
-
-  <style>
-    :root {
-      --conditional-footer: rgb(0, 0, 0);
-    }
-
-    .hoverword,
-    .hoverline {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .landing {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: auto;
-      height: 100vh;
-      justify-content: center;
-      margin: 0 auto;
-      user-select: none;
-      gap: 1rem;
-      max-width: 90rem;
-    }
-
-    .bg {
-      overflow: hidden;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .landing-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      color: #f5f5f7;
-      user-select: none;
-      font-weight: 500;
-    }
-
-    .title {
-      font-size: 2.25rem;
-      color: #f5f5f7;
-      font-weight: 500;
-    }
-
-    .tag {
-      font-size: 0.875rem;
-      letter-spacing: 3px;
-      color: #f5f5f788;
-      font-weight: 400;
-    }
-
-    .landing-direct {
-      color: #f5f5f7;
-      font-size: 1.125rem;
-      font-weight: 500;
-      display: flex;
-    }
-
-    .project-wrapper {
-      padding: 10rem 0 5rem 0;
-      max-width: 90rem;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-      justify-content: space-between;
-      margin: 0 auto;
-      user-select: none;
-      justify-content: center;
-    }
-
-    .project {
-      display: flex;
-      gap: 5rem;
-      width: auto;
-      border-radius: 1.5rem;
-      backdrop-filter: blur(1rem);
-    }
-
-    .project-details {
-      display: flex;
-      flex-direction: column;
-      width: 69%;
-      gap: 1rem;
-    }
-
-    .home-project-title {
-      font-size: 2rem;
-      color: #f5f5f7;
-      text-decoration: none;
-      gap: 0.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    . {
-      font-size: 0.875rem;
-      letter-spacing: 3px;
-      color: #f5f5f788;
-      font-weight: 400;
-    }
-
-    .text-description {
-      color: #868686;
-      user-select: none;
-      line-height: 1.6;
-      font-weight: 400;
-      font-size: 1.125rem;
-      flex: 1;
-    }
-
-    .thumbnail-container {
-      object-fit: cover;
-    }
-
-    .thumbnail {
-      max-width: 100%;
-      object-fit: cover;
-      user-select: none;
-      border-radius: 1rem;
-      gap: 2rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* animations */
-    @keyframes arrow {
-      0% {
-        transform: translateY(-5px);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      40% {
-        transform: translateY(5px);
-        animation-timing-function: cubic-bezier(0.8, 0, 0.5, 1);
-      }
-      100% {
-        transform: translateY(-5px);
-        animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
-      }
-    }
-
-    .arrow {
-      animation: arrow 3s infinite;
-      padding: 0 0.5rem;
-    }
-
-    /* media queries */
-    @media (max-width: 1500px) {
-      /* Project Wrapper */
-      .landing {
-        padding: 10rem calc(2rem + 5%);
-      }
-
-      .project-wrapper {
-        padding: calc(2rem + 5%);
-      }
-    }
-
-    @media (max-width: 1200px) {
-      /* Project Wrapper */
-      .project-details {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 1028px) {
-      /* Project Wrapper */
-      .project {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .project-wrapper {
-        padding: 0 1rem;
-      }
-
-      .thumbnail img {
-        aspect-ratio: 1/1;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .landing {
-        padding: 0 1rem;
-      }
-
-      .landing-direct {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      /* Project Wrapper */
-      .landing {
-        height: auto;
-        min-height: 100svh;
-        padding: 6rem 0;
-        position: relative;
-        padding: 0 1rem;
-      }
-
-      .project {
-        padding: 2rem 1rem;
-        gap: 1.5rem;
-      }
-
-      .tag {
-        font-size: 0.75rem;
-      }
-
-      .title {
-        font-size: 2rem;
-      }
-
-      .text-description {
-        font-size: 1rem;
-      }
-    }
-  </style>
 </Layout>
+<style>
+  :root {
+    --conditional-footer: rgb(29, 29, 31);
+  }
+
+  main {
+    padding: 100px 0;
+  }
+  .home {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 200px 0;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 68px;
+    color: var(--highlight-text);
+    font-weight: 500;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .heading-description {
+    color: var(--description-text);
+    user-select: none;
+    line-height: 29px;
+    font-weight: 600;
+    font-size: 21px;
+    flex: 1;
+    font-weight: 600;
+    display: inline;
+  }
+
+  .project-section {
+    background-color: var(--gray-background);
+    width: 1160px;
+    margin: 0 auto;
+    border-radius: 44px;
+  }
+
+  .project-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style-type: none;
+    padding: 100px 100px;
+  }
+
+  .project {
+    flex: 1 1 calc(50% - 10px); /* Make each project take up 50% width minus the gap */
+    max-width: calc(50% - 10px);
+    box-sizing: border-box;
+    height: 480px;
+  }
+
+  .project-content {
+    border-radius: 28px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .project:nth-child(2n + 1):nth-last-child(1) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-title {
+    position: relative;
+    color: var(--highlight-text);
+    user-select: none;
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .text-description {
+    color: var(--description-text);
+    user-select: none;
+    line-height: 29px;
+    font-weight: 600;
+    font-size: 21px;
+    flex: 1;
+    font-weight: 600;
+    display: inline;
+  }
+
+  .highlight {
+    color: var(--highlight-text);
+  }
+
+  .spotify {
+    background-image: url("images/spotify/spotifythumbnail.webp");
+  }
+
+  .sorette {
+    background-image: url("images/home/sorette-thumbnail.webp");
+  }
+
+  .mechmarket {
+    background-image: url("images/home/mechmarket-thumbnail.webp");
+  }
+  /* animations */
+  @keyframes arrow {
+    0% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    40% {
+      transform: translateY(5px);
+      animation-timing-function: cubic-bezier(0.8, 0, 0.5, 1);
+    }
+    100% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+    }
+  }
+
+  .arrow {
+    animation: arrow 3s infinite;
+    padding: 0 0.5rem;
+  }
+</style>

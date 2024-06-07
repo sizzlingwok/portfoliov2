@@ -12,6 +12,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 >
   <script>
     // gsap
+    import gsap from "gsap";
     document.addEventListener("astro:page-load", () => {
       gsap.fromTo(
         ".fadeup",
@@ -993,13 +994,13 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
 <style>
   :root {
-    --conditional-footer: rgb(29, 29, 31);
+    --conditional-footer: rgb(0, 0, 0);
   }
 
   h1 {
     font-size: 64px;
     line-height: 68px;
-    color: #f5f5f7;
+    color: var(--highlight-text);
     font-weight: 500;
     text-decoration: none;
     user-select: none;

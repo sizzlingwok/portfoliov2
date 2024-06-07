@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Editorial New";
+  src: url("/fonts/PPEditorialNew-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
   font-family: "SF Pro Display";
   src: url("/fonts/SF-Pro-Display-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -33,6 +40,10 @@
   font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.italic {
+  font-family: "Editorial New";
 }
 
 body {

@@ -26,6 +26,9 @@ dependencies:
   astro:
     specifier: ^4.4.9
     version: 4.4.9
+  astro-font:
+    specifier: ^0.0.81
+    version: 0.0.81
   gsap:
     specifier: ^3.12.5
     version: 3.12.5
@@ -1078,6 +1081,10 @@ packages:
     resolution: {integrity: sha512-xvsWESUJn0JN421Xb9MQw6AsMHRCUknCe0Wjlxvjud80mU4E6hQf1A6NzQKcYNmYw62MfzEtXc+badstZP3JpQ==}
     dependencies:
       printable-characters: 1.0.42
+    dev: false
+
+  /astro-font@0.0.81:
+    resolution: {integrity: sha512-VmK4kqzNpOAt2LASVbw2cbbe9sD6K30E7jOjqzHxHieHMTWInkdOljtzHmNGvKr3P0MeF4Wy+Z7j6CdETFecDA==}
     dev: false
 
   /astro@4.4.9:

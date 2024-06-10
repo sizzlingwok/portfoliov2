@@ -1,48 +1,7 @@
-@font-face {
-  font-family: "Editorial New";
-  src: url("/fonts/PPEditorialNew-MediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: block;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Semibold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: block;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -80,12 +39,4 @@ a {
   --highlight-text: rgb(245, 245, 247);
   --description-text: rgb(134, 134, 134);
   --gray-background: rgb(22, 22, 23);
-}
-.divider {
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.divider.content {
-  border-color: rgba(255, 255, 255, 0.08);
-  margin: 10rem 0;
 }

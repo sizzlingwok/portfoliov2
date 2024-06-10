@@ -230,6 +230,27 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         observer.observe(carousel);
       });
     });
+    // Function to set the width of .item to match the width of .grayheading
+    // Function to set the width of .item to match the width of .grayheading
+    function setItemWidth() {
+      var grayheading = document.querySelector(".grayheading");
+      var width = grayheading.getBoundingClientRect().width;
+
+      // Get the item element
+      var item = document.querySelector(".item");
+
+      // Cast the element to HTMLElement to ensure the 'style' property exists
+      var itemElement = item as HTMLElement;
+
+      // Set the width of the item to match the grayheading
+      itemElement.style.width = width + "px";
+    }
+
+    // Initial set width
+    setItemWidth();
+
+    // Listen for resize events and update width
+    window.addEventListener("resize", setItemWidth);
   </script>
   <main>
     <ProjectNav
@@ -1046,7 +1067,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     font-size: 17px;
     line-height: 20px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
     transition: background-color 0.3s;
     box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -1470,6 +1491,15 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       padding-bottom: 7.5rem !important;
     }
 
+    .carousel {
+      padding-left: calc((100%) / 2);
+      padding-right: calc((100%) / 2);
+    }
+
+    .item {
+      height: auto;
+    }
+
     .project-details {
       padding: 0 10%;
     }
@@ -1494,10 +1524,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
     .project-content {
       width: 100%;
-    }
-
-    .carousel {
-      padding-left: 10%;
     }
   }
 
@@ -1536,10 +1562,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   @media (max-width: 779px) {
     h1 {
       font-size: 40px;
-    }
-
-    .heading-description {
-      font-size: 14px;
     }
 
     .text-description {

@@ -137,7 +137,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .project-wrapper {
-    max-width: 100%;
+    max-width: 2560px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -150,14 +150,13 @@ import Layout from "../layouts/Layout.astro";
   .project {
     box-sizing: border-box;
     flex-wrap: wrap;
-    border-radius: 16px;
+
     width: calc(50% - 10px);
 
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
     border: 1px solid #f5f5f715;
     background-color: #86868b10;
-    border-radius: 16px;
 
     transition: border-color 0.3s ease;
   }
@@ -246,16 +245,13 @@ import Layout from "../layouts/Layout.astro";
 
   .project-bg.spotify-party {
     background-image: url("images/spotify/spotifythumbnail.webp");
-    border-radius: 16px;
   }
 
   .sorette {
     background-image: url("images/home/sorette-thumbnail.webp");
-    border-radius: 16px;
   }
 
   .mechmarket {
     background-image: url("images/home/mechmarket-thumbnail.webp");
-    border-radius: 16px;
   }
 </style>

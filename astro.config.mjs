@@ -8,13 +8,13 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "passthrough",
   }),
-  vite: {
-    ssr: {
-      external: ["buffer", "path", "fs", "os", "crypto", "async_hooks"].map(
-        (i) => `node:${i}`
-      ),
-    },
-  },
+  // vite: {
+  //   ssr: {
+  //     external: ["buffer", "path", "fs", "os", "crypto", "async_hooks"].map(
+  //       (i) => `node:${i}`
+  //     ),
+  //   },
+  // },
   site: "https://andyduong.work",
   integrations: [react(), sitemap()],
 });

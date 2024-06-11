@@ -69,9 +69,9 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </li>
         <li class="project">
-          <a href="/spotify-party">
+          <a href="/sorette">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg sorette"></div>
               <div class="project-details">
                 <p class="project-title">sorette</p>
                 <div class="project-description">
@@ -83,9 +83,9 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </li>
         <li class="project">
-          <a href="/spotify-party">
+          <a href="/mechmarket">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg mechmarket"></div>
               <div class="project-details">
                 <p class="project-title">mechmarket</p>
                 <div class="project-description">
@@ -97,14 +97,14 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </li>
         <li class="project">
-          <a href="/spotify-party">
+          <a href="/dillo">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg dillo"></div>
               <div class="project-details">
                 <p class="project-title">Dillo</p>
                 <div class="project-description">
-                  Enhancing the group listening experience for an immersive
-                  music exploration
+                  Integrating ASL into family bedtime reading to support deaf
+                  and hard of hearing children
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ import Layout from "../layouts/Layout.astro";
   .project {
     box-sizing: border-box;
     flex-wrap: wrap;
-
+    min-width: 440px;
     width: calc(50% - 10px);
 
     backdrop-filter: blur(1rem);
@@ -280,11 +280,40 @@ import Layout from "../layouts/Layout.astro";
     background-image: url("images/spotify/spotifythumbnail.webp");
   }
 
-  .sorette {
-    background-image: url("images/home/sorette-thumbnail.webp");
+  .project-bg.sorette {
+    background-image: url("images/sorette/sorettethumbnail.webp");
   }
 
-  .mechmarket {
-    background-image: url("images/home/mechmarket-thumbnail.webp");
+  .project-bg.mechmarket {
+    background-image: url("images/mechmarket/mechmarketthumbnail.webp");
+  }
+
+  .project-bg.dillo {
+    background-image: url("images/dillo/dillothumbnail.webp");
+  }
+
+  @media (max-width: 1777px) {
+    .project-details {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 958px) {
+    .heading-wrapper {
+      padding: 300px 20px 200px 20px;
+    }
+
+    .project-wrapper {
+      justify-content: center;
+    }
+
+    .heading-description,
+    .project-description {
+      font-size: 17px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
   }
 </style>

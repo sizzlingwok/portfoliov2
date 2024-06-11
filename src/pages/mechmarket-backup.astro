@@ -1,0 +1,748 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectHeader from "../components/ProjectHeader.astro";
+import ProjectNav from "../components/ProjectNav.astro";
+import ImageHeader from "../components/ImageHeader.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import VideoPreview from "../components/VideoPreview.astro";
+---
+
+<meta property="og:image" content="/images/home/mechmarket.webp" />
+<Layout
+  title="mechmarket | Andy Duong"
+  description="Mobile marketplace app dedicated to buying and selling keyboard related products"
+  canonical="https://andyduong.work/mechmarket"
+>
+  <main>
+    <ProjectHeader
+      tag="MOBILE DESIGN"
+      title="mechmarket"
+      description1="mechmarket is a dedicated marketplace app where users can buy and sell keyboard related products. mechmarket currently thrives as a subreddit with close to 300,000 members. Recognizing the potential for improvement, I believe the development of a dedicated mobile app would not only streamline the buying and selling experience, but also unlock a plethora of new features that were previously hindered by the traditional scope of Reddit's functionality."
+      description2="I managed the entire user experience process for this project from start to finish over the course of 10 weeks. I designed and delivered a working prototype for mechmarket."
+      role="UI/UX Designer"
+      tools="Figma, Google Forms, Optimal Workshop"
+      timeline="10 weeks (Mar - May 2023)"
+      videoSrc="..//videos/mechmarket/mmoffer.mp4"
+      prototypeLink="https://www.figma.com/proto/o8NlugV7QcyQ7C078psBlQ/mechmarket?page-id=0%3A1&type=design&node-id=6-171&viewport=626%2C762%2C0.34&t=ilETHb1OZwM2IwUG-1&scaling=scale-down&starting-point-node-id=197%3A12181&mode=design"
+    />
+    <article class="project-content-wrapper">
+      <ProjectNav
+        prevLink="/sorette"
+        prevText="sorette"
+        nextLink="/spotify-party"
+        nextText="Spotify Party"
+      />
+      <ImageHeader
+        image1={{
+          src: "images/mechmarket/preview1.webp",
+          description: "mechmarket home screen",
+          alt: "mechmarket home screen",
+        }}
+        image2={{
+          src: "images/mechmarket/preview2.webp",
+          description: "Product page",
+          alt: "Product page",
+        }}
+        image3={{
+          src: "images/mechmarket/preview3.webp",
+          description: "Market listings",
+          alt: "Market listings",
+        }}
+        image4={{
+          src: "images/mechmarket/preview4.webp",
+          description: "Offer screen",
+          alt: "Offer screen",
+        }}
+      />
+      <section class="project-section">
+        <SectionHeading
+          headerTag="FINAL SOLUTION"
+          sectionTitle="A dedicated mobile marketplace app featuring a better user experience for buying and selling keyboard related products"
+        />
+        <div class="preview-wrapper">
+          <VideoPreview videoSrc="videos/mechmarket/mmmarketdata.mp4">
+            <Fragment slot="description"
+              ><span style="color: #e3e3e8;">View current market trends</span>
+              to get a better estimate of current prices before buying and selling
+            </Fragment>
+          </VideoPreview>
+          <VideoPreview
+            videoSrc="videos/mechmarket/mmoffer.mp4"
+            comboclass="reverse"
+          >
+            <Fragment slot="description">
+              <span style="color: #e3e3e8;">
+                Effortlessly streamline transactions by sending and receiving
+                offers,
+              </span>
+              simplifying your deal-making process for optimal efficiency
+            </Fragment>
+          </VideoPreview>
+          <VideoPreview videoSrc="videos/mechmarket/mmfilters.mp4">
+            <Fragment slot="description">
+              Effortlessly locate the products you desire with convenient
+              <span style="color: #e3e3e8;"
+                >access to filters that refine and customize your search
+                criteria</span
+              >
+            </Fragment>
+          </VideoPreview>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USER RESEARCH"
+          sectionTitle="Evaluating the buying and selling experience on the mechmarket subreddit"
+        />
+        <div class="content-details">
+          <span class="title">First click test</span>
+          <p class="text-description">
+            In the initial phase, I assessed the ability of <span
+              style="color: #e3e3e8;">8 participants</span
+            > to navigate the mechmarket subreddit. Testing two distinct user flows,
+            I aimed to determine their proficiency in completing a purchase or listing
+            an item for sale. It's important to highlight that participants had no
+            prior experience with the mechmarket subreddit in this specific test.
+          </p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="img-center"
+            src="/images/mechmarket/surveyresults1.webp"
+            alt=""
+            draggable="false"
+          />
+        </div>
+        <div class="content-details">
+          <span class="title">Survey results</span>
+          <p class="text-description">
+            Approximately <span style="color: #e3e3e8;">13%</span> of the users were
+            able to complete both tasks. This insight suggests that the user flow
+            may be too difficult for new users.
+          </p>
+        </div>
+        <div class="image-wrapper">
+          <div class="image-row">
+            <img
+              class="img-center"
+              src="images/mechmarket/surveyresults2.webp"
+              alt=""
+              draggable="false"
+            />
+          </div>
+        </div>
+        <div class="content-details">
+          <div class="title">A word from our participants</div>
+          <div class="border-box">
+            <p class="box-content">
+              "I wasn't too familiar with buying and selling on Reddit. I only
+              use it to browse content surrounding communities that pique my
+              interests.
+              <span style="color: #ddddde;">
+                Reddit is the last place I'd look at for marketplace activities"
+              </span>
+            </p>
+            <p class="box-content">
+              "Exploring community guides and rules provided insights, but as a
+              new user,
+              <span style="color: #ddddde;">
+                the numerous steps felt overwhelming, making a smooth experience
+                seem intricate, especially on mobile
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="PROBLEM STATEMENT"
+          sectionTitle="How can a dedicated mobile marketplace app effectively address and enhance the user experience, overcoming the challenges identified in the current Reddit platform?"
+        />
+        <div class="content-details">
+          <div class="title">Insights</div>
+          <div class="border-box">
+            <div class="box-content">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/mechmarket/icons/confused.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Lack of User Intuitiveness</div>
+                  <p>
+                    The buying and selling process on Reddit is not user
+                    friendly and poses challenges to new users
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-content">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/mechmarket/icons/shop.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Limited Functionality</div>
+                  <p>
+                    Reddit's platform is primarily designed for discussion
+                    rather than commerce. As a result, features and tools are
+                    limited compared to dedicated e-commerce platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USER PERSONA"
+          sectionTitle="Introducing Amy & Alex"
+        />
+        <div class="content-details">
+          <div class="title">A look from a different perspective</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/mechmarket/amy.webp"
+                    alt=""
+                    class="icon large"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Amy</div>
+                  <p>
+                    Amy is new to the mechanical keyboard hobby. She wants to
+                    acquire a new keyboard with a budget cap of $500. However,
+                    she finds the current lack of price filtering options quite
+                    frustrating on the subreddit. The absence of this feature
+                    makes it cumbersome for her to navigate through various
+                    products, as they may not align with her specific budget
+                    constraints.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/mechmarket/alex.webp"
+                    alt=""
+                    class="icon large"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Alex</div>
+                  <p>
+                    Alex is a veteran on mechmarket. He loves building and
+                    collecting keyboards. He wishes there was a dedicated mobile
+                    app where he can easily track and view market data. This
+                    would spare him the effort of needing to consistently sift
+                    through numerous posts on the subreddit, making it seamless
+                    to obtain an accurate overview of prevailing market prices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="COMPETITIVE ANALYSIS"
+          sectionTitle="Analyzing Popular E-commerce platforms"
+        />
+        <div class="content-details">
+          <span class="title">Digging deeper</span>
+          <p class="text-description">
+            I conducted a comprehensive analysis of top marketplace apps to
+            inspire enhanced design concepts for mechmarket. This involved a
+            evaluation of their user interfaces and userflows, aimed at gaining
+            deeper insights into staple design principles.
+          </p>
+        </div>
+        <div class="image-row nowrap">
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/mechmarket/stockx.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/mechmarket/poshmark.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/mechmarket/goat.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+        </div>
+        <div class="content-details">
+          <div class="title">Findings</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/mechmarket/icons/filter.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">Filtering Options</div>
+                <p>
+                  These leading marketplace platforms offer users the capability
+                  to sort by crucial metrics like price range. In contrast,
+                  mechmarket lacks this functionality, resulting in notable
+                  limitations in its filtering options
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/mechmarket/icons/imageupload.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">Direct Image Upload</div>
+                <p>
+                  These platforms empower users to effortlessly upload and
+                  capture images of their products for sale, eliminating the
+                  need for third-party image hosting services currently required
+                  on mechamarket
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/mechmarket/icons/offer.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">Offers</div>
+                <p>
+                  These platforms allow users to propose a price for a product,
+                  a feature currently unavailable on mechmarket. Currently,
+                  users must engage directly with sellers to discuss pricing
+                  options
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="INFORMATION ARCHITECTURE"
+          sectionTitle="Laying out the floor plan"
+        />
+        <div class="content-details">
+          <span class="title">Creating the flow</span>
+          <p class="text-description">
+            Given the confined space in mobile design as opposed to desktop, I
+            had to carefully consider actions that are touch-friendly and
+            effortlessly tappable. My goal was to create a streamlined user flow
+            that offers easy navigation.
+          </p>
+        </div>
+        <ImageHeader
+          image1={{
+            src: "images/mechmarket/sitemap.webp",
+            description: "Sitemap",
+            alt: "Sitemap",
+          }}
+          image2={{
+            src: "images/mechmarket/userflow1.webp",
+            description: "User purchases a product",
+            alt: "User purchases a product",
+          }}
+          image3={{
+            src: "images/mechmarket/userflow2.webp",
+            description: "User sells a product",
+            alt: "User sells a product",
+          }}
+          image4={{
+            src: "images/mechmarket/userflow3.webp",
+            description: "User edits a submitted offer",
+            alt: "User edits a submitted offer",
+          }}
+        />
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="WIREFRAMING"
+          sectionTitle="Low-mid fidelity prototypes"
+        />
+        <div class="content-details">
+          <span class="title">A look back</span>
+          <p class="text-description">
+            These initial designs mark the beginning stages of mechmarket's
+            development journey. Informed by user surveys and ongoing design
+            iterations, the evolution of the design reflects a collaborative
+            effort driven by real-world feedback and continuous refinement
+          </p>
+        </div>
+        <ImageHeader
+          image1={{
+            src: "images/mechmarket/wireframe1.webp",
+          }}
+          image2={{
+            src: "images/mechmarket/wireframe2.webp",
+          }}
+          image3={{
+            src: "images/mechmarket/wireframe3.webp",
+          }}
+          image4={{
+            src: "images/mechmarket/wireframe4.webp",
+          }}
+        />
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USABILITY TESTING"
+          sectionTitle="Evaluating the mechmarket prototype"
+        />
+        <div class="content-details">
+          <span class="title">First click test</span>
+          <p class="text-description">
+            In a first-click test with the <span style="color: #e3e3e8;"
+              >same 8 participants,</span
+            >
+            I evaluated their grasp of the mechmarket prototype, emphasizing the
+            same initial phase tests. My aim was to determine if there were any enhancements
+            in user experience compared to their previous interactions with the mechmarket
+            subreddit. Below were the results.
+          </p>
+        </div>
+        <div class="image-wrapper gap">
+          <img
+            class="img-center"
+            src="images/mechmarket/surveyresults3.webp"
+            alt=""
+            draggable="false"
+          />
+          <img
+            class="img-center"
+            src="images/mechmarket/surveyresults4.webp"
+            alt=""
+            draggable="false"
+          />
+        </div>
+        <div class="content-details">
+          <span class="title">Significant improvement over the initial 13%</span
+          >
+          <p class="text-description">
+            With the completion rate exceeding <span style="color: #e3e3e8;"
+              >88%</span
+            >, the findings strongly suggest that the mechmarket prototype
+            excels in intuitiveness and user-friendliness when compared to the
+            Reddit platform. Unanimously, all participants agree that the
+            concept of a dedicated mobile app for mechmarket is highly
+            favorable.
+          </p>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading headerTag="REFLECTION" sectionTitle="Wrapping up" />
+        <div class="content-details">
+          <div class="title">Retrospective Insights</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="subheading">Project Takeaways</div>
+                <p>
+                  Developing the mechmarket app was my first personal project
+                  after completing the Google UX Design course. This endeavor
+                  provided invaluable insights into the needs of both novices
+                  and seasoned users within the keyboard community, fostering my
+                  growth as a Product Designer. Moreover, it served as a
+                  platform for honing my skills in Figma, where I delved into
+                  techniques like crafting scrollable content, constructing
+                  components, and leveraging the auto-layout feature. This
+                  enriching journey not only elevated my design proficiency but
+                  also enriched my understanding of delivering user-centric
+                  experiences
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="subheading">Things I would do differently</div>
+                <p>
+                  Reflecting on the project, I recognize the importance of
+                  investing more time in brainstorming and refining the
+                  project's direction during the planning phase. This would have
+                  prevented the need for frequent adjustments during the
+                  implementation of new features. Moving forward, these insights
+                  will inform my approach, leading to a more streamlined and
+                  effective execution in future projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .project-content-wrapper {
+      background-color: #111111;
+      padding: 10rem 00;
+      width: 100%;
+      max-width: 90rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dark-glassbox {
+      border-radius: 1.5rem;
+      backdrop-filter: blur(1rem);
+      border: 1px solid #f5f5f715;
+      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    .project-section {
+      display: flex;
+      flex-direction: column;
+      gap: 7rem;
+      max-width: 90rem;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: 2rem;
+      color: #f5f5f7;
+      text-decoration: none;
+      user-select: none;
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .text-description {
+      color: #868686;
+      user-select: none;
+      line-height: 1.6;
+      font-weight: 400;
+      font-size: 1.125rem;
+      flex: 1;
+      font-weight: 400;
+      display: inline;
+    }
+
+    .content-details {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+    }
+
+    .subheading {
+      font-size: 1.5rem;
+      color: #f5f5f7;
+      text-decoration: none;
+      user-select: none;
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .image-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 3rem 0;
+    }
+
+    .image-wrapper.row {
+      gap: 3rem;
+    }
+
+    .image-container {
+      margin: 0 auto;
+    }
+
+    .image-row {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      gap: 5rem;
+    }
+
+    .preview-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+
+    .border-box {
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      width: 50%;
+      overflow: hidden;
+    }
+
+    .border-box.gap {
+      gap: 1.5rem;
+    }
+
+    .box-content {
+      background: #181818;
+      padding: 2rem;
+      color: #868686;
+      user-select: none;
+      line-height: 1.6;
+      font-weight: 430;
+      font-size: 1.125rem;
+      flex: 1;
+    }
+
+    .box-content.outline {
+      background: none;
+      border: 1px solid #f5f5f715;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    .content-vert {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .content-icon {
+      padding-bottom: 1rem;
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .content-hor {
+      display: flex;
+      flex-direction: row;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .no-padding {
+      padding: 0 0 0 0;
+    }
+
+    .icon.large {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .project-image {
+      max-width: 100%;
+      object-fit: cover;
+      user-select: none;
+      border-radius: 1rem;
+    }
+
+    .img-center {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* media queries */
+    @media (max-width: 1500px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 10rem calc(2rem + 5%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 5rem 1rem;
+      }
+
+      .preview-wrapper,
+      .project-section {
+        gap: 5rem;
+      }
+
+      .divider.content {
+        margin: 5rem 0;
+      }
+
+      .content-details {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .image-wrapper {
+        padding: 0;
+      }
+
+      .border-box {
+        width: auto;
+      }
+
+      .box-content {
+        font-size: 1rem;
+      }
+
+      .subheading {
+        font-size: 1.25rem;
+      }
+
+      .content-hor {
+        flex-direction: column;
+        align-items: normal;
+      }
+
+      .image-row {
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .image-row.nowrap {
+        flex-wrap: nowrap;
+      }
+
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .text-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Layout>

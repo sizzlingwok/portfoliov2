@@ -1,0 +1,778 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectHeader from "../components/ProjectHeader.astro";
+import ProjectNav from "../components/ProjectNav.astro";
+import ImageHeader from "../components/ImageHeader.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import VideoPreview from "../components/VideoPreview.astro";
+---
+
+<meta property="og:image" content="/images/home/sorette.webp" />
+<Layout
+  title="sorette | Andy Duong"
+  description="Cloud sharing platform streamlining music collaboration with others"
+  canonical="https://andyduong.work/sorette"
+>
+  <main>
+    <ProjectHeader
+      tag="UX DESIGN"
+      title="sorette"
+      description1="sorette is an innovative desktop cloud-sharing service designed for music professionals, offering seamless collaboration opportunities. sorette provides a suite of crafted tools and customization options to streamline workflows, simplify file organization, and foster a user-friendly environment conducive to enhanced productivity."
+      description2="The existing cloud-sharing platforms are deficient in providing specialized collaboration tools and features that are crucial for an enhanced user experience. I focused on designing sorette to create features that would adapt to the ease of collaborating with others."
+      role="UI/UX Designer"
+      tools="Figma, Google Forms, Optimal Workshop"
+      timeline="13 weeks (Mar - June 2023)"
+      videoSrc="..//videos/sorette/sorettesearch.mp4"
+      prototypeLink="https://www.figma.com/proto/gAKgOfJEIndvJweTn2Yg0l/sorette?page-id=0%3A1&type=design&node-id=1-51&viewport=-1204%2C721%2C0.42&scaling=scale-down&starting-point-node-id=1%3A51"
+    />
+    <article class="project-content-wrapper">
+      <ProjectNav
+        prevLink="/spotify-party"
+        prevText="Spotfy Party"
+        nextLink="/mechmarket"
+        nextText="mechmarket"
+      />
+      <ImageHeader
+        image1={{
+          src: "images/sorette/preview1.webp",
+          description: "sorette home screen",
+          alt: "sorette home screen",
+        }}
+        image2={{
+          src: "images/sorette/preview2.webp",
+          description: "Projects page",
+          alt: "Group session collaborative playlist page",
+        }}
+        image3={{
+          src: "images/sorette/preview3.webp",
+          description: "Direct messages screen",
+          alt: "User is invited to a group session",
+        }}
+        image4={{
+          src: "images/sorette/preview4.webp",
+          description: "Notifcation center",
+          alt: "User views curated group session playlist",
+        }}
+      />
+      <section class="project-section">
+        <SectionHeading
+          headerTag="FINAL SOLUTION"
+          sectionTitle="Creating a cloud-sharing service app equipped with specialized collaboration tools to bridge the gaps in features found in current platforms"
+        />
+        <div class="preview-wrapper">
+          <VideoPreview videoSrc="videos/sorette/sorettesearch.mp4">
+            <Fragment slot="description">
+              Boost productivity with <span style="color: #e3e3e8;"
+                >robust file tagging and powerful search features. Organize and
+                manage files effortlessly</span
+              >
+            </Fragment>
+          </VideoPreview>
+          <VideoPreview
+            videoSrc="videos/sorette/soretteinvite.mp4"
+            comboclass="reverse"
+          >
+            <Fragment slot="description">
+              <span style="color: #e3e3e8;">
+                Invite others for a dynamic collaborative experience.
+              </span>
+              Stay informed about project changes while fostering a collaborative
+              team environment
+            </Fragment>
+          </VideoPreview>
+          <VideoPreview videoSrc="videos/sorette/notifcationcenter.mp4">
+            <Fragment slot="description"
+              ><span style="color: #e3e3e8;"
+                >Streamline engagements and collaborations with a centralized
+                notification hub,</span
+              >
+              enhancing organization and responsiveness
+            </Fragment>
+          </VideoPreview>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USER RESEARCH"
+          sectionTitle="Evaluating the current user collaboration experience"
+        />
+        <div class="content-details">
+          <span class="title">Initial survey</span>
+          <p class="text-description">
+            In the preliminary stage, I conducted a comprehensive evaluation of
+            user feedback regarding the current collaborative user flow. These
+            participants have experience with various platforms for sharing
+            files, including cloud services. I actively engaged with <span
+              style="color: #e3e3e8;">5 participants</span
+            > to capture their valuable thoughts and insights.
+          </p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="img-center"
+            src="/images/sorette/surveyresults1.webp"
+            alt=""
+            draggable="false"
+          />
+        </div>
+        <div class="content-details">
+          <span class="title">Survey results</span>
+          <div class="text-box-wrap">
+            <p class="text-description">
+              <span style="color: #e3e3e8;">80%</span> of users encountered struggles
+              in collaborating with others. This indicates that there are critical
+              issues that could pertain to workflow issues, communication challenges,
+              user experience concerns, or resource limitations.
+            </p>
+            <div class="border-box noflex">
+              <p class="box-content">
+                "Collaborating with others poses challenges for me, especially
+                when it comes to
+                <span style="color: #ddddde;">
+                  keeping track of project revisions and managing comments from
+                  team members"
+                </span>
+              </p>
+              <p class="box-content">
+                "Coordinating with numerous individuals simultaneously can
+                become confusing, as I often find myself
+                <span style="color: #ddddde;">
+                  needing to maintain a history of bookmarks or shared folder
+                  links for future reference"
+                </span>
+              </p>
+              <p class="box-content">
+                "Receiving email attachments from others
+                <span style="color: #ddddde;">
+                  can get lost especially on top of other messages and emails"
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="PROBLEM STATEMENT"
+          sectionTitle="How can we develop a user-centric platform that not only addresses the challenges of music collaboration but also introduce innovative features to enhance the overall collaborative experience?"
+        />
+        <div class="content-details">
+          <div class="title">Solving the issues</div>
+          <div class="border-box">
+            <div class="box-content">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/sorette/icons/files.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">
+                    Difficulty in managing multiple versions of files
+                  </div>
+                  <p>
+                    Users struggle to maintain and manage up-to-date files with
+                    other collaborators
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-content">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/sorette/icons/nav.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Navigation challenges</div>
+                  <p>
+                    Coordinating with others can be confusing, especially when
+                    users are tasked with managing many shared folder links
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-content">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/sorette/icons/message.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Fragmented Collaboration</div>
+                  <p>
+                    Individuals often find themselves relying on disparate
+                    communication services and tools to coordinate and manage
+                    collaborative efforts
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USER PERSONA"
+          sectionTitle="Introducing Bryson & Taylor"
+        />
+        <div class="content-details">
+          <div class="title">A look from a different perspective</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/sorette/bryson.webp"
+                    alt=""
+                    class="icon large"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Bryson</div>
+                  <p>
+                    Bryson is a talented R&B artist who finds inspiration in
+                    exploring different producers' beats to kickstart his
+                    songwriting. His music revolves around slow tempo beats,
+                    creating a mesmerizing and soulful vibe. However, he's
+                    frustrated by the lack of an option to filter files by BPM
+                    and genre, making it challenging to find the right fit for
+                    his artistic vision.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-hor">
+                <div class="content-icon no-padding">
+                  <img
+                    src="images/sorette/taylor.webp"
+                    alt=""
+                    class="icon large"
+                  />
+                </div>
+                <div class="content-vert">
+                  <div class="subheading">Taylor</div>
+                  <p>
+                    Edward is an avid music listener who loves to play songs
+                    with his friends. He recently found out about the group
+                    session feature sorette implemented. He likes the idea of
+                    such feature, but finds it tedious to constantly invite his
+                    friends through links to listen along with him. He wishes
+                    there was a better invitation system in place so he can
+                    continue to invite the same friends to his sessions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="COMPETITIVE ANALYSIS"
+          sectionTitle="Analyzing cloud platforms"
+        />
+        <div class="content-details">
+          <span class="title">Diving deeper</span>
+          <p class="text-description">
+            I performed a thorough competitive analysis to gain comprehensive
+            insights into the features and user experiences offered by popular
+            cloud platforms like Google Drive, Dropbox, and OneDrive.
+          </p>
+        </div>
+        <div class="image-row nowrap">
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/sorette/googledrive.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/sorette/dropbox.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+          <figure class="image-container">
+            <img
+              class="project-image"
+              src="images/sorette/onedrive.webp"
+              alt=""
+              draggable="false"
+            />
+          </figure>
+        </div>
+        <div class="content-details">
+          <div class="title">Findings</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/sorette/icons/slowdownload.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">Audio playback</div>
+                <p>
+                  Each platform experiences sluggish playback streaming, with a
+                  brief delay as audio files undergo buffering
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/sorette/icons/filters.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">Limited filter capabilities</div>
+                <p>
+                  While these platforms provided basic filters, these platforms
+                  lack advanced options, such as genre or BPM filtering.
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="content-icon">
+                  <img
+                    src="images/sorette/icons/tag.webp"
+                    alt=""
+                    class="icon"
+                  />
+                </div>
+                <div class="subheading">No tagging system</div>
+                <p>
+                  The lack of tag-based organization hinders users from
+                  efficiently navigating and organizing their files.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <SectionHeading
+          headerTag="INFORMATION ARCHITECTURE"
+          sectionTitle="Laying out the floor plan"
+        />
+        <div class="content-details">
+          <span class="title">Creating the flow</span>
+          <p class="text-description">
+            I developed a thorough sitemap and created three user flows for
+            sorette. My goal was to ensure that each interaction was easy to
+            follow, providing clear guidance through every step of the process.
+          </p>
+        </div>
+        <ImageHeader
+          image1={{
+            src: "images/sorette/sitemap.webp",
+            description: "Sitemap",
+            alt: "Sitemap",
+          }}
+          image2={{
+            src: "images/sorette/userflow1.webp",
+            description: "User initiates a group session and invites friends",
+            alt: "User initiates a group session and invites friends",
+          }}
+          image3={{
+            src: "images/sorette/userflow2.webp",
+            description: "User is invited to a group session",
+            alt: "User is invited to a group session",
+          }}
+          image4={{
+            src: "images/sorette/userflow3.webp",
+            description: "User views curated group session playlist",
+            alt: "User views curated group session playlist",
+          }}
+        />
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="WIREFRAMING"
+          sectionTitle="Low-mid fidelity prototypes"
+        />
+        <div class="content-details">
+          <span class="title">A look back</span>
+          <p class="text-description">
+            These were the initial designs I created when I first began working
+            on sorette. While the general layout has remained largely unchanged,
+            it's incredible to see how far it has come
+          </p>
+        </div>
+        <ImageHeader
+          image1={{
+            src: "images/sorette/wireframe1.webp",
+          }}
+          image2={{
+            src: "images/sorette/wireframe2.webp",
+          }}
+          image3={{
+            src: "images/sorette/wireframe3.webp",
+          }}
+          image4={{
+            src: "images/sorette/wireframe4.webp",
+          }}
+        />
+      </section>
+      <section class="project-section">
+        <SectionHeading
+          headerTag="USABILITY TESTING"
+          sectionTitle="Evaluating the sorette prototype"
+        />
+        <div class="content-details">
+          <span class="title">First click test</span>
+          <p class="text-description">
+            I conducted an initial first-click test with <span
+              style="color: #e3e3e8;">7 new participants</span
+            > to assess their proficiency in navigating tasks using the sorette prototype.
+            These participants brought diverse experience levels with various cloud
+            platforms for music collaboration. They underwent testing across <span
+              style="color: #e3e3e8;">three userflow scenarios:</span
+            > uploading a file and inviting others to listen, inviting others to
+            a project, and adding additional tags to a file.
+          </p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="img-center"
+            src="/images/sorette/firstclicktest.webp"
+            alt=""
+            draggable="false"
+          />
+        </div>
+        <div class="content-details">
+          <span class="title">User feedback</span>
+          <div class="text-box-wrap">
+            <div class="border-box">
+              <p class="box-content">
+                "I really like the modern design of sorette. It gives the
+                platform a brand new look from traditional cloud platforms"
+              </p>
+              <p class="box-content">
+                "I love how you can tag each indiviudal file. It will definitely
+                help simplify the process of sorting and categorizing files"
+              </p>
+              <p class="box-content">
+                "The Projects tab is a music collaborator's dream. I'm thrilled
+                with the simplicity of the interface, which elegantly displays
+                all the projects I'm currently collaborating on"
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="image-row">
+          <img
+            class="img-center"
+            src="images/sorette/surveyresults2.webp"
+            alt=""
+            draggable="false"
+          />
+          <img
+            class="img-center"
+            src="images/sorette/surveyresults3.webp"
+            alt=""
+            draggable="false"
+          />
+        </div>
+      </section>
+      <section class="project-section">
+        <SectionHeading headerTag="REFLECTION" sectionTitle="Wrapping up" />
+        <div class="content-details">
+          <div class="title">Retrospective Insights</div>
+          <div class="border-box gap">
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="subheading">Project Takeaways</div>
+                <p>
+                  sorette represents the beginning of my venture into crafting
+                  desktop web designs. It provided a canvas for channeling my
+                  passion towards addressing real-world challenges and
+                  strategically prioritizing features to deliver significant
+                  value to users. Implementing various prototyping features
+                  fortified my proficiency in utilizing Figma's capabilities. In
+                  summary, I found immense joy in designing sorette, and I
+                  sincerely hope that you thoroughly enjoy exploring its
+                  prototype!
+                </p>
+              </div>
+            </div>
+            <div class="box-content outline">
+              <div class="content-vert">
+                <div class="subheading">Things I would do differently</div>
+                <p>
+                  Looking back, one thing I would do differently is improve my
+                  time management. Juggling both sorette and mechmarket
+                  simultaneously was an exhilarating experience. Allocating
+                  specific time blocks for each project would have allowed me to
+                  better balance my efforts and ensure more focused progress on
+                  both fronts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <style>
+    .project-content-wrapper {
+      background-color: #111111;
+      padding: 10rem 00;
+      width: 100%;
+      max-width: 90rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dark-glassbox {
+      border-radius: 1.5rem;
+      backdrop-filter: blur(1rem);
+      border: 1px solid #f5f5f715;
+      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    .project-section {
+      display: flex;
+      flex-direction: column;
+      gap: 7rem;
+      max-width: 90rem;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: 2rem;
+      color: #f5f5f7;
+      text-decoration: none;
+      user-select: none;
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .text-description {
+      color: #868686;
+      user-select: none;
+      line-height: 1.6;
+      font-weight: 400;
+      font-size: 1.125rem;
+      flex: 1;
+      font-weight: 400;
+      display: inline;
+    }
+
+    .content-details {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+    }
+
+    .subheading {
+      font-size: 1.5rem;
+      color: #f5f5f7;
+      text-decoration: none;
+      user-select: none;
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .image-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 3rem 0;
+    }
+
+    .image-wrapper.row {
+      gap: 3rem;
+    }
+
+    .image-row {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      gap: 5rem;
+    }
+
+    .preview-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+    }
+
+    .border-box {
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .border-box.gap {
+      gap: 1.5rem;
+    }
+
+    .border-box.noflex {
+      flex: none;
+    }
+
+    .box-content {
+      background: #181818;
+      padding: 2rem;
+      color: #868686;
+      user-select: none;
+      line-height: 1.6;
+      font-weight: 430;
+      font-size: 1.125rem;
+      flex: 1;
+    }
+
+    .box-content.outline {
+      background: none;
+      border: 1px solid #f5f5f715;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    .content-vert {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .text-box-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .content-icon {
+      padding-bottom: 1rem;
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .content-hor {
+      display: flex;
+      flex-direction: row;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .no-padding {
+      padding: 0 0 0 0;
+    }
+
+    .icon.large {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .project-image {
+      max-width: 100%;
+      object-fit: cover;
+      user-select: none;
+      border-radius: 1rem;
+    }
+
+    .img-center {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* media queries */
+    @media (max-width: 1500px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 10rem calc(2rem + 5%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Project Wrapper */
+      .project-content-wrapper {
+        padding: 5rem 1rem;
+      }
+
+      .preview-wrapper,
+      .project-section {
+        gap: 5rem;
+      }
+
+      .divider.content {
+        margin: 5rem 0;
+      }
+
+      .content-details {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .image-wrapper {
+        padding: 0;
+      }
+
+      .border-box {
+        width: auto;
+      }
+
+      .box-content {
+        font-size: 1rem;
+      }
+
+      .subheading {
+        font-size: 1.25rem;
+      }
+
+      .content-hor {
+        flex-direction: column;
+        align-items: normal;
+      }
+
+      .image-row {
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .image-row.nowrap {
+        flex-wrap: nowrap;
+      }
+
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .text-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Layout>

@@ -13,71 +13,71 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   <script>
     // gsap
     import gsap from "gsap";
-    document.addEventListener("astro:page-load", () => {
-      gsap.fromTo(
-        ".fadeup",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-      gsap.fromTo(
-        ".fadeup-d",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-          delay: 0.1,
-        }
-      );
-      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+    // document.addEventListener("astro:page-load", () => {
+    //   gsap.fromTo(
+    //     ".fadeup",
+    //     {
+    //       opacity: 0,
+    //       y: 25,
+    //     },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       duration: 0.5,
+    //       ease: "cubic-bezier(0,0,0.5,1)",
+    //     }
+    //   );
+    //   gsap.fromTo(
+    //     ".fadeup-d",
+    //     {
+    //       opacity: 0,
+    //       y: 25,
+    //     },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       duration: 0.5,
+    //       ease: "cubic-bezier(0,0,0.5,1)",
+    //       delay: 0.1,
+    //     }
+    //   );
+    //   const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
 
-      elements.forEach((element) => {
-        gsap.fromTo(
-          element,
-          {
-            opacity: 0,
-            y: 25,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "cubic-bezier(0,0,0.5,1)",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse",
-              markers: true,
-            },
-          }
-        );
-      });
+    //   elements.forEach((element) => {
+    //     gsap.fromTo(
+    //       element,
+    //       {
+    //         opacity: 0,
+    //         y: 25,
+    //       },
+    //       {
+    //         opacity: 1,
+    //         y: 0,
+    //         duration: 0.5,
+    //         ease: "cubic-bezier(0,0,0.5,1)",
+    //         scrollTrigger: {
+    //           trigger: element,
+    //           start: "top 80%",
+    //           end: "bottom 20%",
+    //           toggleActions: "play none none reverse",
+    //           markers: true,
+    //         },
+    //       }
+    //     );
+    //   });
 
-      gsap.fromTo(
-        ".fadein",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-    });
+    //   gsap.fromTo(
+    //     ".fadein",
+    //     {
+    //       opacity: 0,
+    //     },
+    //     {
+    //       opacity: 1,
+    //       duration: 2,
+    //       ease: "cubic-bezier(0,0,0.5,1)",
+    //     }
+    //   );
+    // });
 
     // gsap flip
     // const words = document.querySelectorAll(".flip");
@@ -235,26 +235,34 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         observer.observe(carousel);
       });
     });
-    // Function to set the width of .item to match the width of .grayheading
-    function setItemWidth() {
-      var grayheading = document.querySelector(".grayheading");
-      var width = grayheading.getBoundingClientRect().width;
+    function setGalleryWidths() {
+      const grayheading = document.querySelector(".grayheading");
+      if (!grayheading) return;
 
-      // Get the item element
-      var item = document.querySelector(".item");
+      const computedStyle = window.getComputedStyle(grayheading);
+      const paddingLeft = parseFloat(computedStyle.paddingLeft);
+      const paddingRight = parseFloat(computedStyle.paddingRight);
 
-      // Cast the element to HTMLElement to ensure the 'style' property exists
-      var itemElement = item as HTMLElement;
+      const grayheadingWidth =
+        grayheading.clientWidth - (paddingLeft + paddingRight);
+      const galleries =
+        document.querySelectorAll<HTMLElement>(".image-gallery");
 
-      // Set the width of the item to match the grayheading
-      itemElement.style.width = width + "px";
+      galleries.forEach((gallery) => {
+        gallery.style.width = `${grayheadingWidth}px`;
+      });
+
+      console.log(
+        "Width of grayheading (excluding padding):",
+        grayheadingWidth
+      );
     }
 
-    // Initial set width
-    setItemWidth();
+    // Set initial gallery widths
+    setGalleryWidths();
 
-    // Listen for resize events and update width
-    window.addEventListener("resize", setItemWidth);
+    // Update gallery widths on window resize
+    window.addEventListener("resize", setGalleryWidths);
   </script>
   <main>
     <ProjectNav
@@ -1209,7 +1217,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   .image-gallery {
     width: 1260px;
     height: auto;
-
     position: relative;
   }
 
@@ -1499,6 +1506,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     .carousel {
       padding-left: calc((100%) / 2);
       padding-right: calc((100%) / 2);
+    }
+
+    .image-gallery {
     }
 
     .item {

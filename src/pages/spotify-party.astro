@@ -41,26 +41,31 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           delay: 0.1,
         }
       );
-      gsap.fromTo(
-        ".fadeup-st",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-          scrollTrigger: {
-            trigger: ".fadeup-st",
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
-            markers: true,
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+
+      elements.forEach((element) => {
+        gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            y: 25,
           },
-        }
-      );
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "cubic-bezier(0,0,0.5,1)",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+              markers: true,
+            },
+          }
+        );
+      });
+
       gsap.fromTo(
         ".fadein",
         {
@@ -851,7 +856,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </section>
       <div class="overview">
-        <p class="grayheading inline">Information Architecture</p>
+        <p class="grayheading inline fadeup-st">Information Architecture</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -976,7 +981,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <div class="overview end">
         <div class="blackborder">
-          <p class="grayheading">Wrapping Up</p>
+          <p class="grayheading fadeup-st">Wrapping Up</p>
           <div class="border-box row gap">
             <div class="box-content nobg">
               <div class="content-vert">

@@ -9,9 +9,6 @@ export default defineConfig({
     imageService: "passthrough",
   }),
   vite: {
-    build: {
-      minify: false,
-    },
     ssr: {
       external: ["buffer", "path", "fs", "os", "crypto", "async_hooks"].map(
         (i) => `node:${i}`

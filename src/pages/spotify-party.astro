@@ -231,7 +231,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       });
     });
     // Function to set the width of .item to match the width of .grayheading
-    // Function to set the width of .item to match the width of .grayheading
     function setItemWidth() {
       var grayheading = document.querySelector(".grayheading");
       var width = grayheading.getBoundingClientRect().width;
@@ -1203,6 +1202,9 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .image-gallery {
+    width: 1260px;
+    height: auto;
+
     position: relative;
   }
 
@@ -1216,10 +1218,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   }
 
   .item {
-    width: 1260px;
-    height: 680px;
-    border-radius: 28px;
     position: relative;
+    border-radius: 28px;
   }
 
   .list-item {

@@ -7,6 +7,39 @@ import Layout from "../layouts/Layout.astro";
   description="Hello! I'm Andy Duong — Product Designer based in the Bay Area. I craft meaningful narratives fueled by my passion for music and art."
   canonical="https://andyduong.work"
 >
+  <!-- <script>
+    import gsap from "gsap";
+    document.addEventListener("astro:page-load", () => {
+      gsap.fromTo(
+        ".fadeup",
+        {
+          opacity: 0,
+          y: 25,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "cubic-bezier(0,0,0.5,1)",
+        }
+      );
+
+      gsap.fromTo(
+        ".home-fadeup",
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "cubic-bezier(0,0,0.5,1)",
+          delay: 2,
+        }
+      );
+    });
+  </script> -->
   <main>
     <section class="home">
       <div class="heading-wrapper">
@@ -14,12 +47,12 @@ import Layout from "../layouts/Layout.astro";
           <span class="italic">hello!</span>
           I'm Andy Duong<br /> Product Designer in the Bay Area<br />
         </h1>
-        <div class="heading-description">
+        <div class="heading-description fadeup">
           Scroll down to discover<span class="arrow">↓</span>
         </div>
       </div>
     </section>
-    <section class="project-section">
+    <section class="project-section home-fadeup">
       <ul class="project-wrapper">
         <li class="project">
           <a href="/spotify-party">

@@ -19,6 +19,10 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: "SF Pro Display";
+}
+
 /* custom-scrollbar */
 ::-webkit-scrollbar {
   width: 0.5em;

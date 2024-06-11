@@ -1,32 +1,16 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
-import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
 
+// https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: cloudflare({
-    imageService: "passthrough",
-  }),
+  adapter: cloudflare(),
   vite: {
     ssr: {
-      external: [
-        "node:buffer",
-        "node:path",
-        "node:fs",
-        "node:os",
-        "node:crypto",
-      ],
+      external: ["buffer", "path", "fs", "os", "crypto", "async_hooks"].map(
+        (i) => `node:${i}`
+      ),
     },
-    resolve: {
-      alias: {
-        path: "node:path",
-        fs: "node:fs",
-        os: "node:os",
-        crypto: "node:crypto",
-      },
-    },
+    // make sure to use node:fs, node:path, or node:os if you are using it in your project instead of fs, path or os
   },
-  site: "https://andyduong.work",
-  integrations: [react(), sitemap()],
 });

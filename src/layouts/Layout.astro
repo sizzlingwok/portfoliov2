@@ -93,12 +93,6 @@ import { AstroFont } from "astro-font";
         },
       ]}
     />
-  </head>
-
-  <body>
-    <Header />
-    <slot />
-    <Footer />
     <script>
       import gsap from "gsap";
       import ScrollTrigger from "gsap/ScrollTrigger";
@@ -108,5 +102,11 @@ import { AstroFont } from "astro-font";
 
       gsap.registerPlugin(ScrollTrigger);
     </script>
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+    <Footer />
   </body>
 </html>

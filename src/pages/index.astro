@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HomeFadeUp from "../components/js/FramerMotion.jsx";
 ---
 
 <Layout
@@ -40,6 +41,7 @@ import Layout from "../layouts/Layout.astro";
       );
     });
   </script> -->
+  <HomeFadeUp client:load />
   <main>
     <section class="home">
       <div class="heading-wrapper">

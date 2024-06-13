@@ -8,7 +8,7 @@ const { title, description, canonical } = Astro.props;
 import { join } from "node:path";
 import { AstroFont } from "astro-font";
 
-const fontPrefix = import.meta.env.PROD
+const fontPrefix = import.meta.env.DEV
   ? Astro.site.toString()
   : join(process.cwd(), "public");
 

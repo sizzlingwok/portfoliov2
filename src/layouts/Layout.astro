@@ -5,7 +5,6 @@ import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 const { title, description, canonical } = Astro.props;
 
-import { join } from "node:path";
 import { AstroFont } from "astro-font";
 ---
 
@@ -29,12 +28,7 @@ import { AstroFont } from "astro-font";
             {
               style: "italic",
               weight: "500",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "PPEditorialNew-MediumItalic.woff2"
-              ),
+              path: "/fonts/PPEditorialNew-MediumItalic.woff2",
             },
           ],
           preload: true,
@@ -48,42 +42,22 @@ import { AstroFont } from "astro-font";
             {
               style: "normal",
               weight: "400",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "SF-Pro-Display-Regular.woff2"
-              ),
+              path: "/fonts/SF-Pro-Display-Regular.woff2",
             },
             {
               style: "normal",
               weight: "500",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "SF-Pro-Display-Medium.woff2"
-              ),
+              path: "/fonts/SF-Pro-Display-Medium.woff2",
             },
             {
               style: "normal",
               weight: "600",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "SF-Pro-Display-Semibold.woff2"
-              ),
+              path: "/fonts/SF-Pro-Display-Semibold.woff2",
             },
             {
               style: "normal",
               weight: "700",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "SF-Pro-Display-Bold.woff2"
-              ),
+              path: "/fonts/SF-Pro-Display-Bold.woff2",
             },
           ],
           preload: true,

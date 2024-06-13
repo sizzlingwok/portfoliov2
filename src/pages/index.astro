@@ -7,8 +7,7 @@ import Layout from "../layouts/Layout.astro";
   description="Hello! I'm Andy Duong — Product Designer based in the Bay Area. I craft meaningful narratives fueled by my passion for music and art."
   canonical="https://andyduong.work"
 >
-  <!-- <script>
-    import gsap from "gsap";
+  <script>
     document.addEventListener("astro:page-load", () => {
       gsap.fromTo(
         ".fadeup",
@@ -35,11 +34,10 @@ import Layout from "../layouts/Layout.astro";
           y: 0,
           duration: 1,
           ease: "cubic-bezier(0,0,0.5,1)",
-          delay: 2,
         }
       );
     });
-  </script> -->
+  </script>
   <main>
     <section class="home">
       <div class="heading-wrapper">
@@ -175,6 +173,7 @@ import Layout from "../layouts/Layout.astro";
   .project-section {
     padding: 100px 0 0 0;
     margin: 0 auto;
+    opacity: 0;
   }
 
   .project-wrapper {

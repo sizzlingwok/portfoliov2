@@ -58,12 +58,7 @@ import Layout from "../layouts/Layout.astro";
           <a href="/spotify-party">
             <div class="project-content">
               <div class="project-bg">
-                <img
-                  src="src/images/spotify/spotifythumbnail.webp"
-                  width="100%"
-                  height="100%"
-                  alt=""
-                />
+                <img src="images/spotify/spotifythumbnail.webp" alt="" />
               </div>
               <div class="project-details">
                 <p class="project-title">Spotify Party</p>
@@ -78,7 +73,9 @@ import Layout from "../layouts/Layout.astro";
         <li class="project">
           <a href="/sorette">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg">
+                <img src="images/sorette/sorettethumbnail.webp" alt="" />
+              </div>
               <div class="project-details">
                 <p class="project-title">sorette</p>
                 <div class="project-description">
@@ -92,7 +89,9 @@ import Layout from "../layouts/Layout.astro";
         <li class="project">
           <a href="/mechmarket">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg">
+                <img src="images/mechmarket/mechmarketthumbnail.webp" alt="" />
+              </div>
               <div class="project-details">
                 <p class="project-title">mechmarket</p>
                 <div class="project-description">
@@ -106,7 +105,9 @@ import Layout from "../layouts/Layout.astro";
         <li class="project">
           <a href="/dillo">
             <div class="project-content">
-              <div class="project-bg"></div>
+              <div class="project-bg">
+                <img src="images/dillo/dillothumbnail.webp" alt="" />
+              </div>
               <div class="project-details">
                 <p class="project-title">Dillo</p>
                 <div class="project-description">
@@ -257,6 +258,13 @@ import Layout from "../layouts/Layout.astro";
     filter: brightness(75%);
   }
 
+  .project-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .project-title {
     position: relative;
     color: var(--highlight-text);
@@ -281,22 +289,6 @@ import Layout from "../layouts/Layout.astro";
 
   .highlight {
     color: var(--highlight-text);
-  }
-
-  .project-bg.spotify-party {
-    background-image: url("src/images/spotify/spotifythumbnail.webp");
-  }
-
-  .project-bg.sorette {
-    background-image: url("src/images/sorette/sorettethumbnail.webp");
-  }
-
-  .project-bg.mechmarket {
-    background-image: url("src/images/mechmarket/mechmarketthumbnail.webp");
-  }
-
-  .project-bg.dillo {
-    background-image: url("src/images/dillo/dillothumbnail.webp");
   }
 
   @media (max-width: 1777px) {

@@ -12,7 +12,7 @@ const fontPrefix = import.meta.env.PROD
   ? Astro.site.toString()
   : join(process.cwd(), "public");
 
-const fontPath = (suffix) => join(fontPrefix, suffix);
+const fontPath = (suffix: string) => join(fontPrefix, suffix);
 ---
 
 <!doctype html>

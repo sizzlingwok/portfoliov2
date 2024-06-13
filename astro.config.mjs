@@ -15,6 +15,6 @@ export default defineConfig({
       ),
     },
   },
-  site: "1-1.portfoliov2-3fc.pages.dev",
+  site: "https://1-1.portfoliov2-3fc.pages.dev",
   integrations: [react(), sitemap()],
 });

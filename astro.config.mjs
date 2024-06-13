@@ -15,6 +15,6 @@ export default defineConfig({
       ),
     },
   },
-  site: "https://andyduong.work",
+  // site: "https://andyduong.work",
   integrations: [react(), sitemap()],
 });

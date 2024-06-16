@@ -12,8 +12,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 >
   <script>
     // gsap
-    import gsap from "gsap";
     document.addEventListener("astro:page-load", () => {
+      ScrollTrigger.refresh();
       gsap.fromTo(
         ".fadeup",
         {
@@ -41,30 +41,30 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           delay: 0.1,
         }
       );
-      // const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
 
-      // elements.forEach((element) => {
-      //   gsap.fromTo(
-      //     element,
-      //     {
-      //       opacity: 0,
-      //       y: 25,
-      //     },
-      //     {
-      //       opacity: 1,
-      //       y: 0,
-      //       duration: 0.5,
-      //       ease: "cubic-bezier(0,0,0.5,1)",
-      //       scrollTrigger: {
-      //         trigger: element,
-      //         start: "top 80%",
-      //         end: "bottom 20%",
-      //         toggleActions: "play none none reverse",
-      //         markers: true,
-      //       },
-      //     }
-      //   );
-      // });
+      elements.forEach((element) => {
+        gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            y: 25,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "cubic-bezier(0,0,0.5,1)",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+              markers: true,
+            },
+          }
+        );
+      });
 
       gsap.fromTo(
         ".fadein",

@@ -11,110 +11,73 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   canonical="https://andyduong.work/sorette"
 >
   <script>
-    // gsap
-    import gsap from "gsap";
+    // GSAP
+    let ctx: gsap.Context | null = null;
+    let initialize = false;
+
     document.addEventListener("astro:page-load", () => {
-      gsap.fromTo(
-        ".fadeup",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-      gsap.fromTo(
-        ".fadeup-d",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-          delay: 0.1,
-        }
-      );
-      // const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const currentPath = window.location.pathname;
+      initialize = currentPath === "/sorette";
 
-      // elements.forEach((element) => {
-      //   gsap.fromTo(
-      //     element,
-      //     {
-      //       opacity: 0,
-      //       y: 25,
-      //     },
-      //     {
-      //       opacity: 1,
-      //       y: 0,
-      //       duration: 0.5,
-      //       ease: "cubic-bezier(0,0,0.5,1)",
-      //       scrollTrigger: {
-      //         trigger: element,
-      //         start: "top 80%",
-      //         end: "bottom 20%",
-      //         toggleActions: "play none none reverse",
-      //         markers: true,
-      //       },
-      //     }
-      //   );
-      // });
+      if (initialize) {
+        ctx = gsap.context(() => {});
 
-      gsap.fromTo(
-        ".fadein",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-          ease: "cubic-bezier(0,0,0.5,1)",
+        ctx.add(() => {
+          // Animation for .fadeup elements
+          gsap.fromTo(
+            ".fadeup",
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "cubic-bezier(0,0,0.5,1)" }
+          );
+
+          // Animation for .fadeup-d elements
+          gsap.fromTo(
+            ".fadeup-d",
+            { opacity: 0, y: 25 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: "cubic-bezier(0,0,0.5,1)",
+              delay: 0.1,
+            }
+          );
+
+          // Animation for .fadeup-st elements with ScrollTrigger
+          elements.forEach((element) => {
+            gsap.fromTo(
+              element,
+              { opacity: 0, y: 25 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "cubic-bezier(0,0,0.5,1)",
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "bottom 20%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          });
+
+          // Refresh ScrollTrigger to recalculate trigger points
+          ScrollTrigger.refresh(true);
+        });
+      }
+
+      // Event listener for after-swap event
+      document.addEventListener("astro:after-swap", () => {
+        if (ctx) {
+          ctx.revert();
+          ctx = null;
         }
-      );
+      });
     });
 
-    // gsap flip
-    // const words = document.querySelectorAll(".flip");
-
-    // words.forEach((element) => {
-    //   const wordsElement = element as HTMLElement; // Type casting to HTMLElement
-
-    //   // Split text into words wrapped in span elements
-    //   const textsplit = new SplitType(wordsElement, {
-    //     types: "words",
-    //     tagName: "span",
-    //   });
-
-    //   // Apply the GSAP animation with ScrollTrigger
-    //   gsap.fromTo(
-    //     textsplit.words, // Access the split words directly
-    //     {
-    //       opacity: 0,
-    //       x: -5,
-    //       rotationX: 100,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       x: 0,
-    //       rotationX: 0,
-    //       scrollTrigger: {
-    //         trigger: wordsElement,
-    //         start: "top 80%",
-    //         end: "bottom 20%",
-    //         toggleActions: "play none none reverse",
-    //       },
-    //       duration: 0.5,
-    //       stagger: 0.1, // Apply stagger correctly to animate each word
-    //       ease: "cubic-bezier(0,0,0.5,1)",
-    //     }
-    //   );
-    // });
     //carousel
     document.addEventListener("astro:page-load", () => {
       // Select all carousels on the page
@@ -1682,7 +1645,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .gap {
-      gap: 100px;
+      gap: 50px;
     }
 
     .icon.large {

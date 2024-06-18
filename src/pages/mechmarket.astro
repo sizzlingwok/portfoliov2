@@ -14,110 +14,72 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   canonical="https://andyduong.work/mechmarket"
 >
   <script>
-    // gsap
-    import gsap from "gsap";
+    // GSAP
+    let ctx: gsap.Context | null = null;
+    let initialize = false;
+
     document.addEventListener("astro:page-load", () => {
-      gsap.fromTo(
-        ".fadeup",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-        }
-      );
-      gsap.fromTo(
-        ".fadeup-d",
-        {
-          opacity: 0,
-          y: 25,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "cubic-bezier(0,0,0.5,1)",
-          delay: 0.1,
-        }
-      );
-      // const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const currentPath = window.location.pathname;
+      initialize = currentPath === "/mechmarket";
 
-      // elements.forEach((element) => {
-      //   gsap.fromTo(
-      //     element,
-      //     {
-      //       opacity: 0,
-      //       y: 25,
-      //     },
-      //     {
-      //       opacity: 1,
-      //       y: 0,
-      //       duration: 0.5,
-      //       ease: "cubic-bezier(0,0,0.5,1)",
-      //       scrollTrigger: {
-      //         trigger: element,
-      //         start: "top 80%",
-      //         end: "bottom 20%",
-      //         toggleActions: "play none none reverse",
-      //         markers: true,
-      //       },
-      //     }
-      //   );
-      // });
+      if (initialize) {
+        ctx = gsap.context(() => {});
 
-      gsap.fromTo(
-        ".fadein",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-          ease: "cubic-bezier(0,0,0.5,1)",
+        ctx.add(() => {
+          // Animation for .fadeup elements
+          gsap.fromTo(
+            ".fadeup",
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "cubic-bezier(0,0,0.5,1)" }
+          );
+
+          // Animation for .fadeup-d elements
+          gsap.fromTo(
+            ".fadeup-d",
+            { opacity: 0, y: 25 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: "cubic-bezier(0,0,0.5,1)",
+              delay: 0.1,
+            }
+          );
+          // Animation for .fadeup-st elements with ScrollTrigger
+          elements.forEach((element) => {
+            gsap.fromTo(
+              element,
+              { opacity: 0, y: 25 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "cubic-bezier(0,0,0.5,1)",
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "bottom 20%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          });
+
+          // Refresh ScrollTrigger to recalculate trigger points
+          ScrollTrigger.refresh(true);
+        });
+      }
+
+      // Event listener for after-swap event
+      document.addEventListener("astro:after-swap", () => {
+        if (ctx) {
+          ctx.revert();
+          ctx = null;
         }
-      );
+      });
     });
 
-    // gsap flip
-    // const words = document.querySelectorAll(".flip");
-
-    // words.forEach((element) => {
-    //   const wordsElement = element as HTMLElement; // Type casting to HTMLElement
-
-    //   // Split text into words wrapped in span elements
-    //   const textsplit = new SplitType(wordsElement, {
-    //     types: "words",
-    //     tagName: "span",
-    //   });
-
-    //   // Apply the GSAP animation with ScrollTrigger
-    //   gsap.fromTo(
-    //     textsplit.words, // Access the split words directly
-    //     {
-    //       opacity: 0,
-    //       x: -5,
-    //       rotationX: 100,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       x: 0,
-    //       rotationX: 0,
-    //       scrollTrigger: {
-    //         trigger: wordsElement,
-    //         start: "top 80%",
-    //         end: "bottom 20%",
-    //         toggleActions: "play none none reverse",
-    //       },
-    //       duration: 0.5,
-    //       stagger: 0.1, // Apply stagger correctly to animate each word
-    //       ease: "cubic-bezier(0,0,0.5,1)",
-    //     }
-    //   );
-    // });
     //carousel
     document.addEventListener("astro:page-load", () => {
       // Select all carousels on the page
@@ -299,7 +261,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </a>
       </button>
     </div>
-
     <article class="project-content-wrapper">
       <section class="overview">
         <div class="project-details">
@@ -774,6 +735,125 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </div>
     </section>
     <div class="overview">
+      <p class="grayheading inline fadeup-st">Low fidelity prototypes</p>
+      <ul class="carousel">
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/mechmarket/lf1.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/mechmarket/lf2.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/mechmarket/lf3.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/mechmarket/lf4.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+      </ul>
+      <div class="carousel-buttons-wrapper">
+        <ul class="carousel-buttons">
+          <button class="prev-button disabled">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+              <path
+                d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
+              ></path>
+            </svg>
+          </button>
+          <button class="next-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+              <path
+                d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"
+              ></path>
+            </svg>
+          </button>
+        </ul>
+      </div>
+    </div>
+    <section class="project-section">
+      <div class="section-heading">
+        <p class="grayheading fadeup-st">Usability Testing</p>
+        <p class="subsection center">Evaluating the mechmarket prototype</p>
+      </div>
+      <div class="project-content">
+        <div class="content-details">
+          <span class="title xlarge">First click test</span>
+          <p class="text-description">
+            In a first-click test with the <span class="highlight"
+              >same 8 participants</span
+            >, I evaluated their grasp of the mechmarket prototype, emphasizing
+            the same initial phase tests. My aim was to determine if there were
+            any enhancements in user experience compared to their previous
+            interactions with the mechmarket subreddit. Below were the results.
+          </p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="img-center"
+            src="images/mechmarket/surveyresults3.webp"
+            alt=""
+            draggable="false"
+          />
+          <img
+            class="img-center"
+            src="images/mechmarket/surveyresults4.webp"
+            alt=""
+            draggable="false"
+          />
+          <div class="content-details">
+            <p class="text-description center">
+              With the completion rate exceeding <span class="highlight"
+                >88%</span
+              >, the findings strongly suggest that the mechmarket prototype
+              excels in intuitiveness andn user-friendlessness when compared to
+              the Reddit platform. Unanimously, all participants agree that the
+              concept of a dedicated mobile app for mechmarket is highly
+              favorable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="overview">
       <p class="grayheading inline fadeup-st">Information Architecture</p>
       <ul class="carousel">
         <li>
@@ -848,50 +928,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </ul>
       </div>
     </div>
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="grayheading fadeup-st">Usability Testing</p>
-        <p class="subsection center">Evaluating the mechmarket prototype</p>
-      </div>
-      <div class="project-content">
-        <div class="content-details">
-          <span class="title xlarge">First click test</span>
-          <p class="text-description">
-            In a first-click test with the <span class="highlight"
-              >same 8 participants</span
-            >, I evaluated their grasp of the mechmarket prototype, emphasizing
-            the same initial phase tests. My aim was to determine if there were
-            any enhancements in user experience compared to their previous
-            interactions with the mechmarket subreddit. Below were the results.
-          </p>
-        </div>
-        <div class="image-wrapper">
-          <img
-            class="img-center"
-            src="images/mechmarket/surveyresults3.webp"
-            alt=""
-            draggable="false"
-          />
-          <img
-            class="img-center"
-            src="images/mechmarket/surveyresults4.webp"
-            alt=""
-            draggable="false"
-          />
-          <div class="content-details">
-            <p class="text-description center">
-              With the completion rate exceeding <span class="highlight"
-                >88%</span
-              >, the findings strongly suggest that the mechmarket prototype
-              excels in intuitiveness andn user-friendlessness when compared to
-              the Reddit platform. Unanimously, all participants agree that the
-              concept of a dedicated mobile app for mechmarket is highly
-              favorable.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <div class="overview end">
       <div class="blackborder">
         <p class="grayheading fadeup-st">Wrapping Up</p>
@@ -1593,7 +1629,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     }
 
     .gap {
-      gap: 100px;
+      gap: 50px;
     }
 
     .icon.large {

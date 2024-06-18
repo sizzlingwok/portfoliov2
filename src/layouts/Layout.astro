@@ -84,6 +84,7 @@ const fontPrefix = import.meta.env.PROD
       window.ScrollTrigger = ScrollTrigger;
 
       gsap.registerPlugin(ScrollTrigger);
+      gsap.config({ nullTargetWarn: false });
     </script>
   </head>
 

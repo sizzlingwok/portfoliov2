@@ -77,42 +77,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       }
     });
   });
-    // gsap flip
-    // const words = document.querySelectorAll(".flip");
 
-    // words.forEach((element) => {
-    //   const wordsElement = element as HTMLElement; // Type casting to HTMLElement
-
-    //   // Split text into words wrapped in span elements
-    //   const textsplit = new SplitType(wordsElement, {
-    //     types: "words",
-    //     tagName: "span",
-    //   });
-
-    //   // Apply the GSAP animation with ScrollTrigger
-    //   gsap.fromTo(
-    //     textsplit.words, // Access the split words directly
-    //     {
-    //       opacity: 0,
-    //       x: -5,
-    //       rotationX: 100,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       x: 0,
-    //       rotationX: 0,
-    //       scrollTrigger: {
-    //         trigger: wordsElement,
-    //         start: "top 80%",
-    //         end: "bottom 20%",
-    //         toggleActions: "play none none reverse",
-    //       },
-    //       duration: 0.5,
-    //       stagger: 0.1, // Apply stagger correctly to animate each word
-    //       ease: "cubic-bezier(0,0,0.5,1)",
-    //     }
-    //   );
-    // });
     //carousel
     document.addEventListener("astro:page-load", () => {
       // Select all carousels on the page
@@ -555,11 +520,10 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
               <div class="content-vert">
                 <p class="title large highlight">
-                  Group session feature is hard to locate
+                  Engagement Challenges
                 </p>
                 <p class="text-description small">
-                  The current placement of initiating a group session feature is
-                  hidden under the device lists screen which users can overlook
+                  Learning ASL can feel daunting or uninteresting without engaging and interactive methods that captivate both children and parents.
                 </p>
               </div>
             </div>
@@ -576,11 +540,10 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
               <div class="content-vert">
                 <p class="title large highlight">
-                  Feature does not exist on desktop platforms
+                  Family Involvement
                 </p>
                 <p class="text-description small">
-                  The lack of group session support on desktop dillo puts
-                  desktop users at a disadvantage
+                  Effective ASL learning hinges on active participation and support from parents or guardians, who often lack the necessary knowledge and tools to teach ASL effectively to their hard of hearing children.
                 </p>
               </div>
             </div>
@@ -596,12 +559,10 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
               </div>
               <div class="content-vert">
                 <p class="title large highlight">
-                  Lack of friend activity integration
+                  Lack of Resources
                 </p>
                 <p class="text-description small">
-                  Inviting friends to a group session lacks a direct in-app
-                  feature, requiring users to resort to sending invite links via
-                  text or social media
+                  Many existing ASL learning resources do not prioritize accessibility, making it difficult for families with hard of hearing children to find materials that meet their needs.
                 </p>
               </div>
             </div>
@@ -715,7 +676,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         </div>
       </section>
       <div class="overview">
-        <p class="grayheading inline fadeup-st">Information Architecture</p>
+        <p class="grayheading inline fadeup-st">Low fidelity prototypes</p>
         <ul class="carousel">
           <li>
             <div class="image-gallery">
@@ -789,55 +750,6 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </ul>
         </div>
       </div>
-      <section class="project-section">
-        <div class="section-heading">
-          <p class="grayheading fadeup-st">Usability Testing</p>
-          <p class="subsection center">
-            Evaluating the dillo Party prototype
-          </p>
-        </div>
-        <div class="project-content">
-          <div class="content-details">
-            <span class="title xlarge">Second click test</span>
-            <p class="text-description">
-              I conducted a second first-click test involving <span
-                class="highlight">9 new participants</span
-              >
-              to assess how well users grasped tasks within the dillo Party prototype.
-              The test encompassed demonstrations of both mobile and desktop versions,
-              with a specific emphasis on participants' capability to initiate a
-              group session.
-            </p>
-          </div>
-          <div class="image-wrapper">
-            <img
-              class="img-center"
-              src="images/dillo/surveyresults4.webp"
-              alt=""
-              draggable="false"
-            />
-            <img
-              class="img-center"
-              src="images/dillo/surveyresults5.webp"
-              alt=""
-              draggable="false"
-            />
-            <div class="content-details">
-              <p class="text-description center">
-                With a completion rate surpassing <span class="highlight"
-                  >77%</span
-                >, the results bly indicate that the dillo Party prototype
-                exhibits a higher level of intuitiveness and user-friendliness
-                in comparison to dillo's current user interface. Participants
-                were able to quickly navigate to the corresponding interaction
-                with an average time taken of <span class="highlight"
-                  >26.5 seconds</span
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       <div class="overview end">
         <div class="blackborder">
           <p class="grayheading fadeup-st">Wrapping Up</p>

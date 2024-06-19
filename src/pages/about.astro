@@ -157,7 +157,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           if (!firstSlide || !lastSlide) return; // Ensure the slides exist
 
           // Check if the carousel is at the first slide
-          if (carousel.scrollLeft <= firstSlide.offsetWidth) {
+          if (carousel.scrollLeft <= firstSlide.offsetLeft) {
             prevButton?.classList.add("disabled");
           } else {
             prevButton?.classList.remove("disabled");
@@ -166,7 +166,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           // Check if the carousel is at the last slide
           if (
             carousel.scrollLeft >=
-            carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
+            carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetLeft
           ) {
             nextButton?.classList.add("disabled");
           } else {
@@ -640,8 +640,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     scroll-snap-type: x mandatory;
     scroll-padding: 0 20px;
     gap: 20px;
-    padding-left: calc((100% - 620px) / 2);
-    padding-right: calc((100% - 620px) / 2);
+    padding-left: calc((100% - 1260px) / 2);
+    padding-right: calc((100% - 1260px) / 2);
     scrollbar-width: none;
     align-items: center;
   }

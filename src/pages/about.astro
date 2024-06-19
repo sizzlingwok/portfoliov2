@@ -5,447 +5,698 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
 
 <Layout
   title="About | Andy Duong"
-  description="Greetings! In June of 2022, I graduated from the University of California, Irvine with a degree in Business Administration. While contemplating my future career, I took a leap into the exciting world of UX design."
+  description="Hello! I'm Andy Duong — Product Designer based in the Bay Area. I craft meaningful narratives fueled by my passion for music and art."
   canonical="https://andyduong.work/about"
 >
+  <script>
+    // GSAP
+    let ctx: gsap.Context | null = null;
+    let initialize = false;
+
+    document.addEventListener("astro:page-load", () => {
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const currentPath = window.location.pathname;
+      initialize = currentPath === "/about";
+
+      if (initialize) {
+        ctx = gsap.context(() => {});
+
+        ctx.add(() => {
+          // Animation for .fadeup elements
+          gsap.fromTo(
+            ".fadeup",
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "cubic-bezier(0,0,0.5,1)" }
+          );
+
+          // Animation for .fadeup-d elements
+          gsap.fromTo(
+            ".home-fadeup",
+            {
+              opacity: 0,
+              y: 50,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "cubic-bezier(0,0,0.5,1)",
+            }
+          );
+          // Animation for .fadeup-st elements with ScrollTrigger
+          elements.forEach((element) => {
+            gsap.fromTo(
+              element,
+              { opacity: 0, y: 25 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "cubic-bezier(0,0,0.5,1)",
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "bottom 20%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          });
+
+          // Refresh ScrollTrigger to recalculate trigger points
+          ScrollTrigger.refresh(true);
+        });
+      }
+
+      // Event listener for after-swap event
+      document.addEventListener("astro:after-swap", () => {
+        if (ctx) {
+          ctx.revert();
+          ctx = null;
+        }
+      });
+    });
+    document.addEventListener("astro:page-load", () => {
+      // Select all carousels on the page
+      const carousels = document.querySelectorAll<HTMLElement>(".carousel");
+
+      carousels.forEach((carousel) => {
+        const prevButton = carousel.parentElement?.querySelector(
+          ".prev-button"
+        ) as HTMLElement;
+        const nextButton = carousel.parentElement?.querySelector(
+          ".next-button"
+        ) as HTMLElement;
+        let isScrolling = false;
+        const scrollDuration = 700; // Duration of the scroll animation in milliseconds
+        let isCarouselVisible = true;
+
+        // Function to handle left arrow key press
+        function handleLeftArrowKey() {
+          if (!isScrolling && isCarouselVisible) {
+            isScrolling = true;
+            const scrollDistance =
+              carousel.scrollLeft -
+              (carousel.querySelector(".item") as HTMLElement).offsetWidth;
+            carousel.scrollTo({
+              left: scrollDistance,
+              behavior: "smooth",
+            });
+            setTimeout(function () {
+              isScrolling = false;
+              checkButtonsState(); // Check button state after scrolling
+            }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+          }
+        }
+
+        // Function to handle right arrow key press
+        function handleRightArrowKey() {
+          if (!isScrolling && isCarouselVisible) {
+            isScrolling = true;
+            const scrollDistance =
+              carousel.scrollLeft +
+              (carousel.querySelector(".item") as HTMLElement).offsetWidth;
+            carousel.scrollTo({
+              left: scrollDistance,
+              behavior: "smooth",
+            });
+            setTimeout(function () {
+              isScrolling = false;
+              checkButtonsState(); // Check button state after scrolling
+            }, scrollDuration); // Adjust the time to match the duration of your scroll animation
+          }
+        }
+
+        prevButton?.addEventListener("click", function () {
+          handleLeftArrowKey();
+        });
+
+        nextButton?.addEventListener("click", function () {
+          handleRightArrowKey();
+        });
+
+        // Event listener for keyboard arrow keys
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowLeft") {
+            handleLeftArrowKey();
+          } else if (event.key === "ArrowRight") {
+            handleRightArrowKey();
+          }
+        });
+
+        // Function to check and disable/enable prev/next buttons based on carousel position
+        function checkButtonsState() {
+          // Get the first and last slides
+          const firstSlide = carousel.querySelector(
+            ".item:first-child"
+          ) as HTMLElement;
+          const lastSlide = carousel.querySelector(
+            ".item:last-child"
+          ) as HTMLElement;
+
+          if (!firstSlide || !lastSlide) return; // Ensure the slides exist
+
+          // Check if the carousel is at the first slide
+          if (carousel.scrollLeft <= firstSlide.offsetWidth) {
+            prevButton?.classList.add("disabled");
+          } else {
+            prevButton?.classList.remove("disabled");
+          }
+
+          // Check if the carousel is at the last slide
+          if (
+            carousel.scrollLeft >=
+            carousel.scrollWidth - carousel.offsetWidth - lastSlide.offsetWidth
+          ) {
+            nextButton?.classList.add("disabled");
+          } else {
+            nextButton?.classList.remove("disabled");
+          }
+        }
+
+        // Initially check button state
+        checkButtonsState();
+
+        // Event listener for scroll events on the carousel
+        carousel.addEventListener("scroll", function () {
+          checkButtonsState(); // Check button state after scrolling
+        });
+
+        // IntersectionObserver to check if the carousel is fully visible
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              isCarouselVisible = entry.isIntersecting;
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        observer.observe(carousel);
+      });
+    });
+  </script>
   <main>
-    <section class="about">
-      <div class="about-wrapper">
-        <div class="about-header-container">
-          <div class="heading-title splitletter">
-            <div class="tag">ABOUT ME</div>
-            <h1 class="heading splitletter">Nice to meet you!</h1>
-          </div>
-          <div class="description-wrapper hoverword">
-            <p class="about-description">
-              Greetings! In June of 2022, I graduated from the University of
-              California, Irvine with a degree in Business Administration. While
-              contemplating my future career, I took a leap into the exciting
-              world of UX design. As a creative enthusiast with a passion for
-              photography, video production, and music creation, I find immense
-              joy in bringing art to life. My interest lies in designing
-              experiences that foster human connection and leave a positive
-              impact on society. I am currently exploring new opportunities! If
-              you'd like to connect, feel free to contact me via email or reach
-              out on LinkedIn.
-            </p>
-          </div>
-          <div class="about-direct hoverline">
-            Scroll down to see my other work<span class="arrow">↓</span>
-          </div>
+    <section class="home">
+      <div class="heading-wrapper">
+        <h1 class="hoverword">
+          <span class="italic">about me!</span>
+        </h1>
+        <div class="heading-description fadeup">
+          Scroll down to discover my other work!<span class="arrow">↓</span>
         </div>
-        <div class="about-image slideup">
-          <img src="images/about/pp.webp" alt="" draggable="false" />
-          <div></div>
-        </div>
+        <img class="pp-image home-fadeup" src="images/about/pp.webp" alt="" />
       </div>
     </section>
-    <section class="work">
-      <div class="music">
-        <div class="heading-title">
-          <div class="tag">MUSIC</div>
-          <div class="heading">dear you</div>
-        </div>
-        <div class="embed-work">
+    <section class="project-section">
+      <div class="project-content short">
+        <p class="text-description center highlight fadeup-st">
+          Greetings! In June of 2022, I graduated from the University of
+          California, Irvine with a degrere in Business Administration. While
+          contemplating my future career, I took a leap into the exciting world
+          of UX design. As a creative enthusiast with a passion for photography,
+          video production, and music creation, I find immense joy in bringing
+          art to life. My interest lies in designing experiences that foster
+          human connection and leave a positive impact on society. I am
+          currently exploring new opportunities. If you'd like to connect, feel
+          free to contact me via email or reach out on Linkedin.
+        </p>
+      </div>
+
+      <div class="preview-wrapper">
+        <p class="grayheading fadeup-st">music</p>
+        <div class="project-content">
           <div class="embed">
             <iframe
-              style={{ borderRadius: "1rem" }}
+              style="border-radius:12px"
               src="https://open.spotify.com/embed/artist/2aTcMxIOsUTt4i2KBJASrA?utm_source=generator&theme=0"
               width="100%"
-              height="450px"
-              allowfullscreen
+              height="450"
+              frameBorder="0"
+              allowfullscreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
           <div class="embed">
             <iframe
-              id="embedPlayer"
-              src="https://embed.music.apple.com/us/album/thank-u-single/1631766772?app=music&itsct=music_box_player&itscg=30200&ls=1&theme=dark"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              allow="autoplay *; encrypted-media *; clipboard-write"
-              style={{
-                width: "100%",
-                height: "450px",
-                overflow: "hidden",
-                borderRadius: "1rem",
-                transform: "translateZ(0px)",
-                animation: "2s ease 0s 6 normal none running loading-indicator",
-                backgroundColor: "rgb(0, 0, 0)",
-              }}></iframe>
+              allow="autoplay *; encrypted-media *;"
+              frameborder="0"
+              height="450"
+              style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/thank-u-single/1631766772"
+            ></iframe>
           </div>
         </div>
       </div>
-
-      <div class="beats">
-        <div class="heading-title">
-          <div class="tag">BEATS</div>
-          <div class="heading">prod. ichiban</div>
-        </div>
-        <div class="embed-work">
+      <div class="preview-wrapper">
+        <p class="grayheading fadeup-st">beats</p>
+        <div class="project-content col">
           <div class="embed">
             <iframe
               width="100%"
-              height="450px"
-              style={{ borderRadius: "1rem" }}
-              src="https://www.youtube.com/embed/rynowdhZfRQ?rel=0"
-              title='[free] summer walker x kehlani x bryson tiller type beat "karma"'
+              height="100%"
+              src="https://www.youtube.com/embed/UEFA-wsB6bo"
+              title='[free] wolfacejoeyy x sexy drill type beat - "is it all"'
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen></iframe>
           </div>
           <div class="embed">
             <iframe
               width="100%"
-              height="450px"
-              style={{ borderRadius: "1rem" }}
-              src="https://www.youtube.com/embed/WK3-o3QErws?rel=0"
-              title='[FREE] tory lanez x bryson tiller x drake type beat "affection"'
+              height="100%"
+              src="https://www.youtube.com/embed/xvI4S42mqOs"
+              title='[free] wolfacejoeyy x sexy drill type beat - "her way"'
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="photography">
-        <div class="heading-title">
-          <div class="tag">PHOTOGRAPHY</div>
-        </div>
-        <div class="content-header">
-          <div class="content-row">
-            <div class="project-image">
-              <ImageZoom
-                options={{ background: "#111111" }}
-                client:only="react"
-                src="images/about/pic1.webp"
-                alt=""
-                draggable="false"
-                width="100%"
-                height="100%"
-              />
-            </div>
-            <div class="project-image">
-              <ImageZoom
-                options={{ background: "#111111" }}
-                client:only="react"
-                src="images/about/pic2.webp"
-                alt=""
-                draggable="false"
-                width="100%"
-                height="100%"
-              />
-            </div>
-          </div>
-          <div class="content-row">
-            <div class="project-image">
-              <ImageZoom
-                options={{ background: "#111111" }}
-                client:only="react"
-                src="images/about/pic3.webp"
-                alt=""
-                draggable="false"
-                width="100%"
-                height="100%"
-              />
-            </div>
-            <div class="project-image">
-              <ImageZoom
-                options={{ background: "#111111" }}
-                client:only="react"
-                src="images/about/pic4.webp"
-                alt=""
-                draggable="false"
-                width="100%"
-                height="100%"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="beats">
-        <div class="heading-title">
-          <div class="tag">VIDEOS</div>
-        </div>
-        <div class="embed-work">
-          <div class="embed">
-            <iframe
-              width="100%"
-              height="450px"
-              src="https://www.youtube.com/embed/NlSZEhXSW94?rel=0"
-              title="everything goes on - gym edit"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="embed">
-            <iframe
-              width="100%"
-              height="450px"
-              src="https://www.youtube.com/embed/jujFuyUALs4?rel=0"
-              title="SOP PL Promo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="embed">
-            <iframe
-              width="100%"
-              height="450px"
-              src="https://www.youtube.com/embed/D79o2jLOiXM?rel=0"
-              title="Bay Area Barbell Open 2023 - Powerlifting Meet Recap"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="embed">
-            <iframe
-              width="100%"
-              height="450px"
-              src="https://www.youtube.com/embed/tAkb9H_FtyY?rel=0"
-              title="Eli Meet Recap - SoCal Shodown 2022"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </section>
+    <div class="overview">
+      <p class="grayheading inline fadeup-st">photography</p>
+      <ul class="carousel">
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/about/pic1.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/about/pic2.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/about/pic3.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+        <li>
+          <div class="image-gallery">
+            <ImageZoom
+              options={{ background: "#000000" }}
+              client:only="react"
+              class="item"
+              src="images/about/pic4.webp"
+              draggable="false"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </li>
+      </ul>
+      <div class="carousel-buttons-wrapper">
+        <ul class="carousel-buttons">
+          <button class="prev-button disabled">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+              <path
+                d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z"
+              ></path>
+            </svg>
+          </button>
+          <button class="next-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+              <path
+                d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"
+              ></path>
+            </svg>
+          </button>
+        </ul>
+      </div>
+    </div>
   </main>
-
-  <style>
-    .hoverword,
-    .hoverline,
-    .splitletter,
-    .slideup {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .tag {
-      font-size: 0.875rem;
-      letter-spacing: 3px;
-      color: #86868b;
-      font-weight: 400;
-    }
-
-    h1,
-    .heading {
-      font-size: 2.25rem;
-      color: #f5f5f7;
-      text-decoration: none;
-      user-select: none;
-      font-weight: 500;
-      text-align: center;
-    }
-
-    .heading-title {
-      font-size: 2rem;
-      color: #f5f5f7;
-      text-decoration: none;
-      gap: 0.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .about {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      justify-content: center;
-      margin: 0 auto;
-      user-select: none;
-      gap: 1rem;
-      max-width: 90rem;
-    }
-
-    .work {
-      max-width: 90rem;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-      padding: 10rem 0;
-    }
-
-    .about-wrapper {
-      display: flex;
-      gap: 10rem;
-    }
-
-    .description-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .about-description {
-      font-size: 1.125rem;
-      color: #f5f5f7;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    .about-direct {
-      color: #f5f5f7;
-      font-size: 1.125rem;
-      overflow: hidden;
-      font-weight: 500;
-      display: flex;
-    }
-
-    .about-image img {
-      border-radius: 100%;
-    }
-
-    .about-header-container {
-      gap: 2rem;
-      display: flex;
-      flex-direction: column;
-      user-select: none;
-    }
-
-    .music,
-    .beats,
-    .videos {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .photography,
-    .videos {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .embed-work {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 50%;
-    }
-
-    .embed iframe {
-      border: none;
-    }
-
-    .content-header {
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 0 auto;
-    }
-
-    .content-row {
-      display: flex;
-      gap: 1rem;
-      max-width: 100%;
-    }
-
-    .project-image {
-      max-width: 100%;
-      object-fit: cover;
-      user-select: none;
-      width: 100%;
-    }
-
-    .medium-zoom-image {
-      border-radius: 0.5rem;
-      max-width: 100%;
-      box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
-      height: auto;
-      width: 100%;
-    }
-
-    /* animations */
-    @keyframes arrow {
-      0% {
-        transform: translateY(-5px);
-        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      40% {
-        transform: translateY(5px);
-        animation-timing-function: cubic-bezier(0.8, 0, 0.5, 1);
-      }
-      100% {
-        transform: translateY(-5px);
-        animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
-      }
-    }
-
-    .arrow {
-      animation: arrow 3s infinite;
-      padding: 0 0.5rem;
-    }
-
-    /* media queries */
-    @media (max-width: 1500px) {
-      /* Project Wrapper */
-      .about,
-      .work {
-        padding: 10rem calc(2rem + 5%);
-      }
-    }
-
-    @media (max-width: 1000px) {
-      /* Project Wrapper */
-      .about-wrapper {
-        flex-direction: column;
-        gap: 5rem;
-      }
-
-      .about-image {
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      /* Project Wrapper */
-      .about-wrapper {
-        flex-direction: column;
-        gap: 5rem;
-      }
-
-      .music,
-      .beats,
-      .videos {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .photography,
-      .videos {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .embed-work {
-        width: 100%;
-      }
-
-      .content-row {
-        flex-direction: column;
-      }
-
-      .work {
-        padding: 3rem 1rem;
-        gap: 3rem;
-      }
-
-      .about {
-        height: auto;
-        min-height: 100svh;
-        padding: 6rem 1rem;
-        position: relative;
-      }
-
-      .tag {
-        font-size: 0.75rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .about-description,
-      .about-direct {
-        font-size: 1rem;
-      }
-    }
-  </style>
 </Layout>
+
+<style>
+  :root {
+    --conditional-footer: rgb(0, 0, 0);
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 300px 0 0 0;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    color: var(--highlight-text);
+    font-weight: 500;
+    text-decoration: none;
+    user-select: none;
+    text-align: center;
+  }
+
+  .pp-image {
+    border-radius: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+    opacity: 0;
+  }
+
+  .heading-description {
+    display: flex;
+    color: var(--description-text);
+    user-select: none;
+    line-height: 29px;
+    font-weight: 600;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .project-description {
+    color: var(--highlight-text);
+    user-select: none;
+    line-height: 25px;
+    font-weight: 400;
+    font-size: 19px;
+    text-align: center;
+  }
+
+  .project-section {
+    padding: 100px 0 0 0;
+    margin: 0 auto;
+  }
+
+  .project-wrapper {
+    max-width: 2560px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  .arrow {
+    animation: arrow 3s infinite;
+    padding: 0 0.5rem;
+    color: var(--highlight-text);
+  }
+
+  .project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 200px 0;
+  }
+
+  .grayheading {
+    color: #86868b;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .subsection {
+    font-size: 80px;
+    line-height: 84px;
+    font-weight: 600;
+    color: #f5f5f7;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .text-description,
+  .heading-description {
+    color: var(--description-text);
+    user-select: none;
+    line-height: 29px;
+    font-weight: 600;
+    font-size: 21px;
+    flex: 1;
+    font-weight: 600;
+    display: inline;
+  }
+
+  .highlight {
+    color: #f5f5f7;
+  }
+
+  .project-content {
+    display: flex;
+    width: 1260px;
+    margin: 0 auto;
+    gap: 5rem;
+  }
+
+  .project-content.short {
+    width: 980px;
+  }
+
+  .project-content.col {
+    flex-direction: column;
+    width: 960px;
+    height: 100%;
+  }
+
+  .carousel-buttons-wrapper {
+    width: 1260px;
+    margin: -1rem auto;
+  }
+
+  .carousel-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .prev-button,
+  .next-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background: #333336;
+    border: none;
+    cursor: pointer;
+    transition: background 100ms linear;
+  }
+
+  .prev-button svg path,
+  .next-button svg path {
+    fill: #ffffff80;
+    transition: fill 100ms linear;
+  }
+
+  .prev-button:hover svg path,
+  .next-button:hover svg path {
+    fill: rgba(255, 255, 255, 0.8);
+  }
+
+  .prev-button:focus,
+  .next-button:focus {
+    outline: none;
+  }
+
+  .prev-button:hover,
+  .next-button:hover {
+    background: #37373a;
+  }
+
+  .prev-button.disabled,
+  .next-button.disabled {
+    pointer-events: none;
+    opacity: 0.36;
+    transition: opacity 0.1s linear;
+  }
+  @keyframes arrow {
+    0% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    40% {
+      transform: translateY(5px);
+      animation-timing-function: cubic-bezier(0.8, 0, 0.5, 1);
+    }
+    100% {
+      transform: translateY(-5px);
+      animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+    }
+  }
+
+  .project-details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    z-index: 1;
+    width: 100%;
+    padding: 36px;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .project-bg {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    filter: brightness(75%);
+  }
+
+  .project-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .project-title {
+    position: relative;
+    color: var(--highlight-text);
+    user-select: none;
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .text-description {
+    color: var(--description-text);
+    user-select: none;
+    line-height: 29px;
+    font-weight: 600;
+    font-size: 21px;
+    flex: 1;
+    font-weight: 600;
+    display: inline;
+  }
+
+  .highlight {
+    color: var(--highlight-text);
+  }
+
+  .embed {
+    width: 100%;
+    height: 454px;
+  }
+
+  .preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .text-description.center.highlight.fadeup-st {
+    opacity: 0;
+  }
+
+  .carousel {
+    display: flex;
+    overflow: auto;
+    max-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    gap: 20px;
+    padding-left: calc((100% - 620px) / 2);
+    padding-right: calc((100% - 620px) / 2);
+    scrollbar-width: none;
+    align-items: center;
+  }
+
+  .grayheading.inline {
+    width: 1260px;
+    margin: 0 auto;
+  }
+
+  .overview {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0;
+    gap: 2.5rem;
+  }
+
+  .image-gallery {
+    width: 620px;
+    height: auto;
+    position: relative;
+  }
+
+  .carousel .item {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
+  .item {
+    position: relative;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 1777px) {
+    .project-details {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 958px) {
+    .heading-wrapper {
+      padding: 300px 20px 200px 20px;
+    }
+
+    .project-wrapper {
+      justify-content: center;
+    }
+
+    .heading-description,
+    .project-description {
+      font-size: 17px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+</style>

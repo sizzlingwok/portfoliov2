@@ -226,8 +226,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     <ProjectNav
       prevLink="/mechmarket"
       prevText="mechmarket"
-      nextLink="/dillo-party"
-      nextText="dillo Party"
+      nextLink="/spotify-party"
+      nextText="Spotify Party"
     />
     <div class="project-header-wrapper">
       <picture class="project-thumbnail fadeup">
@@ -370,50 +370,70 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
       </section>
       <section class="project-section">
         <div class="section-heading">
-          <p class="grayheading fadeup-st">Final Solution</p>
+          <p class="grayheading fadeup-st">Problem Statement</p>
           <p class="subsection center">
-            Strengthen family bonds and enhance parent-child communication
+            How can we make ASL learning resources accessible and engaging for families with hard of hearing children?
           </p>
         </div>
-        <div class="project-content">
-          <div class="content-details">
-            <span class="title xlarge">Lesson Units</span>
-            <p class="text-description">
-              Each lesson includes a story that users progress through by answering questions correctly. The app features questions in multiple choice format and uses AI to interpret hand gestures captured by the camera. This integrated approach enhances interactivity and engagement throughout the learning experience.
-            </p>
+        <div class="border-box row">
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/dillo/icons/chart.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Engagement Challenges
+                </p>
+                <p class="text-description small">
+                  Learning ASL can feel daunting or uninteresting without engaging and interactive methods that captivate both children and parents.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="image-wrapper">
-            <ImageZoom
-            options={{ background: "#000000" }}
-            client:only="react"
-            class="item"
-            src="images/dillo/camera.webp"
-            draggable="false"
-            width="100%"
-            height="100%"
-          />
-            <div class="content-details">
-              <p class="text-description center">
-                The figure above shows a user correctly performing a specific hand gesture. If encountering a challenging question, users can tap the 
-                <span class="highlight">"Teach Me"</span> button to view a video demonstrating the proper technique.
-              </p>
-            </div>          
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/dillo/icons/people.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Family Involvement
+                </p>
+                <p class="text-description small">
+                  Effective ASL learning hinges on active participation and support from parents or guardians, who often lack the necessary knowledge and tools to teach ASL effectively to their hard of hearing children.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="image-wrapper">
-            <ImageZoom
-            options={{ background: "#000000" }}
-            client:only="react"
-            class="item"
-            src="images/dillo/choice.webp"
-            draggable="false"
-            width="100%"
-            height="100%"
-            />
-            <div class="content-details">
-              <p class="text-description center">
-                In the interactive story mode, users watch videos demonstrating sign language and choose the correct answer from the options provided.
-              </p>              
-            </div>          
+          <div class="box-content">
+            <div class="content-vert">
+              <div class="icon-wrapper">
+                <img
+                  src="images/dillo/icons/book.webp"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="content-vert">
+                <p class="title large highlight">
+                  Lack of Resources
+                </p>
+                <p class="text-description small">
+                  Many existing ASL learning resources do not prioritize accessibility, making it difficult for families with hard of hearing children to find materials that meet their needs.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -443,7 +463,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             <div class="content-vert">
               <div class="icon-wrapper">
                 <img
-                  src="images/dillo/icons/searchicon.webp"
+                  src="images/dillo/icons/engagement.webp"
                   alt=""
                   class="icon"
                 />
@@ -463,7 +483,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             <div class="content-vert">
               <div class="icon-wrapper">
                 <img
-                  src="images/dillo/icons/laptopicon.webp"
+                  src="images/dillo/icons/table.webp"
                   alt=""
                   class="icon"
                 />
@@ -483,7 +503,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             <div class="content-vert">
               <div class="icon-wrapper">
                 <img
-                  src="images/dillo/icons/messageicon.webp"
+                  src="images/dillo/icons/family.webp"
                   alt=""
                   class="icon"
                 />
@@ -500,181 +520,8 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           </div>
         </div>
       </section>
-      <section class="project-section">
-        <div class="section-heading">
-          <p class="grayheading fadeup-st">Problem Statement</p>
-          <p class="subsection center">
-            How can we make ASL learning resources accessible and engaging for families with hard of hearing children?
-          </p>
-        </div>
-        <div class="border-box row">
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/searchicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
 
-              <div class="content-vert">
-                <p class="title large highlight">
-                  Engagement Challenges
-                </p>
-                <p class="text-description small">
-                  Learning ASL can feel daunting or uninteresting without engaging and interactive methods that captivate both children and parents.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/laptopicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
 
-              <div class="content-vert">
-                <p class="title large highlight">
-                  Family Involvement
-                </p>
-                <p class="text-description small">
-                  Effective ASL learning hinges on active participation and support from parents or guardians, who often lack the necessary knowledge and tools to teach ASL effectively to their hard of hearing children.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/messageicon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-              <div class="content-vert">
-                <p class="title large highlight">
-                  Lack of Resources
-                </p>
-                <p class="text-description small">
-                  Many existing ASL learning resources do not prioritize accessibility, making it difficult for families with hard of hearing children to find materials that meet their needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="project-section">
-        <div class="section-heading">
-          <p class="grayheading fadeup-st">Competitive Analysis</p>
-          <p class="subsection center">Analyzing dillo's Competitors</p>
-        </div>
-        <div class="image-wrapper">
-          <div class="image-row nowrap">
-            <figure class="image-container">
-              <img
-                class="project-image"
-                src="images/dillo/applemusic.webp"
-                alt=""
-                draggable="false"
-              />
-            </figure>
-            <figure class="image-container">
-              <img
-                class="project-image"
-                src="images/dillo/amazonmusic.webp"
-                alt=""
-                draggable="false"
-              />
-            </figure>
-            <figure class="image-container">
-              <img
-                class="project-image"
-                src="images/dillo/youtubemusic.webp"
-                alt=""
-                draggable="false"
-              />
-            </figure>
-          </div>
-          <div class="content-details">
-            <p class="text-description center">
-              I conducted a comprehensive analysis of dillo's direct
-              competitors, assessing their user interface and implementation of
-              listening group sessions with others. This endeavor allowed me to
-              delve deeper into their approach to user experience as well as
-              explore other related functionalities, uncovering valuable
-              insights in the process.
-            </p>
-          </div>
-        </div>
-        <div class="border-box row">
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/layouticon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-
-              <div class="content-vert">
-                <p class="title large highlight">Similar User Experience</p>
-                <p class="text-description small">
-                  Each platform delivers an intuitive and cohesive user
-                  interface with consistent design elements and a familiar
-                  layout for a user-friendly experience
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/speakericon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-
-              <div class="content-vert">
-                <p class="title large highlight">
-                  Cross-platform compatibility
-                </p>
-                <p class="text-description small">
-                  These platforms allow the user to play media through multiple
-                  devices including phones, tablets, computers and TVs
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-content">
-            <div class="content-vert">
-              <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/playlisticon.webp"
-                  alt=""
-                  class="icon"
-                />
-              </div>
-              <div class="content-vert">
-                <p class="title large highlight">Playlist Sharing</p>
-                <p class="text-description small">
-                  Users are able to share their playlists with others. The
-                  process of sharing a playlist involves sending a shareable
-                  link
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <div class="overview">
         <p class="grayheading inline fadeup-st">Low fidelity prototypes</p>
         <ul class="carousel">
@@ -684,7 +531,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 options={{ background: "#000000" }}
                 client:only="react"
                 class="item"
-                src="images/dillo/sitemap.webp"
+                src="images/dillo/lf1.webp"
                 draggable="false"
                 width="100%"
                 height="100%"
@@ -697,7 +544,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 options={{ background: "#000000" }}
                 client:only="react"
                 class="item"
-                src="images/dillo/userflow1.webp"
+                src="images/dillo/lf2.webp"
                 draggable="false"
                 width="100%"
                 height="100%"
@@ -710,7 +557,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 options={{ background: "#000000" }}
                 client:only="react"
                 class="item"
-                src="images/dillo/userflow2.webp"
+                src="images/dillo/lf3.webp"
                 draggable="false"
                 width="100%"
                 height="100%"
@@ -723,7 +570,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
                 options={{ background: "#000000" }}
                 client:only="react"
                 class="item"
-                src="images/dillo/userflow3.webp"
+                src="images/dillo/lf4.webp"
                 draggable="false"
                 width="100%"
                 height="100%"
@@ -758,26 +605,17 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
               <div class="content-vert">
                 <p class="title large highlight">Project Takeaways</p>
                 <p class="text-description small">
-                  Inspired by the limitations of dillo's group session
-                  feature, I created dillo Party to explore innovative designs
-                  and enhance my app organization skills. The project refined my
-                  smart animate techniques and visual continuity, marking my
-                  first responsive design for both desktop and mobile platforms.
+                  Participating in this hackathon was an incredibly rewarding experience. Collaborating with my team on Dillo was both fun and challenging, especially given the 24-hour time constraint. Despite the pressure, I learned a great deal from everyone involved. Witnessing Dillo's development and seeing the innovative ideas from other teams was inspiring. The hackathon was an eye-opening experience, showcasing the potential for many great apps if given the opportunity to develop further. Overall, it was enjoyable and significantly boosted my confidence and skills in design thinking under tight deadlines.
                 </p>
               </div>
             </div>
             <div class="box-content nobg">
               <div class="content-vert">
                 <p class="title large highlight">
-                  Things I would do differently
+                  Learning Outcomes
                 </p>
                 <p class="text-description small">
-                  In hindsight, I devoted considerable time to manual tasks like
-                  copying album cover arts and track information, which
-                  prolonged the design phase. Reflecting on this, I realize I
-                  could have streamlined the process by reusing assets and
-                  focusing more on functional aspects to expedite project
-                  completion.
+                The hackathon honed my design thinking skills, enabling me to apply user-centered design principles and excel in rapid prototyping. Effective project management was essential, enhancing my time management and task prioritization under tight deadlines. Teamwork and collaboration were key, teaching me to communicate effectively, align on a shared vision, and adapt to different working styles. These experiences have significantly boosted my confidence and skills in technical development, design thinking, project management, and teamwork.
                 </p>
               </div>
             </div>

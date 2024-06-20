@@ -10,73 +10,73 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
   description="Integrating ASL into family bedtime reading to support deaf and hard of hearing children"
   canonical="https://andyduong.work/dillo"
 >
-<script>
-  // GSAP
-  let ctx: gsap.Context | null = null;
-  let initialize = false;
+  <script>
+    // GSAP
+    let ctx: gsap.Context | null = null;
+    let initialize = false;
 
-  document.addEventListener("astro:page-load", () => {
-    const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
-    const currentPath = window.location.pathname;
-    initialize = currentPath === "/dillo";
+    document.addEventListener("astro:page-load", () => {
+      const elements = gsap.utils.toArray<HTMLElement>(".fadeup-st");
+      const currentPath = window.location.pathname;
+      initialize = currentPath === "/dillo";
 
-    if (initialize) {
-      ctx = gsap.context(() => {});
+      if (initialize) {
+        ctx = gsap.context(() => {});
 
-      ctx.add(() => {
-        // Animation for .fadeup elements
-        gsap.fromTo(
-          ".fadeup",
-          { opacity: 0, y: 25 },
-          { opacity: 1, y: 0, duration: 0.5, ease: "cubic-bezier(0,0,0.5,1)" }
-        );
-
-        // Animation for .fadeup-d elements
-        gsap.fromTo(
-          ".fadeup-d",
-          { opacity: 0, y: 25 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "cubic-bezier(0,0,0.5,1)",
-            delay: 0.1,
-          }
-        );
-
-        // Animation for .fadeup-st elements with ScrollTrigger
-        elements.forEach((element) => {
+        ctx.add(() => {
+          // Animation for .fadeup elements
           gsap.fromTo(
-            element,
+            ".fadeup",
+            { opacity: 0, y: 25 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "cubic-bezier(0,0,0.5,1)" }
+          );
+
+          // Animation for .fadeup-d elements
+          gsap.fromTo(
+            ".fadeup-d",
             { opacity: 0, y: 25 },
             {
               opacity: 1,
               y: 0,
               duration: 0.5,
               ease: "cubic-bezier(0,0,0.5,1)",
-              scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none reverse",
-              },
+              delay: 0.1,
             }
           );
+
+          // Animation for .fadeup-st elements with ScrollTrigger
+          elements.forEach((element) => {
+            gsap.fromTo(
+              element,
+              { opacity: 0, y: 25 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "cubic-bezier(0,0,0.5,1)",
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 80%",
+                  end: "bottom 20%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          });
+
+          // Refresh ScrollTrigger to recalculate trigger points
+          ScrollTrigger.refresh(true);
         });
-
-        // Refresh ScrollTrigger to recalculate trigger points
-        ScrollTrigger.refresh(true);
-      });
-    }
-
-    // Event listener for after-swap event
-    document.addEventListener("astro:after-swap", () => {
-      if (ctx) {
-        ctx.revert();
-        ctx = null;
       }
+
+      // Event listener for after-swap event
+      document.addEventListener("astro:after-swap", () => {
+        if (ctx) {
+          ctx.revert();
+          ctx = null;
+        }
+      });
     });
-  });
 
     //carousel
     document.addEventListener("astro:page-load", () => {
@@ -232,7 +232,7 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     <div class="project-header-wrapper">
       <picture class="project-thumbnail fadeup">
         <div class="project-header-details">
-          <h1 class="">Dillo</h1>
+          <h1 class="project-title">Dillo</h1>
           <p class="heading-description">
             Integrating ASL into family bedtime reading to support deaf and hard
             of hearing children
@@ -262,15 +262,11 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <ul class="list-container">
             <ul class="list-item">
               <p class="text-description highlight">Role</p>
-              <p class="text-description">
-                UX Design, Prototyping
-              </p>
+              <p class="text-description">UX Design, Prototyping</p>
             </ul>
             <ul class="list-item">
               <p class="text-description highlight">Tools</p>
-              <p class="text-description">
-                Figma
-              </p>
+              <p class="text-description">Figma</p>
             </ul>
             <ul class="list-item">
               <p class="text-description highlight">Timeline</p>
@@ -281,7 +277,13 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
             <ul class="list-item">
               <p class="text-description highlight">Overview</p>
               <p class="text-description">
-                Dillo is an app that helps families with hard of hearing children to learn more about American Sign Language. Dillo offers lessons that include enjoyable bedtime stories families can interact with alongside their children. This app was created in response to the createSC 24 hour design hackathon that featured over 250 members. Our team received runner up out of 60 teams.
+                Dillo is an app that helps families with hard of hearing
+                children to learn more about American Sign Language. Dillo
+                offers lessons that include enjoyable bedtime stories families
+                can interact with alongside their children. This app was created
+                in response to the createSC 24 hour design hackathon that
+                featured over 250 members. Our team received runner up out of 60
+                teams.
               </p>
             </ul>
           </ul>
@@ -364,7 +366,11 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         <p class="grayheading fadeup-st">Prompt</p>
         <div class="preview-wrapper">
           <div class="preview-header">
-            <p class="subsection center">Develop a mobile application platform aimed at enhancing accessibility and enriching the entertainment experience for individuals needing medical accommodations.</p>
+            <p class="subsection center">
+              Develop a mobile application platform aimed at enhancing
+              accessibility and enriching the entertainment experience for
+              individuals needing medical accommodations.
+            </p>
           </div>
         </div>
       </section>
@@ -372,26 +378,23 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
         <div class="section-heading">
           <p class="grayheading fadeup-st">Problem Statement</p>
           <p class="subsection center">
-            How can we make ASL learning resources accessible and engaging for families with hard of hearing children?
+            How can we make ASL learning resources accessible and engaging for
+            families with hard of hearing children?
           </p>
         </div>
         <div class="border-box row">
           <div class="box-content">
             <div class="content-vert">
               <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/chart.webp"
-                  alt=""
-                  class="icon"
-                />
+                <img src="images/dillo/icons/chart.webp" alt="" class="icon" />
               </div>
 
               <div class="content-vert">
-                <p class="title large highlight">
-                  Engagement Challenges
-                </p>
+                <p class="title large highlight">Engagement Challenges</p>
                 <p class="text-description small">
-                  Learning ASL can feel daunting or uninteresting without engaging and interactive methods that captivate both children and parents.
+                  Learning ASL can feel daunting or uninteresting without
+                  engaging and interactive methods that captivate both children
+                  and parents.
                 </p>
               </div>
             </div>
@@ -399,19 +402,16 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <div class="box-content">
             <div class="content-vert">
               <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/people.webp"
-                  alt=""
-                  class="icon"
-                />
+                <img src="images/dillo/icons/people.webp" alt="" class="icon" />
               </div>
 
               <div class="content-vert">
-                <p class="title large highlight">
-                  Family Involvement
-                </p>
+                <p class="title large highlight">Family Involvement</p>
                 <p class="text-description small">
-                  Effective ASL learning hinges on active participation and support from parents or guardians, who often lack the necessary knowledge and tools to teach ASL effectively to their hard of hearing children.
+                  Effective ASL learning hinges on active participation and
+                  support from parents or guardians, who often lack the
+                  necessary knowledge and tools to teach ASL effectively to
+                  their hard of hearing children.
                 </p>
               </div>
             </div>
@@ -419,18 +419,14 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <div class="box-content">
             <div class="content-vert">
               <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/book.webp"
-                  alt=""
-                  class="icon"
-                />
+                <img src="images/dillo/icons/book.webp" alt="" class="icon" />
               </div>
               <div class="content-vert">
-                <p class="title large highlight">
-                  Lack of Resources
-                </p>
+                <p class="title large highlight">Lack of Resources</p>
                 <p class="text-description small">
-                  Many existing ASL learning resources do not prioritize accessibility, making it difficult for families with hard of hearing children to find materials that meet their needs.
+                  Many existing ASL learning resources do not prioritize
+                  accessibility, making it difficult for families with hard of
+                  hearing children to find materials that meet their needs.
                 </p>
               </div>
             </div>
@@ -448,13 +444,24 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <div class="content-details">
             <span class="title xlarge">Secondary Research</span>
             <p class="text-description">
-              Due to time constraints, primary research was not feasible, so we relied on existing data from reputable sources. Our findings revealed a <span class="highlight">critical gap</span>: <span class="highlight">over 90% of deaf children</span> are born to hearing families with limited knowledge of deafness. Early hearing screenings are underutilized, leaving families without clear pathways for accessing essential language and communication support.
+              Due to time constraints, primary research was not feasible, so we
+              relied on existing data from reputable sources. Our findings
+              revealed a <span class="highlight">critical gap</span>: <span
+                class="highlight">over 90% of deaf children</span
+              > are born to hearing families with limited knowledge of deafness.
+              Early hearing screenings are underutilized, leaving families without
+              clear pathways for accessing essential language and communication support.
             </p>
           </div>
           <div class="content-details">
             <span class="title xlarge">Target Audience</span>
             <p class="text-description">
-              Our target audience includes families with hard of hearing children who face challenges in accessing adequate language and communication support. This includes parents and guardians who are pivotal in their children's educational journey, as well as the hard of hearing children themselves who benefit from early intervention and language development tools.
+              Our target audience includes families with hard of hearing
+              children who face challenges in accessing adequate language and
+              communication support. This includes parents and guardians who are
+              pivotal in their children's educational journey, as well as the
+              hard of hearing children themselves who benefit from early
+              intervention and language development tools.
             </p>
           </div>
         </div>
@@ -470,11 +477,11 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
               </div>
 
               <div class="content-vert">
-                <p class="title large highlight">
-                  User Engagement
-                </p>
+                <p class="title large highlight">User Engagement</p>
                 <p class="text-description small">
-                  The app incorporates gamification elements such as progression and interactive challenges to keep children motivated and eager to learn
+                  The app incorporates gamification elements such as progression
+                  and interactive challenges to keep children motivated and
+                  eager to learn
                 </p>
               </div>
             </div>
@@ -482,19 +489,16 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <div class="box-content">
             <div class="content-vert">
               <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/table.webp"
-                  alt=""
-                  class="icon"
-                />
+                <img src="images/dillo/icons/table.webp" alt="" class="icon" />
               </div>
 
               <div class="content-vert">
-                <p class="title large highlight">
-                  Intuitive Design
-                </p>
+                <p class="title large highlight">Intuitive Design</p>
                 <p class="text-description small">
-                  Dillo employs intuitive design principles such as clear navigation menus, visual cues for interactive elements, and simple instructions that guide users through activities and lessons effortlessly
+                  Dillo employs intuitive design principles such as clear
+                  navigation menus, visual cues for interactive elements, and
+                  simple instructions that guide users through activities and
+                  lessons effortlessly
                 </p>
               </div>
             </div>
@@ -502,25 +506,21 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
           <div class="box-content">
             <div class="content-vert">
               <div class="icon-wrapper">
-                <img
-                  src="images/dillo/icons/family.webp"
-                  alt=""
-                  class="icon"
-                />
+                <img src="images/dillo/icons/family.webp" alt="" class="icon" />
               </div>
               <div class="content-vert">
-                <p class="title large highlight">
-                  Connecting Families
-                </p>
+                <p class="title large highlight">Connecting Families</p>
                 <p class="text-description small">
-                  Dillo enriches family learning through interactive American Sign Language experiences, promoting shared learning moments and meaningful engagement between parents and their hard of hearing children
+                  Dillo enriches family learning through interactive American
+                  Sign Language experiences, promoting shared learning moments
+                  and meaningful engagement between parents and their hard of
+                  hearing children
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
 
       <div class="overview">
         <p class="grayheading inline fadeup-st">Low fidelity prototypes</p>
@@ -605,17 +605,34 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
               <div class="content-vert">
                 <p class="title large highlight">Project Takeaways</p>
                 <p class="text-description small">
-                  Participating in this hackathon was an incredibly rewarding experience. Collaborating with my team on Dillo was both fun and challenging, especially given the 24-hour time constraint. Despite the pressure, I learned a great deal from everyone involved. Witnessing Dillo's development and seeing the innovative ideas from other teams was inspiring. The hackathon was an eye-opening experience, showcasing the potential for many great apps if given the opportunity to develop further. Overall, it was enjoyable and significantly boosted my confidence and skills in design thinking under tight deadlines.
+                  Participating in this hackathon was an incredibly rewarding
+                  experience. Collaborating with my team on Dillo was both fun
+                  and challenging, especially given the 24-hour time constraint.
+                  Despite the pressure, I learned a great deal from everyone
+                  involved. Witnessing Dillo's development and seeing the
+                  innovative ideas from other teams was inspiring. The hackathon
+                  was an eye-opening experience, showcasing the potential for
+                  many great apps if given the opportunity to develop further.
+                  Overall, it was enjoyable and significantly boosted my
+                  confidence and skills in design thinking under tight
+                  deadlines.
                 </p>
               </div>
             </div>
             <div class="box-content nobg">
               <div class="content-vert">
-                <p class="title large highlight">
-                  Learning Outcomes
-                </p>
+                <p class="title large highlight">Learning Outcomes</p>
                 <p class="text-description small">
-                The hackathon honed my design thinking skills, enabling me to apply user-centered design principles and excel in rapid prototyping. Effective project management was essential, enhancing my time management and task prioritization under tight deadlines. Teamwork and collaboration were key, teaching me to communicate effectively, align on a shared vision, and adapt to different working styles. These experiences have significantly boosted my confidence and skills in technical development, design thinking, project management, and teamwork.
+                  The hackathon honed my design thinking skills, enabling me to
+                  apply user-centered design principles and excel in rapid
+                  prototyping. Effective project management was essential,
+                  enhancing my time management and task prioritization under
+                  tight deadlines. Teamwork and collaboration were key, teaching
+                  me to communicate effectively, align on a shared vision, and
+                  adapt to different working styles. These experiences have
+                  significantly boosted my confidence and skills in technical
+                  development, design thinking, project management, and
+                  teamwork.
                 </p>
               </div>
             </div>
@@ -631,716 +648,17 @@ import { ImageZoom } from "../components/js/ImageZoom.jsx";
     --conditional-footer: rgb(0, 0, 0);
   }
 
-  h1 {
-    font-size: 64px;
-    line-height: 68px;
-    color: var(--highlight-text);
-    font-weight: 500;
-    text-decoration: none;
-    user-select: none;
-  }
-
-  .project-header-details {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .project-thumbnail {
-    position: relative;
-    width: 100%:
-  }
-
-  .project-thumbnail img {
-    max-width: 100%;
-  }
-
-  .project-header-wrapper {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1260px;
-    margin: 0 auto;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .project-button {
-    border: none;
-    color: #f5f5f7;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-    line-height: 20px;
-    cursor: pointer;
-    font-weight: 400;
-    transition: background-color 0.3s;
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1rem);
-    border-radius: 1.5rem;
-
-    background-color: #86868b35;
-
-    border: 1px solid #f5f5f715;
-    transition: border-color 0.3s ease;
-  }
-
-  .project-button:hover {
-    border: 1px solid #f5f5f735;
-  }
-
-  .carousel-buttons-wrapper {
-    width: 1260px;
-    margin: -1rem auto;
-  }
-
-  .carousel-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .prev-button,
-  .next-button {
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
-    background: #333336;
-    border: none;
-    cursor: pointer;
-    transition: background 100ms linear;
-  }
-
-  .prev-button svg path,
-  .next-button svg path {
-    fill: #ffffff80;
-    transition: fill 100ms linear;
-  }
-
-  .prev-button:hover svg path,
-  .next-button:hover svg path {
-    fill: rgba(255, 255, 255, 0.8);
-  }
-
-  .prev-button:focus,
-  .next-button:focus {
-    outline: none;
-  }
-
-  .prev-button:hover,
-  .next-button:hover {
-    background: #37373a;
-  }
-
-  .prev-button.disabled,
-  .next-button.disabled {
-    pointer-events: none;
-    opacity: 0.36;
-    transition: opacity 0.1s linear;
-  }
-
-  .project-details {
-    display: flex;
-    max-width: 1260px;
-    margin: 0 auto;
-    justify-content: space-between;
-    padding-bottom: 7.5rem;
-    gap: 5rem;
-  }
-
-  .list-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    flex: 1;
-  }
-
-  .overview {
-    background-color: var(--gray-background);
-    display: flex;
-    flex-direction: column;
-    padding: 10rem 0;
-    gap: 2.5rem;
-  }
-
-  .fadeup {
-    opacity: 0;
-  }
-
-  .grayheading {
-    color: #86868b;
-    font-size: 3.5rem;
-    font-weight: 600;
-    text-align: left;
-    text-decoration: none;
-    user-select: none;
-  }
-
-  .grayheading.inline {
-    width: 1260px;
-    margin: 0 auto;
-  }
-
-  .box {
-    max-width: 33.33%;
-  }
-
-  .blackborder {
-    display: flex;
-    flex-direction: column;
-    background: black;
-    border-radius: 28px;
-    max-width: 95.25rem;
-    margin: 0 auto;
-    padding: 8.25rem;
-    gap: 3rem;
-  }
-
-  .carousel {
-    display: flex;
-    overflow: auto;
-    max-width: none;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 20px;
-    gap: 20px;
-    padding-left: calc((100% - 1260px) / 2);
-    padding-right: calc((100% - 1260px) / 2);
-    scrollbar-width: none;
-  }
-
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .image-gallery {
-    width: 1260px;
-    height: auto;
-    position: relative;
-  }
-
-  .carousel .item {
-    scroll-snap-align: center;
-    flex-shrink: 0;
-  }
-
-  .mobile-image {
-    display: none;
-  }
-
-  .item {
-    position: relative;
-    border-radius: 28px;
-  }
-
-  .list-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .item img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .project-content-wrapper {
-    background-color: #000000;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .dark-glassbox {
-    border-radius: 1.5rem;
-    backdrop-filter: blur(1rem);
-    border: 1px solid #f5f5f715;
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
-  }
-
-  .padding {
-    padding: 3rem 0;
-  }
-
-  .project-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 200px 0;
-  }
-
-  .title {
-    font-size: 2rem;
-    color: #f5f5f7;
-    text-decoration: none;
-    user-select: none;
-    flex: 1;
-    font-weight: 600;
-  }
-
-  .project-content {
-    display: flex;
-    flex-direction: column;
-    width: 980px;
-    margin: 0 auto;
-    gap: 10rem;
-  }
-
-  .subsection {
-    font-size: 80px;
-    line-height: 84px;
-    font-weight: 600;
-    color: #f5f5f7;
-    text-decoration: none;
-    user-select: none;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .text-description,
-  .heading-description {
-    color: var(--description-text);
-    user-select: none;
-    line-height: 29px;
-    font-weight: 600;
-    font-size: 21px;
-    flex: 1;
-    font-weight: 600;
-    display: inline;
-  }
-
-  .content-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .content-details.col {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .subheading {
-    font-size: 1.5rem;
-    color: #f5f5f7;
-    text-decoration: none;
-    user-select: none;
-    flex: 1;
-    font-weight: 500;
-  }
-
-  .image-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .image-wrapper.row {
-    gap: 3rem;
-  }
-
-  .section-heading {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-  }
-
-  .image-row {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    margin: 0 auto;
-    max-width: 100%;
-    gap: 5rem;
-  }
-
-  .preview-header {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    margin: 0 auto;
-  }
-
-  .highlight {
-    color: #f5f5f7;
-  }
-
-  .large {
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  .xlarge {
-    font-size: 48px;
-    line-height: 52px;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 39px 46px;
-  }
-
-  .content-preview {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-  }
-
-  .content {
-    margin: 0 auto;
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .reverse {
-    flex-direction: row-reverse;
-  }
-
-  .half {
-    width: 50%;
-  }
-
-  .preview-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-  }
-
-  .border-box {
-    display: flex;
-    flex: 1;
-    gap: 25px;
-    justify-content: space-around;
-  }
-
-  .border-box.row {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-  }
-
-  .gap {
-    gap: 10em;
-  }
-
-  .box-content {
-    background: #161617;
-    padding: 3rem 2rem;
-    color: #868686;
-    user-select: none;
-    line-height: 1.6;
-    font-weight: 430;
-    flex: 1;
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-  }
-
-  .box-content.nobg {
-    background: none;
-    padding: 0;
-  }
-
-  .content-vert {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .icon-wrapper {
-    padding-bottom: 1rem;
-  }
-
-  .small {
-    font-size: 19px;
-  }
-
-  .icon {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .content-hor {
-    display: flex;
-    flex-direction: row;
-    gap: 1.75rem;
-    align-items: center;
-  }
-
-  .no-padding {
-    padding: 0 0 0 0;
-  }
-
-  .icon.large {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .project-image {
-    max-width: 100%;
-    object-fit: cover;
-    user-select: none;
-    border-radius: 1rem;
-  }
-
-  .img-center {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* media queries */
   @media (max-width: 1270px) {
-    .project-details {
-      padding-bottom: 7.5rem !important;
-    }
-
-    .carousel {
-      padding-left: calc((100%) / 2);
-      padding-right: calc((100%) / 2);
-    }
-
-    .image-gallery {
-    }
-
-    .item {
-      height: auto;
-    }
-
-    .project-details {
-      padding: 0 10%;
-    }
-
-    .project-section {
-      padding: 200px 10%;
-    }
-
-    .overview.end {
-      padding: 10rem 10%;
-    }
-
-    .carousel-buttons-wrapper {
-      width: 100%;
-      padding: 0 10%;
-    }
-
-    .grayheading.inline {
-      width: 100%;
-      padding: 0 10%;
-    }
-
-    .project-content {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 1068px) {
-    h1 {
-      font-size: 48px;
-    }
-
-    .heading-description {
-      font-size: 17px;
-    }
-
-    .project-header-details {
-      gap: 8px;
-      margin: -36px 0;
-    }
-
-    .project-content {
-      width: 100%;
-    }
-
-    .image-row.stats {
-      gap: 3rem;
-      justify-content: space-between;
-      flex-direction: column;
-    }
-
-    .blackborder {
-      padding: 6rem;
-    }
-
-    .preview-header {
-      width: 75%;
+    .subsection {
+      font-size: 64px;
+      line-height: 1.0834933333;
     }
   }
 
   @media (max-width: 779px) {
-    h1 {
-      font-size: 40px;
-    }
-
-    .text-description {
-      font-size: 19px;
-    }
-
-    .project-header-details {
-      gap: 0;
-      padding: 0 5%;
-      margin: 0;
-    }
-
-    .project-details {
-      padding: 0;
-      flex-direction: column;
-    }
-
-    .list-item {
-      gap: 0.3rem;
-    }
-
-    .list-container {
-      gap: 1rem;
-    }
-
-    .overview {
-      padding: 100px 0;
-    }
-
-    .project-details {
-      gap: 3rem;
-      padding: 0 5%;
-    }
-
-    .grayheading.inline {
-      padding: 0 5%;
-    }
-
-    .grayheading {
-      font-size: 32px;
-    }
-
     .subsection {
       font-size: 48px;
       line-height: 1.0834933333;
-    }
-
-    .content {
-      flex-direction: column;
-    }
-
-    .content-preview,
-    .project-section,
-    .preview-wrapper,
-    .section-heading {
-      gap: 100px;
-    }
-
-    .project-section {
-      padding: 100px 5%;
-    }
-
-    .content-details {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .project-content {
-      width: 100%;
-      gap: 100px;
-    }
-
-    .xlarge,
-    .title {
-      font-size: 28px;
-    }
-
-    .image-row {
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .content-details.padding {
-      flex-direction: row;
-    }
-
-    .border-box.row,
-    .border-box {
-      flex-wrap: wrap;
-      flex-basis: 100%;
-    }
-
-    .icon {
-      width: 2rem;
-      height: 2rem;
-    }
-
-    .image-row.nowrap {
-      flex-direction: row;
-    }
-
-    .blackborder {
-      padding: 5rem 3rem;
-    }
-
-    .gap {
-      gap: 50px;
-    }
-
-    .icon.large {
-      width: 3rem;
-      height: 3rem;
-    }
-
-    .icon-wrapper {
-      padding-bottom: 0;
-    }
-
-    .title.large.highlight {
-      font-size: 21px;
-    }
-
-    .content-vert {
-      gap: 0.5rem;
-    }
-
-    .text-description.small {
-      font-size: 17px;
-    }
-
-    .box-content {
-      padding: 2rem 2rem;
-      min-width: 210px;
-    }
-
-    .border-box.row.gap {
-      flex-direction: column;
-    }
-
-    .carousel-buttons-wrapper {
-      padding: 0 5%;
-    }
-
-    .preview {
-      width: 75%;
-    }
-
-    .preview-header {
-      gap: 1.5rem;
-      width: 100%;
-    }
-
-    .mobile-image {
-      display: block;
-    }
-
-    .def-image {
-      display: none;
     }
   }
 </style>

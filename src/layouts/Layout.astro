@@ -10,7 +10,7 @@ import { AstroFont } from "astro-font";
 
 const fontPrefix = import.meta.env.PROD
   ? "/fonts"
-  : join(process.cwd(), "public");
+  : join(process.cwd(), "public", "fonts");
 ---
 
 <!doctype html>
@@ -51,22 +51,22 @@ const fontPrefix = import.meta.env.PROD
             {
               style: "normal",
               weight: "400",
-              path: join(fontPrefix, "fonts", "SF-Pro-Display-Regular.woff2"),
+              path: join(fontPrefix, "SF-Pro-Display-Regular.woff2"),
             },
             {
               style: "normal",
               weight: "500",
-              path: join(fontPrefix, "fonts", "SF-Pro-Display-Medium.woff2"),
+              path: join(fontPrefix, "SF-Pro-Display-Medium.woff2"),
             },
             {
               style: "normal",
               weight: "600",
-              path: join(fontPrefix, "fonts", "SF-Pro-Display-Semibold.woff2"),
+              path: join(fontPrefix, "SF-Pro-Display-Semibold.woff2"),
             },
             {
               style: "normal",
               weight: "700",
-              path: join(fontPrefix, "fonts", "SF-Pro-Display-Bold.woff2"),
+              path: join(fontPrefix, "SF-Pro-Display-Bold.woff2"),
             },
           ],
           preload: true,

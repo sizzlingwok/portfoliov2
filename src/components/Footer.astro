@@ -1,13 +1,18 @@
 <footer class="footer">
   <div class="footer-wrapper">
     <div class="footer-content">
-      <div class="title">© 2024 Andy Duong</div>
+      <div class="title">© <span id="currentYear"></span> Andy Duong</div>
+
       <nav class="footer-nav">
         <a class="ext-link" href="mailto:contact@andyduong.work"> Email ↗ </a>
       </nav>
     </div>
   </div>
 </footer>
+<script>
+  (document.getElementById("currentYear") as HTMLElement).textContent =
+    new Date().getFullYear().toString();
+</script>
 
 <style>
   .footer {

@@ -7,11 +7,12 @@
 }
 
 .italic {
-  font-family: "Editorial New";
+  font-family: var(--editorial-new);
 }
 
 body {
   background-color: #000000;
+  font-family: var(--sf-pro);
 }
 
 a {
@@ -20,7 +21,7 @@ a {
 }
 
 button {
-  font-family: "SF Pro Display";
+  font-family: var(--sf-pro);
 }
 
 /* custom-scrollbar */
